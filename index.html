@@ -12,7 +12,6 @@
 :root{
  --bg:#07070a;
  --card:#111116;
- --card2:#17171d;
  --border:rgba(255,255,255,.09);
  --text:#fff;
  --muted:#9999a6;
@@ -33,7 +32,6 @@ body{
 }
 
 button,input,select{font-family:inherit}
-
 button{cursor:pointer}
 
 .app{
@@ -54,9 +52,7 @@ button{cursor:pointer}
  font-weight:1000;
 }
 
-.logo span{
- color:#a78bfa;
-}
+.logo span{color:#a78bfa}
 
 .ig{
  text-decoration:none;
@@ -114,10 +110,7 @@ button{cursor:pointer}
  margin-bottom:10px;
 }
 
-.counter-title{
- font-weight:900;
-}
-
+.counter-title{font-weight:900}
 .counter-text{
  color:#c4b5fd;
  font-weight:900;
@@ -164,17 +157,9 @@ button{cursor:pointer}
  cursor:pointer;
 }
 
-.upload-icon{
- font-size:48px;
-}
-
-.upload small{
- color:var(--muted);
-}
-
-#fileInput{
- display:none;
-}
+.upload-icon{font-size:48px}
+.upload small{color:var(--muted)}
+#fileInput{display:none}
 
 .preview{
  display:none;
@@ -184,9 +169,7 @@ button{cursor:pointer}
  object-fit:contain;
 }
 
-.group{
- margin-bottom:14px;
-}
+.group{margin-bottom:14px}
 
 label{
  display:block;
@@ -242,9 +225,12 @@ input:focus,select:focus{
  margin-top:4px;
 }
 
-.output{
- display:none;
+.generate:disabled{
+ opacity:.55;
+ cursor:not-allowed;
 }
+
+.output{display:none}
 
 .canvas-wrap{
  background:#08080b;
@@ -275,9 +261,7 @@ canvas{
  border-radius:12px;
 }
 
-.subscription{
- margin-top:18px;
-}
+.subscription{margin-top:18px}
 
 .plans{
  display:grid;
@@ -296,18 +280,14 @@ canvas{
  border-color:rgba(236,72,153,.4);
 }
 
-.plan h3{
- margin-bottom:8px;
-}
+.plan h3{margin-bottom:8px}
 
 .price{
  font-size:23px;
  font-weight:1000;
 }
 
-.plan small{
- color:var(--muted);
-}
+.plan small{color:var(--muted)}
 
 .dm{
  display:block;
@@ -321,7 +301,7 @@ canvas{
  font-weight:900;
 }
 
-/* CODE */
+/* ACTIVATION */
 
 .activation{
  border:1px solid rgba(34,197,94,.2);
@@ -354,6 +334,10 @@ canvas{
  font-weight:900;
 }
 
+.activate:disabled{
+ opacity:.6;
+}
+
 .active-plan{
  display:none;
  margin-top:13px;
@@ -377,9 +361,7 @@ canvas{
  padding:18px;
 }
 
-.modal.show{
- display:flex;
-}
+.modal.show{display:flex}
 
 .modal-box{
  max-width:440px;
@@ -436,25 +418,15 @@ canvas{
 
 @media(max-width:750px){
 
- .grid{
-  grid-template-columns:1fr;
- }
+ .grid{grid-template-columns:1fr}
 
- .plans{
-  grid-template-columns:1fr;
- }
+ .plans{grid-template-columns:1fr}
 
- .options{
-  grid-template-columns:repeat(2,1fr);
- }
+ .options{grid-template-columns:repeat(2,1fr)}
 
- .activation-box{
-  flex-direction:column;
- }
+ .activation-box{flex-direction:column}
 
- .activate{
-  padding:13px;
- }
+ .activate{padding:13px}
 
 }
 </style>
@@ -479,7 +451,6 @@ canvas{
  </a>
 
 </header>
-
 
 <section class="hero">
 
@@ -509,7 +480,7 @@ canvas{
    class="counter-text"
    id="counterText"
   >
-   ۵ طراحی رایگان
+   ⏳ در حال بررسی...
   </div>
 
  </div>
@@ -539,7 +510,7 @@ canvas{
   <input
    id="activationCode"
    type="text"
-   placeholder="مثلاً APX-XXXXXX"
+   placeholder="مثلاً APX-XXXXXX-XXXXXX"
    autocomplete="off"
   >
 
@@ -563,7 +534,6 @@ canvas{
 <!-- GENERATOR -->
 
 <main class="grid">
-
 
 <section class="card">
 
@@ -614,68 +584,29 @@ canvas{
   ✨ اطلاعات محصول
  </div>
 
-
  <div class="group">
-
-  <label>
-   نام محصول
-  </label>
-
-  <input
-   id="productName"
-   placeholder="مثلاً کتونی"
-  >
-
+  <label>نام محصول</label>
+  <input id="productName" placeholder="مثلاً کتونی">
  </div>
 
-
  <div class="group">
-
-  <label>
-   برند
-  </label>
-
-  <input
-   id="brand"
-   placeholder="مثلاً Nike"
-  >
-
+  <label>برند</label>
+  <input id="brand" placeholder="مثلاً Nike">
  </div>
 
-
  <div class="group">
-
-  <label>
-   قیمت
-  </label>
-
-  <input
-   id="price"
-   placeholder="1,990,000"
-  >
-
+  <label>قیمت</label>
+  <input id="price" placeholder="1,990,000">
  </div>
 
-
  <div class="group">
-
-  <label>
-   تخفیف
-  </label>
-
-  <input
-   id="discount"
-   placeholder="20%"
-  >
-
+  <label>تخفیف</label>
+  <input id="discount" placeholder="20%">
  </div>
 
-
  <div class="group">
 
-  <label>
-   دسته‌بندی
-  </label>
+  <label>دسته‌بندی</label>
 
   <div class="options">
 
@@ -707,12 +638,9 @@ canvas{
 
  </div>
 
-
  <div class="group">
 
-  <label>
-   استایل
-  </label>
+  <label>استایل</label>
 
   <div class="options">
 
@@ -736,31 +664,19 @@ canvas{
 
  </div>
 
-
  <div class="group">
 
-  <label>
-   فرمت
-  </label>
+  <label>فرمت</label>
 
   <select id="format">
 
-   <option value="story">
-    استوری 9:16
-   </option>
-
-   <option value="portrait">
-    پست 4:5
-   </option>
-
-   <option value="square">
-    پست 1:1
-   </option>
+   <option value="story">استوری 9:16</option>
+   <option value="portrait">پست 4:5</option>
+   <option value="square">پست 1:1</option>
 
   </select>
 
  </div>
-
 
  <button
   class="generate"
@@ -786,31 +702,20 @@ canvas{
  </div>
 
  <div class="canvas-wrap">
-
   <canvas id="canvas"></canvas>
-
  </div>
 
  <div class="actions">
 
-  <button
-   class="action"
-   id="download"
-  >
+  <button class="action" id="download">
    ⬇️ دانلود
   </button>
 
-  <button
-   class="action"
-   id="share"
-  >
+  <button class="action" id="share">
    📤 اشتراک‌گذاری
   </button>
 
-  <button
-   class="action"
-   id="newDesign"
-  >
+  <button class="action" id="newDesign">
    🔄 طراحی جدید
   </button>
 
@@ -831,39 +736,29 @@ canvas{
 
   <div class="plan">
 
-   <h3>
-    ⭐ Starter
-   </h3>
+   <h3>⭐ Starter</h3>
 
    <div class="price">
     ۹۹٬۰۰۰ تومان
    </div>
 
-   <small>
-    ۳۰ طراحی
-   </small>
+   <small>۳۰ طراحی</small>
 
   </div>
 
-
   <div class="plan pro">
 
-   <h3>
-    👑 Pro
-   </h3>
+   <h3>👑 Pro</h3>
 
    <div class="price">
     ۲۹۹٬۰۰۰ تومان
    </div>
 
-   <small>
-    ۱۵۰ طراحی
-   </small>
+   <small>۱۵۰ طراحی</small>
 
   </div>
 
  </div>
-
 
  <a
   class="dm"
@@ -900,9 +795,9 @@ canvas{
   </p>
 
   <p>
-   ⭐ Starter — ۳۰ طراحی
+   ⭐ Starter — ۹۹٬۰۰۰ تومان — ۳۰ طراحی
    <br>
-   👑 Pro — ۱۵۰ طراحی
+   👑 Pro — ۲۹۹٬۰۰۰ تومان — ۱۵۰ طراحی
   </p>
 
   <a
@@ -933,18 +828,29 @@ canvas{
 
 <script>
 
-/* =========================================
-   ADPIX STEP 2
-========================================= */
+/* =====================================================
+   ADPIX BACKEND CONNECTION
+===================================================== */
 
-const FREE_LIMIT = 5;
+const API_URL =
+ "https://adpix-backend.pwaammaaamir.workers.dev";
 
-const USED_KEY =
- "adpix_used_v2";
+const CUSTOMER_KEY =
+ "adpix_customer_id_v1";
 
-const SUB_KEY =
+const OLD_SUB_KEY =
  "adpix_subscription_v2";
 
+
+/* =====================================================
+   STATE
+===================================================== */
+
+let customerId = null;
+
+let serverCredits = 5;
+
+let serverPlan = null;
 
 let productImage = null;
 
@@ -953,7 +859,9 @@ let selectedCategory = "fashion";
 let selectedStyle = "luxury";
 
 
-/* ---------- ELEMENTS ---------- */
+/* =====================================================
+   ELEMENTS
+===================================================== */
 
 const fileInput =
  document.getElementById("fileInput");
@@ -991,159 +899,56 @@ const activationCode =
 const activePlan =
  document.getElementById("activePlan");
 
-
-/* ---------- STORAGE ---------- */
-
-function getUsed(){
-
- return Number(
-  localStorage.getItem(USED_KEY) || 0
- );
-
-}
+const activateBtn =
+ document.getElementById("activateBtn");
 
 
-function setUsed(value){
+/* =====================================================
+   CUSTOMER ID
+===================================================== */
 
- localStorage.setItem(
-  USED_KEY,
-  value
- );
+function getCustomerId(){
 
-}
-
-
-function getSubscription(){
-
- try{
-
-  return JSON.parse(
-   localStorage.getItem(SUB_KEY)
+ let id =
+  localStorage.getItem(
+   CUSTOMER_KEY
   );
 
- }catch{
+ if(!id){
 
-  return null;
+  id =
+   crypto.randomUUID();
+
+  localStorage.setItem(
+   CUSTOMER_KEY,
+   id
+  );
 
  }
 
-}
-
-
-function saveSubscription(data){
-
- localStorage.setItem(
-  SUB_KEY,
-  JSON.stringify(data)
- );
+ return id;
 
 }
 
 
-/* ---------- NUMBERS ---------- */
+/* =====================================================
+   NUMBER
+===================================================== */
 
 function fa(number){
 
  return String(number)
- .replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
+ .replace(
+  /\d/g,
+  d=>"۰۱۲۳۴۵۶۷۸۹"[d]
+ );
 
 }
 
 
-/* ---------- COUNTER ---------- */
-
-function updateCounter(){
-
- const sub =
-  getSubscription();
-
- let remaining;
- let total;
-
-
- if(sub){
-
-  remaining =
-   Math.max(
-    Number(sub.credits),
-    0
-   );
-
-  total =
-   Number(sub.total);
-
-  counterText.textContent =
-   fa(remaining) +
-   " طراحی از اشتراک " +
-   sub.plan;
-
- }else{
-
-  remaining =
-   Math.max(
-    FREE_LIMIT - getUsed(),
-    0
-   );
-
-  total =
-   FREE_LIMIT;
-
-  counterText.textContent =
-   remaining > 0
-    ? fa(remaining) + " طراحی رایگان باقی مانده"
-    : "استفاده رایگان تمام شده";
-
- }
-
-
- progressBar.style.width =
-  Math.max(
-   Math.min(
-    (remaining / total) * 100,
-    100
-   ),
-   0
-  ) + "%";
-
-
- updateActivePlan();
-
-}
-
-
-/* ---------- ACTIVE PLAN ---------- */
-
-function updateActivePlan(){
-
- const sub =
-  getSubscription();
-
-
- if(!sub){
-
-  activePlan.style.display =
-   "none";
-
-  return;
-
- }
-
-
- activePlan.style.display =
-  "block";
-
-
- activePlan.innerHTML =
-  "✅ اشتراک فعال: " +
-  sub.plan +
-  " — " +
-  fa(sub.credits) +
-  " طراحی باقی مانده";
-
-}
-
-
-/* ---------- TOAST ---------- */
+/* =====================================================
+   TOAST
+===================================================== */
 
 function showToast(message){
 
@@ -1152,17 +957,24 @@ function showToast(message){
 
  toast.classList.add("show");
 
- setTimeout(
-  ()=>{
-   toast.classList.remove("show");
-  },
-  2500
+ clearTimeout(
+  window.toastTimer
  );
+
+ window.toastTimer =
+  setTimeout(
+   ()=>{
+    toast.classList.remove("show");
+   },
+   2800
+  );
 
 }
 
 
-/* ---------- MODAL ---------- */
+/* =====================================================
+   MODAL
+===================================================== */
 
 function openModal(){
 
@@ -1182,7 +994,212 @@ function closeModal(){
 }
 
 
-/* ---------- IMAGE ---------- */
+/* =====================================================
+   API
+===================================================== */
+
+async function api(
+ path,
+ options={}
+){
+
+ const response =
+  await fetch(
+   API_URL + path,
+   {
+    ...options,
+
+    headers:{
+     "Content-Type":
+      "application/json",
+
+     ...(options.headers || {})
+    }
+   }
+  );
+
+
+ const text =
+  await response.text();
+
+
+ let data;
+
+
+ try{
+
+  data =
+   JSON.parse(text);
+
+ }catch{
+
+  throw new Error(
+   "پاسخ Backend نامعتبر است."
+  );
+
+ }
+
+
+ if(
+  !response.ok ||
+  data.ok === false
+ ){
+
+  throw new Error(
+   data.error ||
+   "خطای Backend"
+  );
+
+ }
+
+
+ return data;
+
+}
+
+
+/* =====================================================
+   LOAD CUSTOMER
+===================================================== */
+
+async function loadCustomer(){
+
+ customerId =
+  getCustomerId();
+
+
+ try{
+
+  const data =
+   await api(
+    "/api/customer/" +
+    encodeURIComponent(
+     customerId
+    )
+   );
+
+
+  const customer =
+   data.customer;
+
+
+  serverCredits =
+   Math.max(
+    Number(
+     customer.credits
+    ),
+    0
+   );
+
+
+  serverPlan =
+   customer.plan || null;
+
+
+  updateCounter();
+
+
+ }catch(error){
+
+  console.error(
+   error
+  );
+
+
+  counterText.textContent =
+   "خطا در اتصال";
+
+
+  showToast(
+   "اتصال به سرور برقرار نشد."
+  );
+
+ }
+
+}
+
+
+/* =====================================================
+   COUNTER
+===================================================== */
+
+function updateCounter(){
+
+ const credits =
+  Math.max(
+   Number(serverCredits),
+   0
+  );
+
+
+ if(serverPlan){
+
+  counterText.textContent =
+   fa(credits) +
+   " طراحی از اشتراک " +
+   serverPlan;
+
+  activePlan.style.display =
+   "block";
+
+  activePlan.innerHTML =
+   "✅ اشتراک فعال: " +
+   serverPlan +
+   " — " +
+   fa(credits) +
+   " طراحی باقی مانده";
+
+  const total =
+   serverPlan === "Pro"
+    ? 150
+    : 30;
+
+  progressBar.style.width =
+   Math.max(
+    Math.min(
+     (credits / total) * 100,
+     100
+    ),
+    0
+   ) + "%";
+
+ }else{
+
+  activePlan.style.display =
+   "none";
+
+
+  if(credits > 0){
+
+   counterText.textContent =
+    fa(credits) +
+    " طراحی رایگان باقی مانده";
+
+  }else{
+
+   counterText.textContent =
+    "استفاده رایگان تمام شده";
+
+  }
+
+
+  progressBar.style.width =
+   Math.max(
+    Math.min(
+     (credits / 5) * 100,
+     100
+    ),
+    0
+   ) + "%";
+
+ }
+
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
 
 fileInput.addEventListener(
  "change",
@@ -1194,7 +1211,9 @@ fileInput.addEventListener(
   if(!file) return;
 
 
-  if(!file.type.startsWith("image/")){
+  if(
+   !file.type.startsWith("image/")
+  ){
 
    showToast(
     "فایل تصویر معتبر انتخاب کن."
@@ -1246,87 +1265,89 @@ fileInput.addEventListener(
 );
 
 
-/* ---------- OPTIONS ---------- */
+/* =====================================================
+   CATEGORY
+===================================================== */
 
 document
 .querySelectorAll("[data-cat]")
-.forEach(button=>{
+.forEach(
+ button=>{
 
- button.addEventListener(
-  "click",
-  ()=>{
+  button.addEventListener(
+   "click",
+   ()=>{
 
-   document
-   .querySelectorAll("[data-cat]")
-   .forEach(x=>
-    x.classList.remove("active")
-   );
+    document
+    .querySelectorAll("[data-cat]")
+    .forEach(
+     x=>
+      x.classList.remove(
+       "active"
+      )
+    );
 
-   button.classList.add("active");
 
-   selectedCategory =
-    button.dataset.cat;
+    button.classList.add(
+     "active"
+    );
 
-  }
- );
 
-});
+    selectedCategory =
+     button.dataset.cat;
 
+   }
+  );
+
+ }
+);
+
+
+/* =====================================================
+   STYLE
+===================================================== */
 
 document
 .querySelectorAll("[data-style]")
-.forEach(button=>{
+.forEach(
+ button=>{
 
- button.addEventListener(
-  "click",
-  ()=>{
+  button.addEventListener(
+   "click",
+   ()=>{
 
-   document
-   .querySelectorAll("[data-style]")
-   .forEach(x=>
-    x.classList.remove("active")
-   );
-
-   button.classList.add("active");
-
-   selectedStyle =
-    button.dataset.style;
-
-  }
- );
-
-});
+    document
+    .querySelectorAll("[data-style]")
+    .forEach(
+     x=>
+      x.classList.remove(
+       "active"
+      )
+    );
 
 
-/* =========================================
-   ACTIVATION
+    button.classList.add(
+     "active"
+    );
 
-   TEST CODES ONLY
-   WILL BE REMOVED IN STEP 3
-========================================= */
 
-const TEST_CODES = {
+    selectedStyle =
+     button.dataset.style;
 
- "ADPIX-START-30X":{
-  plan:"Starter",
-  total:30,
-  credits:30
- },
+   }
+  );
 
- "ADPIX-PRO-150X":{
-  plan:"Pro",
-  total:150,
-  credits:150
  }
+);
 
-};
 
+/* =====================================================
+   ACTIVATE REAL CODE
+===================================================== */
 
-document
-.getElementById("activateBtn")
-.addEventListener(
+activateBtn.addEventListener(
  "click",
- function(){
+ async function(){
 
   const code =
    activationCode
@@ -1346,91 +1367,105 @@ document
   }
 
 
-  const plan =
-   TEST_CODES[code];
+  activateBtn.disabled =
+   true;
+
+  activateBtn.textContent =
+   "⏳ در حال فعال‌سازی...";
 
 
-  if(!plan){
+  try{
+
+   const data =
+    await api(
+     "/api/activate",
+     {
+      method:"POST",
+
+      body:JSON.stringify({
+       code:code,
+       customerId:customerId
+      })
+     }
+    );
+
+
+   serverPlan =
+    data.subscription.plan;
+
+
+   serverCredits =
+    Number(
+     data.subscription.credits
+    );
+
+
+   activationCode.value =
+    "";
+
+
+   updateCounter();
+
 
    showToast(
-    "❌ کد اشتراک معتبر نیست."
+    "🎉 اشتراک " +
+    serverPlan +
+    " فعال شد!"
    );
 
-   return;
+
+  }catch(error){
+
+   if(
+    error.message ===
+    "INVALID_CODE"
+   ){
+
+    showToast(
+     "❌ کد اشتراک معتبر نیست."
+    );
+
+   }else if(
+    error.message ===
+    "CODE_ALREADY_USED"
+   ){
+
+    showToast(
+     "❌ این کد قبلاً استفاده شده."
+    );
+
+   }else{
+
+    showToast(
+     "❌ " +
+     error.message
+    );
+
+   }
+
+  }finally{
+
+   activateBtn.disabled =
+    false;
+
+   activateBtn.textContent =
+    "فعال‌سازی";
 
   }
 
-
-  saveSubscription({
-
-   plan:plan.plan,
-
-   total:plan.total,
-
-   credits:plan.credits,
-
-   code:code,
-
-   activatedAt:
-    Date.now()
-
-  });
+ }
+);
 
 
-  activationCode.value =
-   "";
-
-
-  updateCounter();
-
-
-  showToast(
-   "🎉 اشتراک " +
-   plan.plan +
-   " فعال شد!"
-  );
-
- });
-
-
-/* =========================================
+/* =====================================================
    GENERATE
-========================================= */
+===================================================== */
 
 generateBtn.addEventListener(
  "click",
- function(){
+ async function(){
 
-  const sub =
-   getSubscription();
-
-
-  /* CHECK CREDIT */
-
-  if(sub){
-
-   if(Number(sub.credits) <= 0){
-
-    openModal();
-
-    return;
-
-   }
-
-  }else{
-
-   if(getUsed() >= FREE_LIMIT){
-
-    openModal();
-
-    return;
-
-   }
-
-  }
-
-
-  /* IMAGE */
+  /* CHECK IMAGE */
 
   if(!productImage){
 
@@ -1443,7 +1478,7 @@ generateBtn.addEventListener(
   }
 
 
-  /* NAME */
+  /* CHECK NAME */
 
   const name =
    document
@@ -1457,6 +1492,19 @@ generateBtn.addEventListener(
    showToast(
     "نام محصول را وارد کن."
    );
+
+   return;
+
+  }
+
+
+  /* CHECK SERVER CREDIT */
+
+  if(
+   Number(serverCredits) <= 0
+  ){
+
+   openModal();
 
    return;
 
@@ -1490,58 +1538,119 @@ generateBtn.addEventListener(
    .value;
 
 
-  /* GENERATE */
+  /* LOCK BUTTON */
 
-  makePoster(
-   name,
-   brand,
-   price,
-   discount,
-   format
-  );
+  generateBtn.disabled =
+   true;
+
+  generateBtn.textContent =
+   "⏳ در حال ساخت...";
 
 
-  /* CONSUME */
+  try{
 
-  if(sub){
+   /*
+      اعتبار از Backend کم می‌شود.
+      Backend منبع اصلی اعتبار است.
+   */
 
-   sub.credits =
-    Number(sub.credits) - 1;
+   const result =
+    await api(
+     "/api/use",
+     {
+      method:"POST",
 
-   saveSubscription(sub);
+      body:JSON.stringify({
+       customerId:
+        customerId
+      })
+     }
+    );
 
-  }else{
 
-   setUsed(
-    getUsed() + 1
+   serverCredits =
+    Number(
+     result.credits
+    );
+
+
+   serverPlan =
+    result.plan || null;
+
+
+   /*
+      حالا تبلیغ را می‌سازیم
+   */
+
+   makePoster(
+    name,
+    brand,
+    price,
+    discount,
+    format
    );
+
+
+   updateCounter();
+
+
+   /*
+      اگر این آخرین طراحی رایگان بود
+   */
+
+   if(
+    !serverPlan &&
+    serverCredits === 0
+   ){
+
+    setTimeout(
+     openModal,
+     700
+    );
+
+   }
+
+
+  }catch(error){
+
+   if(
+    error.message ===
+    "NO_CREDITS"
+   ){
+
+    serverCredits =
+     0;
+
+    updateCounter();
+
+    openModal();
+
+   }else{
+
+    showToast(
+     "❌ " +
+     error.message
+    );
+
+   }
+
+  }finally{
+
+   generateBtn.disabled =
+    false;
+
+   generateBtn.textContent =
+    "🚀 ساخت تبلیغ";
 
   }
 
-
-  updateCounter();
-
-
-  /* AFTER FREE #5 */
-
-  if(
-   !sub &&
-   getUsed() >= FREE_LIMIT
-  ){
-
-   setTimeout(
-    openModal,
-    700
-   );
-
-  }
-
- });
+ }
+);
 
 
-/* =========================================
+/* =====================================================
    POSTER
-========================================= */
+===================================================== */
 
 function makePoster(
  name,
@@ -1572,8 +1681,11 @@ function makePoster(
  }
 
 
- canvas.width=w;
- canvas.height=h;
+ canvas.width =
+  w;
+
+ canvas.height =
+  h;
 
 
  const ctx =
@@ -1701,7 +1813,9 @@ function makePoster(
    "bold 32px Arial";
 
   ctx.fillText(
-   "🔥 " + discount + " تخفیف",
+   "🔥 " +
+   discount +
+   " تخفیف",
    180,
    102
   );
@@ -1817,7 +1931,8 @@ function makePoster(
     : "#fff";
 
   ctx.fillText(
-   price + " تومان",
+   price +
+   " تومان",
    w/2,
    h*.87
   );
@@ -1879,7 +1994,9 @@ function makePoster(
 }
 
 
-/* ---------- ROUNDED ---------- */
+/* =====================================================
+   ROUND RECT
+===================================================== */
 
 function roundRect(
  ctx,
@@ -1888,40 +2005,57 @@ function roundRect(
 
  ctx.beginPath();
 
- ctx.moveTo(x+r,y);
-
- ctx.lineTo(x+w-r,y);
-
- ctx.quadraticCurveTo(
-  x+w,y,
-  x+w,y+r
+ ctx.moveTo(
+  x+r,
+  y
  );
 
  ctx.lineTo(
-  x+w,y+h-r
+  x+w-r,
+  y
  );
 
  ctx.quadraticCurveTo(
-  x+w,y+h,
-  x+w-r,y+h
+  x+w,
+  y,
+  x+w,
+  y+r
  );
 
  ctx.lineTo(
-  x+r,y+h
+  x+w,
+  y+h-r
  );
 
  ctx.quadraticCurveTo(
-  x,y+h,
-  x,y+h-r
+  x+w,
+  y+h,
+  x+w-r,
+  y+h
  );
 
  ctx.lineTo(
-  x,y+r
+  x+r,
+  y+h
  );
 
  ctx.quadraticCurveTo(
-  x,y,
-  x+r,y
+  x,
+  y+h,
+  x,
+  y+h-r
+ );
+
+ ctx.lineTo(
+  x,
+  y+r
+ );
+
+ ctx.quadraticCurveTo(
+  x,
+  y,
+  x+r,
+  y
  );
 
  ctx.closePath();
@@ -1929,7 +2063,9 @@ function roundRect(
 }
 
 
-/* ---------- DOWNLOAD ---------- */
+/* =====================================================
+   DOWNLOAD
+===================================================== */
 
 document
 .getElementById("download")
@@ -1950,10 +2086,13 @@ document
 
   a.click();
 
- });
+ }
+);
 
 
-/* ---------- SHARE ---------- */
+/* =====================================================
+   SHARE
+===================================================== */
 
 document
 .getElementById("share")
@@ -1977,7 +2116,9 @@ document
     new File(
      [blob],
      "adpix-ad.png",
-     {type:"image/png"}
+     {
+      type:"image/png"
+     }
     );
 
 
@@ -2002,16 +2143,19 @@ document
 
    }
 
-  }catch(e){
+  }catch(error){
 
-   console.log(e);
+   console.log(error);
 
   }
 
- });
+ }
+);
 
 
-/* ---------- NEW ---------- */
+/* =====================================================
+   NEW DESIGN
+===================================================== */
 
 document
 .getElementById("newDesign")
@@ -2027,14 +2171,17 @@ document
    behavior:"smooth"
   });
 
- });
+ }
+);
 
 
-/* ---------- START ---------- */
+/* =====================================================
+   START
+===================================================== */
 
-updateCounter();
+loadCustomer();
 
 </script>
 
 </body>
-</html>
+ </html>
