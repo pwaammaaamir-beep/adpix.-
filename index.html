@@ -2,533 +2,459 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>ADPIX — ساخت تبلیغ حرفه‌ای</title>
+<title>ADPIX — ساخت تبلیغ</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --bg:#07070a;
-  --card:#111116;
-  --card2:#17171d;
-  --border:rgba(255,255,255,.09);
-  --text:#fff;
-  --muted:#9898a5;
-  --purple:#8b5cf6;
-  --purple2:#6d28d9;
-  --pink:#ec4899;
-  --green:#22c55e;
-  --red:#ef4444;
+ --bg:#07070a;
+ --card:#111116;
+ --card2:#17171d;
+ --border:rgba(255,255,255,.09);
+ --text:#fff;
+ --muted:#9999a6;
+ --purple:#8b5cf6;
+ --pink:#ec4899;
+ --green:#22c55e;
+ --red:#ef4444;
 }
 
 body{
-  min-height:100vh;
-  background:
-    radial-gradient(circle at 20% 0%,rgba(139,92,246,.18),transparent 30%),
-    radial-gradient(circle at 100% 20%,rgba(236,72,153,.12),transparent 25%),
-    var(--bg);
-  color:var(--text);
-  font-family:
-    Tahoma,
-    Arial,
-    sans-serif;
+ background:
+ radial-gradient(circle at 15% 0%,rgba(139,92,246,.18),transparent 30%),
+ radial-gradient(circle at 100% 20%,rgba(236,72,153,.12),transparent 28%),
+ var(--bg);
+ color:#fff;
+ font-family:Tahoma,Arial,sans-serif;
+ min-height:100vh;
 }
 
-button,
-input,
-textarea,
-select{
-  font-family:inherit;
-}
+button,input,select{font-family:inherit}
 
-button{
-  cursor:pointer;
-}
+button{cursor:pointer}
 
 .app{
-  width:100%;
-  max-width:1100px;
-  margin:auto;
-  padding:18px;
+ max-width:1100px;
+ margin:auto;
+ padding:16px;
 }
 
-/* HEADER */
-
 .header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 0 25px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:10px 0 25px;
 }
 
 .logo{
-  font-size:25px;
-  font-weight:1000;
-  letter-spacing:1px;
+ font-size:25px;
+ font-weight:1000;
 }
 
 .logo span{
-  color:#a78bfa;
+ color:#a78bfa;
 }
 
-.instagram{
-  color:#fff;
-  text-decoration:none;
-  background:rgba(255,255,255,.06);
-  border:1px solid var(--border);
-  padding:9px 14px;
-  border-radius:999px;
-  font-size:13px;
+.ig{
+ text-decoration:none;
+ color:white;
+ background:#15151b;
+ border:1px solid var(--border);
+ padding:9px 14px;
+ border-radius:999px;
+ font-size:13px;
 }
-
-/* HERO */
 
 .hero{
-  text-align:center;
-  padding:25px 10px 35px;
+ text-align:center;
+ padding:20px 5px 30px;
 }
 
 .hero h1{
-  font-size:clamp(30px,7vw,58px);
-  line-height:1.15;
-  font-weight:1000;
+ font-size:clamp(32px,7vw,58px);
+ font-weight:1000;
 }
 
 .hero h1 span{
-  background:linear-gradient(90deg,#a78bfa,#ec4899);
-  -webkit-background-clip:text;
-  color:transparent;
+ background:linear-gradient(90deg,#a78bfa,#ec4899);
+ -webkit-background-clip:text;
+ color:transparent;
 }
 
 .hero p{
-  margin-top:15px;
-  color:var(--muted);
-  font-size:15px;
-}
-
-/* FREE COUNTER */
-
-.counter{
-  margin:0 auto 20px;
-  max-width:650px;
-  padding:15px 18px;
-  border-radius:18px;
-  background:linear-gradient(
-    135deg,
-    rgba(139,92,246,.16),
-    rgba(236,72,153,.08)
-  );
-  border:1px solid rgba(139,92,246,.25);
-}
-
-.counter-top{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  align-items:center;
-  margin-bottom:10px;
-}
-
-.counter-title{
-  font-weight:900;
-}
-
-.counter-number{
-  color:#c4b5fd;
-  font-weight:1000;
-}
-
-.progress{
-  width:100%;
-  height:8px;
-  background:#22222a;
-  border-radius:99px;
-  overflow:hidden;
-}
-
-.progress-bar{
-  height:100%;
-  width:100%;
-  background:linear-gradient(90deg,#8b5cf6,#ec4899);
-  border-radius:99px;
-  transition:.4s;
-}
-
-/* MAIN GRID */
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
+ color:var(--muted);
+ margin-top:12px;
+ font-size:14px;
 }
 
 .card{
-  background:rgba(17,17,22,.88);
-  border:1px solid var(--border);
-  border-radius:24px;
-  padding:20px;
-  box-shadow:0 20px 60px rgba(0,0,0,.2);
+ background:rgba(17,17,22,.9);
+ border:1px solid var(--border);
+ border-radius:23px;
+ padding:20px;
+ margin-bottom:18px;
 }
 
-.card-title{
-  font-size:18px;
-  font-weight:1000;
-  margin-bottom:16px;
+.counter{
+ background:linear-gradient(
+ 135deg,
+ rgba(139,92,246,.15),
+ rgba(236,72,153,.07)
+ );
 }
 
-/* UPLOAD */
+.counter-top{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:10px;
+ margin-bottom:10px;
+}
+
+.counter-title{
+ font-weight:900;
+}
+
+.counter-text{
+ color:#c4b5fd;
+ font-weight:900;
+}
+
+.progress{
+ height:8px;
+ background:#24242c;
+ border-radius:20px;
+ overflow:hidden;
+}
+
+.progress-bar{
+ height:100%;
+ background:linear-gradient(90deg,#8b5cf6,#ec4899);
+ width:100%;
+ transition:.3s;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:18px;
+}
+
+.title{
+ font-weight:1000;
+ font-size:18px;
+ margin-bottom:16px;
+}
 
 .upload{
-  min-height:250px;
-  border:2px dashed rgba(139,92,246,.35);
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  gap:10px;
-  padding:20px;
-  text-align:center;
-  background:rgba(139,92,246,.04);
-  transition:.2s;
-}
-
-.upload:hover{
-  border-color:#a78bfa;
-  background:rgba(139,92,246,.08);
+ min-height:250px;
+ border:2px dashed rgba(139,92,246,.35);
+ border-radius:20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ flex-direction:column;
+ gap:9px;
+ text-align:center;
+ padding:20px;
+ background:rgba(139,92,246,.04);
+ cursor:pointer;
 }
 
 .upload-icon{
-  font-size:48px;
-}
-
-.upload strong{
-  font-size:17px;
+ font-size:48px;
 }
 
 .upload small{
-  color:var(--muted);
+ color:var(--muted);
 }
 
 #fileInput{
-  display:none;
+ display:none;
 }
 
-.preview-image{
-  display:none;
-  max-width:100%;
-  max-height:270px;
-  border-radius:16px;
-  object-fit:contain;
+.preview{
+ display:none;
+ max-width:100%;
+ max-height:270px;
+ border-radius:15px;
+ object-fit:contain;
 }
 
-/* FORM */
-
-.form-group{
-  margin-bottom:14px;
+.group{
+ margin-bottom:14px;
 }
 
 label{
-  display:block;
-  margin-bottom:7px;
-  font-size:13px;
-  color:#cfcfd7;
-  font-weight:700;
+ display:block;
+ margin-bottom:7px;
+ font-size:13px;
+ color:#ccc;
 }
 
-input,
-textarea,
-select{
-  width:100%;
-  border:1px solid var(--border);
-  background:#0b0b0f;
-  color:#fff;
-  border-radius:13px;
-  padding:13px;
-  outline:none;
-  font-size:14px;
+input,select{
+ width:100%;
+ background:#0b0b0f;
+ border:1px solid var(--border);
+ color:white;
+ padding:13px;
+ border-radius:13px;
+ outline:none;
 }
 
-input:focus,
-textarea:focus,
-select:focus{
-  border-color:#8b5cf6;
-  box-shadow:0 0 0 3px rgba(139,92,246,.1);
+input:focus,select:focus{
+ border-color:#8b5cf6;
 }
 
-textarea{
-  min-height:90px;
-  resize:vertical;
-}
-
-/* OPTIONS */
-
-.option-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
+.options{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:8px;
 }
 
 .option{
-  border:1px solid var(--border);
-  background:#0d0d12;
-  color:#ddd;
-  border-radius:12px;
-  padding:12px 5px;
-  font-size:12px;
-  text-align:center;
-  transition:.2s;
+ background:#0d0d12;
+ color:#ddd;
+ border:1px solid var(--border);
+ border-radius:12px;
+ padding:11px 5px;
+ font-size:12px;
 }
 
 .option.active{
-  border-color:#8b5cf6;
-  background:rgba(139,92,246,.16);
-  color:#fff;
+ border-color:#8b5cf6;
+ background:rgba(139,92,246,.16);
+ color:#fff;
 }
-
-/* BUTTON */
 
 .generate{
-  width:100%;
-  margin-top:5px;
-  border:0;
-  color:white;
-  padding:16px;
-  border-radius:15px;
-  font-size:16px;
-  font-weight:1000;
-  background:linear-gradient(135deg,#7c3aed,#db2777);
-  box-shadow:0 12px 35px rgba(124,58,237,.25);
-  transition:.2s;
+ width:100%;
+ border:0;
+ color:#fff;
+ padding:16px;
+ border-radius:15px;
+ font-size:16px;
+ font-weight:1000;
+ background:linear-gradient(135deg,#7c3aed,#db2777);
+ margin-top:4px;
 }
 
-.generate:hover{
-  transform:translateY(-2px);
-}
-
-.generate:active{
-  transform:scale(.98);
-}
-
-/* OUTPUT */
-
-.output-card{
-  margin-top:18px;
-  display:none;
+.output{
+ display:none;
 }
 
 .canvas-wrap{
-  background:#08080b;
-  border-radius:20px;
-  padding:15px;
-  text-align:center;
+ background:#08080b;
+ padding:14px;
+ border-radius:18px;
+ text-align:center;
 }
 
-#posterCanvas{
-  max-width:100%;
-  border-radius:14px;
-  display:block;
-  margin:auto;
+canvas{
+ max-width:100%;
+ border-radius:13px;
+ display:block;
+ margin:auto;
 }
 
 .actions{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-  margin-top:12px;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:8px;
+ margin-top:10px;
 }
 
 .action{
-  border:1px solid var(--border);
-  background:#15151b;
-  color:#fff;
-  border-radius:12px;
-  padding:12px 7px;
-  font-size:13px;
+ background:#17171d;
+ color:#fff;
+ border:1px solid var(--border);
+ padding:12px 6px;
+ border-radius:12px;
 }
 
-/* SUBS */
-
 .subscription{
-  margin-top:18px;
+ margin-top:18px;
 }
 
 .plans{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
 }
 
 .plan{
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:18px;
-  background:#0d0d12;
+ border:1px solid var(--border);
+ background:#0d0d12;
+ border-radius:18px;
+ padding:17px;
 }
 
 .plan.pro{
-  border-color:rgba(236,72,153,.35);
-  background:
-    linear-gradient(
-      145deg,
-      rgba(236,72,153,.09),
-      rgba(139,92,246,.07)
-    );
+ border-color:rgba(236,72,153,.4);
 }
 
 .plan h3{
-  margin-bottom:8px;
+ margin-bottom:8px;
 }
 
-.plan .price{
-  font-size:24px;
-  font-weight:1000;
-  margin-bottom:5px;
+.price{
+ font-size:23px;
+ font-weight:1000;
 }
 
 .plan small{
-  color:var(--muted);
+ color:var(--muted);
 }
 
-.dm-button{
-  display:block;
-  text-align:center;
-  text-decoration:none;
-  color:white;
-  margin-top:14px;
-  background:linear-gradient(135deg,#7c3aed,#db2777);
-  padding:13px;
-  border-radius:13px;
-  font-weight:900;
+.dm{
+ display:block;
+ text-decoration:none;
+ color:#fff;
+ text-align:center;
+ padding:13px;
+ border-radius:13px;
+ background:linear-gradient(135deg,#7c3aed,#db2777);
+ margin-top:14px;
+ font-weight:900;
 }
 
-/* MODAL */
+/* CODE */
+
+.activation{
+ border:1px solid rgba(34,197,94,.2);
+ background:
+ linear-gradient(
+ 135deg,
+ rgba(34,197,94,.08),
+ rgba(139,92,246,.05)
+ );
+}
+
+.activation-box{
+ display:flex;
+ gap:8px;
+}
+
+.activation-box input{
+ flex:1;
+ text-align:center;
+ direction:ltr;
+ letter-spacing:1px;
+}
+
+.activate{
+ border:0;
+ color:white;
+ background:#16a34a;
+ border-radius:13px;
+ padding:0 18px;
+ font-weight:900;
+}
+
+.active-plan{
+ display:none;
+ margin-top:13px;
+ padding:13px;
+ border-radius:13px;
+ background:rgba(34,197,94,.1);
+ border:1px solid rgba(34,197,94,.25);
+ color:#86efac;
+ font-weight:800;
+}
 
 .modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.75);
-  backdrop-filter:blur(8px);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-  z-index:999;
+ display:none;
+ position:fixed;
+ inset:0;
+ z-index:1000;
+ background:rgba(0,0,0,.78);
+ backdrop-filter:blur(8px);
+ align-items:center;
+ justify-content:center;
+ padding:18px;
 }
 
 .modal.show{
-  display:flex;
+ display:flex;
 }
 
 .modal-box{
-  width:100%;
-  max-width:450px;
-  background:#111116;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:25px;
-  padding:25px;
-  text-align:center;
-  box-shadow:0 30px 100px rgba(0,0,0,.5);
-  animation:pop .2s ease;
-}
-
-@keyframes pop{
-  from{
-    opacity:0;
-    transform:scale(.94);
-  }
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
+ max-width:440px;
+ width:100%;
+ background:#111116;
+ border:1px solid var(--border);
+ border-radius:25px;
+ padding:25px;
+ text-align:center;
 }
 
 .modal-icon{
-  font-size:45px;
-  margin-bottom:10px;
-}
-
-.modal h2{
-  margin-bottom:10px;
+ font-size:45px;
+ margin-bottom:10px;
 }
 
 .modal p{
-  color:var(--muted);
-  line-height:1.8;
-  font-size:14px;
+ color:var(--muted);
+ line-height:1.8;
+ font-size:14px;
+ margin-top:8px;
 }
 
 .close{
-  margin-top:10px;
-  width:100%;
-  padding:12px;
-  border:1px solid var(--border);
-  color:#ddd;
-  background:#18181e;
-  border-radius:12px;
+ width:100%;
+ margin-top:10px;
+ background:#18181e;
+ color:#fff;
+ border:1px solid var(--border);
+ padding:12px;
+ border-radius:12px;
 }
 
-/* TOAST */
-
 .toast{
-  position:fixed;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%) translateY(20px);
-  background:#18181e;
-  border:1px solid var(--border);
-  color:white;
-  padding:12px 18px;
-  border-radius:999px;
-  opacity:0;
-  pointer-events:none;
-  transition:.3s;
-  z-index:2000;
-  font-size:13px;
+ position:fixed;
+ bottom:20px;
+ left:50%;
+ transform:translateX(-50%) translateY(20px);
+ background:#18181e;
+ border:1px solid var(--border);
+ padding:12px 18px;
+ border-radius:999px;
+ opacity:0;
+ pointer-events:none;
+ transition:.3s;
+ z-index:2000;
+ font-size:13px;
 }
 
 .toast.show{
-  opacity:1;
-  transform:translateX(-50%) translateY(0);
+ opacity:1;
+ transform:translateX(-50%) translateY(0);
 }
-
-/* MOBILE */
 
 @media(max-width:750px){
 
-  .app{
-    padding:12px;
-  }
+ .grid{
+  grid-template-columns:1fr;
+ }
 
-  .grid{
-    grid-template-columns:1fr;
-  }
+ .plans{
+  grid-template-columns:1fr;
+ }
 
-  .hero{
-    padding-top:15px;
-  }
+ .options{
+  grid-template-columns:repeat(2,1fr);
+ }
 
-  .hero h1{
-    font-size:34px;
-  }
+ .activation-box{
+  flex-direction:column;
+ }
 
-  .plans{
-    grid-template-columns:1fr;
-  }
-
-  .actions{
-    grid-template-columns:1fr 1fr 1fr;
-  }
-
-  .option-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+ .activate{
+  padding:13px;
+ }
 
 }
 </style>
@@ -538,396 +464,416 @@ textarea{
 
 <div class="app">
 
-  <!-- HEADER -->
+<header class="header">
 
-  <header class="header">
+ <div class="logo">
+  AD<span>PIX</span>
+ </div>
 
-    <div class="logo">
-      AD<span>PIX</span>
-    </div>
+ <a
+  class="ig"
+  href="https://www.instagram.com/f2fweb/"
+  target="_blank"
+ >
+  @f2fweb
+ </a>
 
-    <a
-      class="instagram"
-      href="https://www.instagram.com/f2fweb/"
-      target="_blank"
-      rel="noopener"
-    >
-      @f2fweb
-    </a>
+</header>
 
-  </header>
 
+<section class="hero">
 
-  <!-- HERO -->
+ <h1>
+  عکس محصولتو
+  <span>تبلیغ کن</span>
+ </h1>
 
-  <section class="hero">
+ <p>
+  با یک عکس ساده، تبلیغ آماده فروش برای اینستاگرام بساز.
+ </p>
 
-    <h1>
-      عکس محصولتو
-      <span>تبلیغ کن</span>
-    </h1>
+</section>
 
-    <p>
-      با یک عکس ساده، یک پوستر تبلیغاتی آماده فروش بساز.
-    </p>
 
-  </section>
+<!-- COUNTER -->
 
+<section class="card counter">
 
-  <!-- COUNTER -->
+ <div class="counter-top">
 
-  <section class="counter">
+  <div class="counter-title">
+   🎁 اعتبار طراحی
+  </div>
 
-    <div class="counter-top">
+  <div
+   class="counter-text"
+   id="counterText"
+  >
+   ۵ طراحی رایگان
+  </div>
 
-      <div class="counter-title">
-        🎁 استفاده رایگان
-      </div>
+ </div>
 
-      <div
-        class="counter-number"
-        id="remainingText"
-      >
-        ۵ طراحی رایگان باقی مانده
-      </div>
+ <div class="progress">
 
-    </div>
+  <div
+   class="progress-bar"
+   id="progressBar"
+  ></div>
 
-    <div class="progress">
+ </div>
 
-      <div
-        class="progress-bar"
-        id="progressBar"
-      ></div>
+</section>
 
-    </div>
 
-  </section>
+<!-- ACTIVATION -->
 
+<section class="card activation">
 
-  <!-- MAIN -->
+ <div class="title">
+  🎟️ کد اشتراک داری؟
+ </div>
 
-  <main class="grid">
+ <div class="activation-box">
 
-
-    <!-- UPLOAD -->
-
-    <section class="card">
-
-      <div class="card-title">
-        📸 عکس محصول
-      </div>
-
-      <label
-        class="upload"
-        for="fileInput"
-        id="uploadBox"
-      >
-
-        <div
-          class="upload-icon"
-          id="uploadIcon"
-        >
-          📷
-        </div>
-
-        <strong id="uploadTitle">
-          عکس محصول را انتخاب کن
-        </strong>
-
-        <small>
-          JPG / PNG / WEBP
-        </small>
-
-        <img
-          id="previewImage"
-          class="preview-image"
-          alt="پیش‌نمایش محصول"
-        >
-
-      </label>
-
-      <input
-        id="fileInput"
-        type="file"
-        accept="image/*"
-      >
-
-    </section>
-
-
-    <!-- DETAILS -->
-
-    <section class="card">
-
-      <div class="card-title">
-        ✨ اطلاعات محصول
-      </div>
-
-      <div class="form-group">
-
-        <label>
-          نام محصول
-        </label>
-
-        <input
-          id="productName"
-          type="text"
-          placeholder="مثلاً کتونی"
-        >
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>
-          برند
-        </label>
-
-        <input
-          id="brand"
-          type="text"
-          placeholder="مثلاً Nike"
-        >
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>
-          قیمت
-        </label>
-
-        <input
-          id="price"
-          type="text"
-          inputmode="numeric"
-          placeholder="1,990,000"
-        >
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>
-          تخفیف
-        </label>
-
-        <input
-          id="discount"
-          type="text"
-          placeholder="مثلاً 20%"
-        >
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>
-          دسته‌بندی
-        </label>
-
-        <div class="option-grid">
-
-          <button class="option active" data-category="fashion">
-            👕 پوشاک
-          </button>
-
-          <button class="option" data-category="beauty">
-            💄 زیبایی
-          </button>
-
-          <button class="option" data-category="food">
-            🍔 غذا
-          </button>
-
-          <button class="option" data-category="tech">
-            📱 تکنولوژی
-          </button>
-
-          <button class="option" data-category="shoes">
-            👟 کفش
-          </button>
-
-          <button class="option" data-category="accessory">
-            👜 اکسسوری
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>
-          استایل تبلیغ
-        </label>
-
-        <div class="option-grid">
-
-          <button class="option active" data-style="luxury">
-            ✨ لوکس
-          </button>
-
-          <button class="option" data-style="minimal">
-            ◻️ مینیمال
-          </button>
-
-          <button class="option" data-style="dark">
-            🖤 دارک
-          </button>
-
-          <button class="option" data-style="neon">
-            💜 نئون
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>
-          فرمت
-        </label>
-
-        <select id="format">
-
-          <option value="story">
-            استوری 9:16
-          </option>
-
-          <option value="post">
-            پست 1:1
-          </option>
-
-          <option value="portrait">
-            پست 4:5
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <button
-        class="generate"
-        id="generateBtn"
-      >
-        🚀 ساخت تبلیغ
-      </button>
-
-    </section>
-
-  </main>
-
-
-  <!-- OUTPUT -->
-
-  <section
-    class="card output-card"
-    id="outputCard"
+  <input
+   id="activationCode"
+   type="text"
+   placeholder="مثلاً APX-XXXXXX"
+   autocomplete="off"
   >
 
-    <div class="card-title">
-      🎨 تبلیغ آماده شد
-    </div>
+  <button
+   class="activate"
+   id="activateBtn"
+  >
+   فعال‌سازی
+  </button>
 
-    <div class="canvas-wrap">
+ </div>
 
-      <canvas id="posterCanvas"></canvas>
+ <div
+  class="active-plan"
+  id="activePlan"
+ ></div>
 
-    </div>
-
-    <div class="actions">
-
-      <button
-        class="action"
-        id="downloadBtn"
-      >
-        ⬇️ دانلود
-      </button>
-
-      <button
-        class="action"
-        id="shareBtn"
-      >
-        📤 اشتراک‌گذاری
-      </button>
-
-      <button
-        class="action"
-        id="resetBtn"
-      >
-        🔄 ساخت جدید
-      </button>
-
-    </div>
-
-  </section>
+</section>
 
 
-  <!-- SUBSCRIPTION -->
+<!-- GENERATOR -->
 
-  <section class="card subscription">
-
-    <div class="card-title">
-      💎 اشتراک ADPIX
-    </div>
-
-    <div class="plans">
-
-      <div class="plan">
-
-        <h3>
-          ⭐ Starter
-        </h3>
-
-        <div class="price">
-          ۹۹٬۰۰۰ تومان
-        </div>
-
-        <small>
-          ۳۰ طراحی
-        </small>
-
-      </div>
+<main class="grid">
 
 
-      <div class="plan pro">
+<section class="card">
 
-        <h3>
-          👑 Pro
-        </h3>
+ <div class="title">
+  📸 عکس محصول
+ </div>
 
-        <div class="price">
-          ۲۹۹٬۰۰۰ تومان
-        </div>
+ <label
+  class="upload"
+  for="fileInput"
+ >
 
-        <small>
-          ۱۵۰ طراحی
-        </small>
+  <div
+   class="upload-icon"
+   id="uploadIcon"
+  >
+   📷
+  </div>
 
-      </div>
+  <strong id="uploadText">
+   عکس محصول را انتخاب کن
+  </strong>
 
-    </div>
+  <small>
+   JPG / PNG / WEBP
+  </small>
 
-    <a
-      class="dm-button"
-      href="https://www.instagram.com/f2fweb/"
-      target="_blank"
-      rel="noopener"
-    >
-      💬 برای خرید اشتراک به دایرکت پیام دهید
-    </a>
+  <img
+   id="preview"
+   class="preview"
+   alt="preview"
+  >
 
-  </section>
+ </label>
+
+ <input
+  id="fileInput"
+  type="file"
+  accept="image/*"
+ >
+
+</section>
+
+
+<section class="card">
+
+ <div class="title">
+  ✨ اطلاعات محصول
+ </div>
+
+
+ <div class="group">
+
+  <label>
+   نام محصول
+  </label>
+
+  <input
+   id="productName"
+   placeholder="مثلاً کتونی"
+  >
+
+ </div>
+
+
+ <div class="group">
+
+  <label>
+   برند
+  </label>
+
+  <input
+   id="brand"
+   placeholder="مثلاً Nike"
+  >
+
+ </div>
+
+
+ <div class="group">
+
+  <label>
+   قیمت
+  </label>
+
+  <input
+   id="price"
+   placeholder="1,990,000"
+  >
+
+ </div>
+
+
+ <div class="group">
+
+  <label>
+   تخفیف
+  </label>
+
+  <input
+   id="discount"
+   placeholder="20%"
+  >
+
+ </div>
+
+
+ <div class="group">
+
+  <label>
+   دسته‌بندی
+  </label>
+
+  <div class="options">
+
+   <button class="option active" data-cat="fashion">
+    👕 پوشاک
+   </button>
+
+   <button class="option" data-cat="beauty">
+    💄 زیبایی
+   </button>
+
+   <button class="option" data-cat="food">
+    🍔 غذا
+   </button>
+
+   <button class="option" data-cat="tech">
+    📱 تکنولوژی
+   </button>
+
+   <button class="option" data-cat="shoes">
+    👟 کفش
+   </button>
+
+   <button class="option" data-cat="accessory">
+    👜 اکسسوری
+   </button>
+
+  </div>
+
+ </div>
+
+
+ <div class="group">
+
+  <label>
+   استایل
+  </label>
+
+  <div class="options">
+
+   <button class="option active" data-style="luxury">
+    ✨ لوکس
+   </button>
+
+   <button class="option" data-style="minimal">
+    ◻️ مینیمال
+   </button>
+
+   <button class="option" data-style="dark">
+    🖤 دارک
+   </button>
+
+   <button class="option" data-style="neon">
+    💜 نئون
+   </button>
+
+  </div>
+
+ </div>
+
+
+ <div class="group">
+
+  <label>
+   فرمت
+  </label>
+
+  <select id="format">
+
+   <option value="story">
+    استوری 9:16
+   </option>
+
+   <option value="portrait">
+    پست 4:5
+   </option>
+
+   <option value="square">
+    پست 1:1
+   </option>
+
+  </select>
+
+ </div>
+
+
+ <button
+  class="generate"
+  id="generateBtn"
+ >
+  🚀 ساخت تبلیغ
+ </button>
+
+</section>
+
+</main>
+
+
+<!-- OUTPUT -->
+
+<section
+ class="card output"
+ id="output"
+>
+
+ <div class="title">
+  🎨 تبلیغ آماده شد
+ </div>
+
+ <div class="canvas-wrap">
+
+  <canvas id="canvas"></canvas>
+
+ </div>
+
+ <div class="actions">
+
+  <button
+   class="action"
+   id="download"
+  >
+   ⬇️ دانلود
+  </button>
+
+  <button
+   class="action"
+   id="share"
+  >
+   📤 اشتراک‌گذاری
+  </button>
+
+  <button
+   class="action"
+   id="newDesign"
+  >
+   🔄 طراحی جدید
+  </button>
+
+ </div>
+
+</section>
+
+
+<!-- PLANS -->
+
+<section class="card subscription">
+
+ <div class="title">
+  💎 اشتراک ADPIX
+ </div>
+
+ <div class="plans">
+
+  <div class="plan">
+
+   <h3>
+    ⭐ Starter
+   </h3>
+
+   <div class="price">
+    ۹۹٬۰۰۰ تومان
+   </div>
+
+   <small>
+    ۳۰ طراحی
+   </small>
+
+  </div>
+
+
+  <div class="plan pro">
+
+   <h3>
+    👑 Pro
+   </h3>
+
+   <div class="price">
+    ۲۹۹٬۰۰۰ تومان
+   </div>
+
+   <small>
+    ۱۵۰ طراحی
+   </small>
+
+  </div>
+
+ </div>
+
+
+ <a
+  class="dm"
+  href="https://www.instagram.com/f2fweb/"
+  target="_blank"
+ >
+  💬 برای خرید اشتراک به دایرکت پیام دهید
+ </a>
+
+</section>
 
 </div>
 
@@ -935,107 +881,69 @@ textarea{
 <!-- LIMIT MODAL -->
 
 <div
-  class="modal"
-  id="limitModal"
+ class="modal"
+ id="limitModal"
 >
 
-  <div class="modal-box">
+ <div class="modal-box">
 
-    <div class="modal-icon">
-      🔥
-    </div>
-
-    <h2>
-      استفاده رایگان شما تمام شد
-    </h2>
-
-    <p>
-      برای ادامه ساخت تبلیغ، اشتراک ADPIX را فعال کنید.
-    </p>
-
-    <br>
-
-    <p>
-      ⭐ Starter — ۹۹٬۰۰۰ تومان — ۳۰ طراحی
-      <br>
-      👑 Pro — ۲۹۹٬۰۰۰ تومان — ۱۵۰ طراحی
-    </p>
-
-    <a
-      class="dm-button"
-      href="https://www.instagram.com/f2fweb/"
-      target="_blank"
-      rel="noopener"
-    >
-      💬 خرید اشتراک از دایرکت @f2fweb
-    </a>
-
-    <button
-      class="close"
-      onclick="closeModal()"
-    >
-      بستن
-    </button>
-
+  <div class="modal-icon">
+   🔥
   </div>
+
+  <h2>
+   اعتبار شما تمام شده
+  </h2>
+
+  <p>
+   برای ادامه ساخت تبلیغ، اشتراک ADPIX را فعال کنید.
+  </p>
+
+  <p>
+   ⭐ Starter — ۳۰ طراحی
+   <br>
+   👑 Pro — ۱۵۰ طراحی
+  </p>
+
+  <a
+   class="dm"
+   href="https://www.instagram.com/f2fweb/"
+   target="_blank"
+  >
+   💬 خرید اشتراک از دایرکت @f2fweb
+  </a>
+
+  <button
+   class="close"
+   onclick="closeModal()"
+  >
+   بستن
+  </button>
+
+ </div>
 
 </div>
 
 
-<!-- TOAST -->
-
 <div
-  class="toast"
-  id="toast"
+ class="toast"
+ id="toast"
 ></div>
 
 
 <script>
 
 /* =========================================
-   ADPIX — STEP 1
-   FREE 5 DESIGNS
+   ADPIX STEP 2
 ========================================= */
 
 const FREE_LIMIT = 5;
 
-const STORAGE_KEY = "adpix_free_used_v1";
+const USED_KEY =
+ "adpix_used_v2";
 
-
-/* ---------- ELEMENTS ---------- */
-
-const fileInput =
-  document.getElementById("fileInput");
-
-const previewImage =
-  document.getElementById("previewImage");
-
-const uploadIcon =
-  document.getElementById("uploadIcon");
-
-const uploadTitle =
-  document.getElementById("uploadTitle");
-
-const generateBtn =
-  document.getElementById("generateBtn");
-
-const outputCard =
-  document.getElementById("outputCard");
-
-const posterCanvas =
-  document.getElementById("posterCanvas");
-
-const remainingText =
-  document.getElementById("remainingText");
-
-const progressBar =
-  document.getElementById("progressBar");
-
-const limitModal =
-  document.getElementById("limitModal");
-
-const toast =
-  document.getElementById("toast");
+const SUB_KEY =
+ "adpix_subscription_v2";
 
 
 let productImage = null;
@@ -1045,35 +953,99 @@ let selectedCategory = "fashion";
 let selectedStyle = "luxury";
 
 
+/* ---------- ELEMENTS ---------- */
+
+const fileInput =
+ document.getElementById("fileInput");
+
+const preview =
+ document.getElementById("preview");
+
+const uploadIcon =
+ document.getElementById("uploadIcon");
+
+const uploadText =
+ document.getElementById("uploadText");
+
+const generateBtn =
+ document.getElementById("generateBtn");
+
+const counterText =
+ document.getElementById("counterText");
+
+const progressBar =
+ document.getElementById("progressBar");
+
+const output =
+ document.getElementById("output");
+
+const canvas =
+ document.getElementById("canvas");
+
+const toast =
+ document.getElementById("toast");
+
+const activationCode =
+ document.getElementById("activationCode");
+
+const activePlan =
+ document.getElementById("activePlan");
+
+
 /* ---------- STORAGE ---------- */
 
 function getUsed(){
 
-  return Number(
-    localStorage.getItem(STORAGE_KEY) || 0
-  );
+ return Number(
+  localStorage.getItem(USED_KEY) || 0
+ );
 
 }
 
 
 function setUsed(value){
 
-  localStorage.setItem(
-    STORAGE_KEY,
-    String(value)
-  );
+ localStorage.setItem(
+  USED_KEY,
+  value
+ );
 
 }
 
 
-/* ---------- PERSIAN NUMBERS ---------- */
+function getSubscription(){
 
-function persianNumber(number){
+ try{
 
-  return String(number)
-    .replace(/\d/g,function(d){
-      return "۰۱۲۳۴۵۶۷۸۹"[d];
-    });
+  return JSON.parse(
+   localStorage.getItem(SUB_KEY)
+  );
+
+ }catch{
+
+  return null;
+
+ }
+
+}
+
+
+function saveSubscription(data){
+
+ localStorage.setItem(
+  SUB_KEY,
+  JSON.stringify(data)
+ );
+
+}
+
+
+/* ---------- NUMBERS ---------- */
+
+function fa(number){
+
+ return String(number)
+ .replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
 
 }
 
@@ -1082,33 +1054,91 @@ function persianNumber(number){
 
 function updateCounter(){
 
-  const used = getUsed();
+ const sub =
+  getSubscription();
 
-  const remaining =
-    Math.max(
-      FREE_LIMIT - used,
-      0
-    );
-
-  if(remaining > 0){
-
-    remainingText.textContent =
-      persianNumber(remaining) +
-      " طراحی رایگان باقی مانده";
-
-  }else{
-
-    remainingText.textContent =
-      "استفاده رایگان تمام شده";
-
-  }
+ let remaining;
+ let total;
 
 
-  const percentage =
-    (remaining / FREE_LIMIT) * 100;
+ if(sub){
 
-  progressBar.style.width =
-    percentage + "%";
+  remaining =
+   Math.max(
+    Number(sub.credits),
+    0
+   );
+
+  total =
+   Number(sub.total);
+
+  counterText.textContent =
+   fa(remaining) +
+   " طراحی از اشتراک " +
+   sub.plan;
+
+ }else{
+
+  remaining =
+   Math.max(
+    FREE_LIMIT - getUsed(),
+    0
+   );
+
+  total =
+   FREE_LIMIT;
+
+  counterText.textContent =
+   remaining > 0
+    ? fa(remaining) + " طراحی رایگان باقی مانده"
+    : "استفاده رایگان تمام شده";
+
+ }
+
+
+ progressBar.style.width =
+  Math.max(
+   Math.min(
+    (remaining / total) * 100,
+    100
+   ),
+   0
+  ) + "%";
+
+
+ updateActivePlan();
+
+}
+
+
+/* ---------- ACTIVE PLAN ---------- */
+
+function updateActivePlan(){
+
+ const sub =
+  getSubscription();
+
+
+ if(!sub){
+
+  activePlan.style.display =
+   "none";
+
+  return;
+
+ }
+
+
+ activePlan.style.display =
+  "block";
+
+
+ activePlan.innerHTML =
+  "✅ اشتراک فعال: " +
+  sub.plan +
+  " — " +
+  fa(sub.credits) +
+  " طراحی باقی مانده";
 
 }
 
@@ -1117,15 +1147,17 @@ function updateCounter(){
 
 function showToast(message){
 
-  toast.textContent = message;
+ toast.textContent =
+  message;
 
-  toast.classList.add("show");
+ toast.classList.add("show");
 
-  setTimeout(function(){
-
-    toast.classList.remove("show");
-
-  },2500);
+ setTimeout(
+  ()=>{
+   toast.classList.remove("show");
+  },
+  2500
+ );
 
 }
 
@@ -1134,724 +1166,765 @@ function showToast(message){
 
 function openModal(){
 
-  limitModal.classList.add("show");
+ document
+ .getElementById("limitModal")
+ .classList.add("show");
 
 }
 
 
 function closeModal(){
 
-  limitModal.classList.remove("show");
+ document
+ .getElementById("limitModal")
+ .classList.remove("show");
 
 }
 
 
-/* ---------- IMAGE UPLOAD ---------- */
+/* ---------- IMAGE ---------- */
 
 fileInput.addEventListener(
-  "change",
-  function(){
+ "change",
+ function(){
 
-    const file =
-      this.files[0];
+  const file =
+   this.files[0];
 
-    if(!file){
-      return;
-    }
+  if(!file) return;
 
 
-    if(!file.type.startsWith("image/")){
+  if(!file.type.startsWith("image/")){
 
-      showToast(
-        "لطفاً یک عکس معتبر انتخاب کن."
-      );
+   showToast(
+    "فایل تصویر معتبر انتخاب کن."
+   );
 
-      return;
-
-    }
-
-
-    const reader =
-      new FileReader();
-
-
-    reader.onload =
-      function(event){
-
-        productImage =
-          new Image();
-
-
-        productImage.onload =
-          function(){
-
-            previewImage.src =
-              event.target.result;
-
-            previewImage.style.display =
-              "block";
-
-            uploadIcon.style.display =
-              "none";
-
-            uploadTitle.textContent =
-              "عکس محصول انتخاب شد";
-
-          };
-
-
-        productImage.src =
-          event.target.result;
-
-      };
-
-
-    reader.readAsDataURL(file);
+   return;
 
   }
+
+
+  const reader =
+   new FileReader();
+
+
+  reader.onload =
+   function(e){
+
+    productImage =
+     new Image();
+
+
+    productImage.onload =
+     function(){
+
+      preview.src =
+       e.target.result;
+
+      preview.style.display =
+       "block";
+
+      uploadIcon.style.display =
+       "none";
+
+      uploadText.textContent =
+       "عکس محصول انتخاب شد";
+
+     };
+
+
+    productImage.src =
+     e.target.result;
+
+   };
+
+
+  reader.readAsDataURL(file);
+
+ }
 );
 
 
 /* ---------- OPTIONS ---------- */
 
 document
-.querySelectorAll("[data-category]")
-.forEach(function(button){
+.querySelectorAll("[data-cat]")
+.forEach(button=>{
 
-  button.addEventListener(
-    "click",
-    function(){
+ button.addEventListener(
+  "click",
+  ()=>{
 
-      document
-      .querySelectorAll("[data-category]")
-      .forEach(function(btn){
-        btn.classList.remove("active");
-      });
+   document
+   .querySelectorAll("[data-cat]")
+   .forEach(x=>
+    x.classList.remove("active")
+   );
 
-      this.classList.add("active");
+   button.classList.add("active");
 
-      selectedCategory =
-        this.dataset.category;
+   selectedCategory =
+    button.dataset.cat;
 
-    }
-  );
+  }
+ );
 
 });
 
 
 document
 .querySelectorAll("[data-style]")
-.forEach(function(button){
+.forEach(button=>{
 
-  button.addEventListener(
-    "click",
-    function(){
+ button.addEventListener(
+  "click",
+  ()=>{
 
-      document
-      .querySelectorAll("[data-style]")
-      .forEach(function(btn){
-        btn.classList.remove("active");
-      });
+   document
+   .querySelectorAll("[data-style]")
+   .forEach(x=>
+    x.classList.remove("active")
+   );
 
-      this.classList.add("active");
+   button.classList.add("active");
 
-      selectedStyle =
-        this.dataset.style;
+   selectedStyle =
+    button.dataset.style;
 
-    }
-  );
+  }
+ );
 
 });
 
 
-/* ---------- GENERATE ---------- */
+/* =========================================
+   ACTIVATION
+
+   TEST CODES ONLY
+   WILL BE REMOVED IN STEP 3
+========================================= */
+
+const TEST_CODES = {
+
+ "ADPIX-START-30X":{
+  plan:"Starter",
+  total:30,
+  credits:30
+ },
+
+ "ADPIX-PRO-150X":{
+  plan:"Pro",
+  total:150,
+  credits:150
+ }
+
+};
+
+
+document
+.getElementById("activateBtn")
+.addEventListener(
+ "click",
+ function(){
+
+  const code =
+   activationCode
+   .value
+   .trim()
+   .toUpperCase();
+
+
+  if(!code){
+
+   showToast(
+    "کد اشتراک را وارد کن."
+   );
+
+   return;
+
+  }
+
+
+  const plan =
+   TEST_CODES[code];
+
+
+  if(!plan){
+
+   showToast(
+    "❌ کد اشتراک معتبر نیست."
+   );
+
+   return;
+
+  }
+
+
+  saveSubscription({
+
+   plan:plan.plan,
+
+   total:plan.total,
+
+   credits:plan.credits,
+
+   code:code,
+
+   activatedAt:
+    Date.now()
+
+  });
+
+
+  activationCode.value =
+   "";
+
+
+  updateCounter();
+
+
+  showToast(
+   "🎉 اشتراک " +
+   plan.plan +
+   " فعال شد!"
+  );
+
+ });
+
+
+/* =========================================
+   GENERATE
+========================================= */
 
 generateBtn.addEventListener(
-  "click",
-  function(){
+ "click",
+ function(){
 
-    const used =
-      getUsed();
-
-
-    /* LIMIT */
-
-    if(used >= FREE_LIMIT){
-
-      openModal();
-
-      return;
-
-    }
+  const sub =
+   getSubscription();
 
 
-    /* IMAGE */
+  /* CHECK CREDIT */
 
-    if(!productImage){
+  if(sub){
 
-      showToast(
-        "اول عکس محصول را انتخاب کن 📸"
-      );
+   if(Number(sub.credits) <= 0){
 
-      return;
+    openModal();
 
-    }
+    return;
 
-
-    /* NAME */
-
-    const productName =
-      document
-      .getElementById("productName")
-      .value
-      .trim();
-
-
-    if(!productName){
-
-      showToast(
-        "نام محصول را وارد کن."
-      );
-
-      return;
-
-    }
-
-
-    const brand =
-      document
-      .getElementById("brand")
-      .value
-      .trim();
-
-
-    const price =
-      document
-      .getElementById("price")
-      .value
-      .trim();
-
-
-    const discount =
-      document
-      .getElementById("discount")
-      .value
-      .trim();
-
-
-    const format =
-      document
-      .getElementById("format")
-      .value;
-
-
-    /* CREATE */
-
-    generatePoster({
-      productName,
-      brand,
-      price,
-      discount,
-      format,
-      category:selectedCategory,
-      style:selectedStyle
-    });
-
-
-    /* COUNT */
-
-    const newUsed =
-      used + 1;
-
-    setUsed(newUsed);
-
-    updateCounter();
-
-
-    /*
-      AFTER 5TH DESIGN
-      GENERATION IS ALLOWED
-      THEN MODAL OPENS
-    */
-
-    if(newUsed >= FREE_LIMIT){
-
-      setTimeout(function(){
-
-        openModal();
-
-      },700);
-
-    }
-
-  }
-);
-
-
-/* ---------- POSTER ---------- */
-
-function generatePoster(data){
-
-  let width;
-  let height;
-
-
-  if(data.format === "story"){
-
-    width = 1080;
-    height = 1920;
-
-  }else if(data.format === "portrait"){
-
-    width = 1080;
-    height = 1350;
+   }
 
   }else{
 
-    width = 1080;
-    height = 1080;
+   if(getUsed() >= FREE_LIMIT){
+
+    openModal();
+
+    return;
+
+   }
 
   }
 
 
-  posterCanvas.width =
-    width;
+  /* IMAGE */
 
-  posterCanvas.height =
-    height;
+  if(!productImage){
 
+   showToast(
+    "اول عکس محصول را انتخاب کن 📸"
+   );
 
-  const ctx =
-    posterCanvas.getContext("2d");
+   return;
 
-
-  /* BACKGROUND */
-
-  let gradient;
+  }
 
 
-  if(data.style === "neon"){
+  /* NAME */
 
-    gradient =
-      ctx.createLinearGradient(
-        0,0,
-        width,height
-      );
+  const name =
+   document
+   .getElementById("productName")
+   .value
+   .trim();
 
-    gradient.addColorStop(
-      0,
-      "#17102e"
-    );
 
-    gradient.addColorStop(
-      .5,
-      "#09090f"
-    );
+  if(!name){
 
-    gradient.addColorStop(
-      1,
-      "#24102a"
-    );
+   showToast(
+    "نام محصول را وارد کن."
+   );
 
-  }else if(data.style === "luxury"){
+   return;
 
-    gradient =
-      ctx.createLinearGradient(
-        0,0,
-        width,height
-      );
+  }
 
-    gradient.addColorStop(
-      0,
-      "#151515"
-    );
 
-    gradient.addColorStop(
-      1,
-      "#050505"
-    );
+  const brand =
+   document
+   .getElementById("brand")
+   .value
+   .trim();
 
-  }else if(data.style === "minimal"){
 
-    gradient =
-      ctx.createLinearGradient(
-        0,0,
-        width,height
-      );
+  const price =
+   document
+   .getElementById("price")
+   .value
+   .trim();
 
-    gradient.addColorStop(
-      0,
-      "#ffffff"
-    );
 
-    gradient.addColorStop(
-      1,
-      "#eeeeee"
-    );
+  const discount =
+   document
+   .getElementById("discount")
+   .value
+   .trim();
+
+
+  const format =
+   document
+   .getElementById("format")
+   .value;
+
+
+  /* GENERATE */
+
+  makePoster(
+   name,
+   brand,
+   price,
+   discount,
+   format
+  );
+
+
+  /* CONSUME */
+
+  if(sub){
+
+   sub.credits =
+    Number(sub.credits) - 1;
+
+   saveSubscription(sub);
 
   }else{
 
-    gradient =
-      ctx.createLinearGradient(
-        0,0,
-        width,height
-      );
-
-    gradient.addColorStop(
-      0,
-      "#111111"
-    );
-
-    gradient.addColorStop(
-      1,
-      "#020202"
-    );
+   setUsed(
+    getUsed() + 1
+   );
 
   }
 
 
-  ctx.fillStyle =
-    gradient;
+  updateCounter();
 
-  ctx.fillRect(
-    0,
-    0,
-    width,
-    height
+
+  /* AFTER FREE #5 */
+
+  if(
+   !sub &&
+   getUsed() >= FREE_LIMIT
+  ){
+
+   setTimeout(
+    openModal,
+    700
+   );
+
+  }
+
+ });
+
+
+/* =========================================
+   POSTER
+========================================= */
+
+function makePoster(
+ name,
+ brand,
+ price,
+ discount,
+ format
+){
+
+ let w,h;
+
+
+ if(format === "story"){
+
+  w=1080;
+  h=1920;
+
+ }else if(format === "portrait"){
+
+  w=1080;
+  h=1350;
+
+ }else{
+
+  w=1080;
+  h=1080;
+
+ }
+
+
+ canvas.width=w;
+ canvas.height=h;
+
+
+ const ctx =
+  canvas.getContext("2d");
+
+
+ /* BACKGROUND */
+
+ let gradient =
+  ctx.createLinearGradient(
+   0,0,w,h
   );
 
 
-  /* DECORATION */
+ if(selectedStyle === "minimal"){
 
-  if(data.style === "neon"){
-
-    ctx.beginPath();
-
-    ctx.arc(
-      width * .8,
-      height * .12,
-      width * .25,
-      0,
-      Math.PI * 2
-    );
-
-    ctx.fillStyle =
-      "rgba(139,92,246,.18)";
-
-    ctx.fill();
-
-  }
-
-
-  /* CAMPAIGN LABEL */
-
-  ctx.textAlign =
-    "right";
-
-  ctx.direction =
-    "rtl";
-
-
-  ctx.font =
-    "bold 38px Arial";
-
-  ctx.fillStyle =
-    data.style === "minimal"
-      ? "#111"
-      : "#ffffff";
-
-
-  ctx.fillText(
-    "پیشنهاد ویژه",
-    width - 70,
-    90
+  gradient.addColorStop(
+   0,
+   "#ffffff"
   );
 
-
-  /* DISCOUNT */
-
-  if(data.discount){
-
-    ctx.fillStyle =
-      "#ef4444";
-
-    roundRect(
-      ctx,
-      70,
-      55,
-      220,
-      80,
-      40
-    );
-
-    ctx.fill();
-
-    ctx.fillStyle =
-      "#fff";
-
-    ctx.textAlign =
-      "center";
-
-    ctx.font =
-      "bold 34px Arial";
-
-    ctx.fillText(
-      "🔥 " + data.discount + " تخفیف",
-      180,
-      107
-    );
-
-  }
-
-
-  /* PRODUCT IMAGE */
-
-  const maxW =
-    width * .72;
-
-  const maxH =
-    height * .46;
-
-
-  const ratio =
-    Math.min(
-      maxW / productImage.width,
-      maxH / productImage.height
-    );
-
-
-  const imageW =
-    productImage.width * ratio;
-
-  const imageH =
-    productImage.height * ratio;
-
-
-  const imageX =
-    (width - imageW) / 2;
-
-  const imageY =
-    height * .22;
-
-
-  ctx.save();
-
-
-  /*
-    Soft shadow around product.
-  */
-
-  ctx.shadowColor =
-    "rgba(0,0,0,.4)";
-
-  ctx.shadowBlur =
-    45;
-
-  ctx.shadowOffsetY =
-    20;
-
-
-  ctx.drawImage(
-    productImage,
-    imageX,
-    imageY,
-    imageW,
-    imageH
+  gradient.addColorStop(
+   1,
+   "#eeeeee"
   );
 
+ }else if(selectedStyle === "neon"){
 
-  ctx.restore();
-
-
-  /* PRODUCT NAME */
-
-  ctx.textAlign =
-    "center";
-
-  ctx.fillStyle =
-    data.style === "minimal"
-      ? "#111"
-      : "#fff";
-
-
-  ctx.font =
-    "900 72px Arial";
-
-
-  ctx.fillText(
-    data.productName,
-    width / 2,
-    height * .76
+  gradient.addColorStop(
+   0,
+   "#241044"
   );
 
+  gradient.addColorStop(
+   1,
+   "#09090f"
+  );
 
-  /* BRAND */
+ }else if(selectedStyle === "luxury"){
 
-  if(data.brand){
+  gradient.addColorStop(
+   0,
+   "#181818"
+  );
 
-    ctx.font =
-      "500 32px Arial";
+  gradient.addColorStop(
+   1,
+   "#030303"
+  );
 
-    ctx.fillStyle =
-      data.style === "minimal"
-        ? "#555"
-        : "#aaa";
+ }else{
 
+  gradient.addColorStop(
+   0,
+   "#151515"
+  );
 
-    ctx.fillText(
-      data.brand,
-      width / 2,
-      height * .81
-    );
+  gradient.addColorStop(
+   1,
+   "#020202"
+  );
 
-  }
-
-
-  /* PRICE */
-
-  if(data.price){
-
-    ctx.font =
-      "900 55px Arial";
-
-    ctx.fillStyle =
-      data.style === "minimal"
-        ? "#111"
-        : "#fff";
+ }
 
 
-    ctx.fillText(
-      data.price + " تومان",
-      width / 2,
-      height * .87
-    );
+ ctx.fillStyle =
+  gradient;
 
-  }
+ ctx.fillRect(
+  0,0,w,h
+ );
 
 
-  /* CTA */
+ /* LABEL */
+
+ ctx.textAlign =
+  "right";
+
+ ctx.direction =
+  "rtl";
+
+
+ ctx.fillStyle =
+  selectedStyle === "minimal"
+   ? "#111"
+   : "#fff";
+
+
+ ctx.font =
+  "bold 38px Arial";
+
+
+ ctx.fillText(
+  "پیشنهاد ویژه",
+  w-70,
+  90
+ );
+
+
+ /* DISCOUNT */
+
+ if(discount){
 
   ctx.fillStyle =
-    data.style === "minimal"
-      ? "#111"
-      : "#fff";
-
+   "#ef4444";
 
   roundRect(
-    ctx,
-    width * .2,
-    height * .9,
-    width * .6,
-    82,
-    41
+   ctx,
+   60,
+   50,
+   240,
+   80,
+   40
   );
 
   ctx.fill();
 
-
   ctx.fillStyle =
-    data.style === "minimal"
-      ? "#fff"
-      : "#111";
+   "#fff";
 
+  ctx.textAlign =
+   "center";
 
   ctx.font =
-    "bold 32px Arial";
-
+   "bold 32px Arial";
 
   ctx.fillText(
-    "همین حالا سفارش بده",
-    width / 2,
-    height * .9 + 53
+   "🔥 " + discount + " تخفیف",
+   180,
+   102
+  );
+
+ }
+
+
+ /* IMAGE */
+
+ const maxW =
+  w*.72;
+
+ const maxH =
+  h*.46;
+
+
+ const ratio =
+  Math.min(
+   maxW/productImage.width,
+   maxH/productImage.height
   );
 
 
-  /* OUTPUT */
+ const iw =
+  productImage.width*ratio;
 
-  outputCard.style.display =
-    "block";
-
-
-  outputCard.scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
+ const ih =
+  productImage.height*ratio;
 
 
-  showToast(
-    "تبلیغ با موفقیت ساخته شد 🎉"
+ const ix =
+  (w-iw)/2;
+
+ const iy =
+  h*.21;
+
+
+ ctx.save();
+
+ ctx.shadowColor =
+  "rgba(0,0,0,.45)";
+
+ ctx.shadowBlur =
+  45;
+
+ ctx.shadowOffsetY =
+  20;
+
+
+ ctx.drawImage(
+  productImage,
+  ix,
+  iy,
+  iw,
+  ih
+ );
+
+ ctx.restore();
+
+
+ /* NAME */
+
+ ctx.textAlign =
+  "center";
+
+ ctx.fillStyle =
+  selectedStyle === "minimal"
+   ? "#111"
+   : "#fff";
+
+ ctx.font =
+  "900 70px Arial";
+
+
+ ctx.fillText(
+  name,
+  w/2,
+  h*.76
+ );
+
+
+ /* BRAND */
+
+ if(brand){
+
+  ctx.font =
+   "500 32px Arial";
+
+  ctx.fillStyle =
+   selectedStyle === "minimal"
+    ? "#555"
+    : "#aaa";
+
+  ctx.fillText(
+   brand,
+   w/2,
+   h*.81
   );
+
+ }
+
+
+ /* PRICE */
+
+ if(price){
+
+  ctx.font =
+   "900 52px Arial";
+
+  ctx.fillStyle =
+   selectedStyle === "minimal"
+    ? "#111"
+    : "#fff";
+
+  ctx.fillText(
+   price + " تومان",
+   w/2,
+   h*.87
+  );
+
+ }
+
+
+ /* CTA */
+
+ ctx.fillStyle =
+  selectedStyle === "minimal"
+   ? "#111"
+   : "#fff";
+
+
+ roundRect(
+  ctx,
+  w*.2,
+  h*.9,
+  w*.6,
+  82,
+  41
+ );
+
+ ctx.fill();
+
+
+ ctx.fillStyle =
+  selectedStyle === "minimal"
+   ? "#fff"
+   : "#111";
+
+
+ ctx.font =
+  "bold 31px Arial";
+
+
+ ctx.fillText(
+  "همین حالا سفارش بده",
+  w/2,
+  h*.9+53
+ );
+
+
+ output.style.display =
+  "block";
+
+
+ output.scrollIntoView({
+  behavior:"smooth",
+  block:"start"
+ });
+
+
+ showToast(
+  "🎉 تبلیغ ساخته شد!"
+ );
 
 }
 
 
-/* ---------- ROUNDED RECT ---------- */
+/* ---------- ROUNDED ---------- */
 
 function roundRect(
-  ctx,
-  x,
-  y,
-  width,
-  height,
-  radius
+ ctx,
+ x,y,w,h,r
 ){
 
-  ctx.beginPath();
+ ctx.beginPath();
 
-  ctx.moveTo(
-    x + radius,
-    y
-  );
+ ctx.moveTo(x+r,y);
 
-  ctx.lineTo(
-    x + width - radius,
-    y
-  );
+ ctx.lineTo(x+w-r,y);
 
-  ctx.quadraticCurveTo(
-    x + width,
-    y,
-    x + width,
-    y + radius
-  );
+ ctx.quadraticCurveTo(
+  x+w,y,
+  x+w,y+r
+ );
 
-  ctx.lineTo(
-    x + width,
-    y + height - radius
-  );
+ ctx.lineTo(
+  x+w,y+h-r
+ );
 
-  ctx.quadraticCurveTo(
-    x + width,
-    y + height,
-    x + width - radius,
-    y + height
-  );
+ ctx.quadraticCurveTo(
+  x+w,y+h,
+  x+w-r,y+h
+ );
 
-  ctx.lineTo(
-    x + radius,
-    y + height
-  );
+ ctx.lineTo(
+  x+r,y+h
+ );
 
-  ctx.quadraticCurveTo(
-    x,
-    y + height,
-    x,
-    y + height - radius
-  );
+ ctx.quadraticCurveTo(
+  x,y+h,
+  x,y+h-r
+ );
 
-  ctx.lineTo(
-    x,
-    y + radius
-  );
+ ctx.lineTo(
+  x,y+r
+ );
 
-  ctx.quadraticCurveTo(
-    x,
-    y,
-    x + radius,
-    y
-  );
+ ctx.quadraticCurveTo(
+  x,y,
+  x+r,y
+ );
 
-  ctx.closePath();
+ ctx.closePath();
 
 }
 
@@ -1859,154 +1932,109 @@ function roundRect(
 /* ---------- DOWNLOAD ---------- */
 
 document
-.getElementById("downloadBtn")
+.getElementById("download")
 .addEventListener(
-  "click",
-  function(){
+ "click",
+ function(){
 
-    const link =
-      document.createElement("a");
+  const a =
+   document.createElement("a");
 
-    link.download =
-      "adpix-product-ad.png";
+  a.download =
+   "adpix-ad.png";
 
-    link.href =
-      posterCanvas.toDataURL(
-        "image/png"
-      );
+  a.href =
+   canvas.toDataURL(
+    "image/png"
+   );
 
-    link.click();
+  a.click();
 
-  }
-);
+ });
 
 
 /* ---------- SHARE ---------- */
 
 document
-.getElementById("shareBtn")
+.getElementById("share")
 .addEventListener(
-  "click",
-  async function(){
+ "click",
+ async function(){
 
-    try{
+  try{
 
-      const blob =
-        await new Promise(
-          resolve =>
-            posterCanvas.toBlob(
-              resolve,
-              "image/png"
-            )
-        );
-
-
-      const file =
-        new File(
-          [blob],
-          "adpix-ad.png",
-          {
-            type:"image/png"
-          }
-        );
+   const blob =
+    await new Promise(
+     resolve=>
+      canvas.toBlob(
+       resolve,
+       "image/png"
+      )
+    );
 
 
-      if(
-        navigator.share &&
-        navigator.canShare &&
-        navigator.canShare({
-          files:[file]
-        })
-      ){
-
-        await navigator.share({
-          title:"تبلیغ محصول",
-          files:[file]
-        });
-
-      }else{
-
-        showToast(
-          "اشتراک‌گذاری روی این دستگاه پشتیبانی نمی‌شود."
-        );
-
-      }
-
-    }catch(error){
-
-      console.log(error);
-
-    }
-
-  }
-);
+   const file =
+    new File(
+     [blob],
+     "adpix-ad.png",
+     {type:"image/png"}
+    );
 
 
-/* ---------- RESET ---------- */
+   if(
+    navigator.share &&
+    navigator.canShare &&
+    navigator.canShare({
+     files:[file]
+    })
+   ){
 
-document
-.getElementById("resetBtn")
-.addEventListener(
-  "click",
-  function(){
-
-    document
-    .getElementById("productName")
-    .value = "";
-
-    document
-    .getElementById("brand")
-    .value = "";
-
-    document
-    .getElementById("price")
-    .value = "";
-
-    document
-    .getElementById("discount")
-    .value = "";
-
-    fileInput.value =
-      "";
-
-    productImage =
-      null;
-
-    previewImage.style.display =
-      "none";
-
-    uploadIcon.style.display =
-      "block";
-
-    uploadTitle.textContent =
-      "عکس محصول را انتخاب کن";
-
-    outputCard.style.display =
-      "none";
-
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
+    await navigator.share({
+     title:"تبلیغ محصول",
+     files:[file]
     });
 
+   }else{
+
+    showToast(
+     "اشتراک‌گذاری در این دستگاه در دسترس نیست."
+    );
+
+   }
+
+  }catch(e){
+
+   console.log(e);
+
   }
-);
+
+ });
+
+
+/* ---------- NEW ---------- */
+
+document
+.getElementById("newDesign")
+.addEventListener(
+ "click",
+ function(){
+
+  output.style.display =
+   "none";
+
+  window.scrollTo({
+   top:0,
+   behavior:"smooth"
+  });
+
+ });
 
 
 /* ---------- START ---------- */
 
 updateCounter();
 
-
-/*
-  IMPORTANT:
-  This is the frontend MVP.
-
-  Paid subscription will be connected
-  to a backend in the next steps.
-*/
-
 </script>
 
 </body>
-  </html>
+</html>
