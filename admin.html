@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ADPIX Admin</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial,Tahoma,sans-serif;
+  background:#08080d;
+  color:#fff;
+}
+
+.container{
+  max-width:600px;
+  margin:auto;
+  padding:18px 14px 40px;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:900;
+}
+
+.logo span{
+  color:#9b5cff;
+}
+
+.badge{
+  background:#17131f;
+  border:1px solid #30263e;
+  padding:7px 10px;
+  border-radius:20px;
+  font-size:11px;
+  color:#c9a8ff;
+}
+
+.card{
+  background:#121219;
+  border:1px solid #272733;
+  border-radius:20px;
+  padding:16px;
+  margin-bottom:14px;
+}
+
+h2{
+  margin:0 0 12px;
+  font-size:17px;
+}
+
+p{
+  color:#9999a8;
+  font-size:12px;
+  line-height:1.8;
+}
+
+label{
+  display:block;
+  color:#aaaab7;
+  font-size:12px;
+  margin:12px 0 6px;
+}
+
+input{
+  width:100%;
+  background:#09090f;
+  color:#fff;
+  border:1px solid #30303c;
+  border-radius:13px;
+  padding:13px;
+  outline:none;
+  font-size:14px;
+}
+
+input:focus{
+  border-color:#8b5cf6;
+}
+
+button{
+  width:100%;
+  border:0;
+  border-radius:14px;
+  padding:14px;
+  color:white;
+  font-size:14px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.main{
+  background:linear-gradient(135deg,#8b5cf6,#5b21b6);
+}
+
+.starter{
+  background:#2563eb;
+}
+
+.pro{
+  background:#7c3aed;
+}
+
+.dark{
+  background:#22222e;
+  border:1px solid #343442;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.status{
+  margin-top:10px;
+  padding:11px;
+  background:#09090f;
+  border:1px solid #292934;
+  border-radius:12px;
+  font-size:12px;
+  color:#aaa;
+}
+
+.result{
+  display:none;
+  margin-top:12px;
+  background:#09090f;
+  border:1px dashed #7040b8;
+  border-radius:15px;
+  padding:15px;
+  text-align:center;
+}
+
+.code{
+  direction:ltr;
+  font-size:21px;
+  font-weight:900;
+  letter-spacing:1px;
+  word-break:break-all;
+}
+
+.small{
+  color:#999;
+  font-size:12px;
+  margin:8px 0;
+}
+
+.item{
+  background:#0c0c13;
+  border:1px solid #292934;
+  border-radius:12px;
+  padding:12px;
+  margin-top:8px;
+  text-align:right;
+}
+
+.item code{
+  direction:ltr;
+  display:block;
+  font-size:13px;
+}
+
+.green{
+  color:#4ade80;
+}
+
+.red{
+  color:#f87171;
+}
+
+.toast{
+  position:fixed;
+  bottom:15px;
+  left:15px;
+  right:15px;
+  background:#20202b;
+  border:1px solid #383847;
+  border-radius:14px;
+  padding:13px;
+  text-align:center;
+  display:none;
+  z-index:10;
+  font-size:13px;
+}
+
+@media(max-width:420px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+  <div class="logo">AD<span>PIX</span></div>
+  <div class="badge">ADMIN PANEL</div>
+</div>
+
+
+<!-- اتصال -->
+
+<div class="card">
+
+<h2>🔐 اتصال به Backend</h2>
+
+<p>
+آدرس Worker و کلید ادمین را وارد کن.
+</p>
+
+<label>Worker URL</label>
+
+<input
+id="api"
+value="https://adpix-backend.pwaammaaamir.workers.dev"
+>
+
+<label>ADMIN KEY</label>
+
+<input
+id="adminKey"
+type="password"
+placeholder="کلید ادمین"
+>
+
+<br><br>
+
+<button class="main" onclick="testConnection()">
+🔌 تست اتصال
+</button>
+
+<div id="status" class="status">
+آماده تست
+</div>
+
+</div>
+
+
+<!-- ساخت کد -->
+
+<div class="card">
+
+<h2>🎟️ ساخت اشتراک</h2>
+
+<div class="grid">
+
+<button
+class="starter"
+onclick="createCode('starter')"
+>
+⭐ Starter
+<br>
+<small>۳۰ طراحی</small>
+</button>
+
+<button
+class="pro"
+onclick="createCode('pro')"
+>
+👑 Pro
+<br>
+<small>۱۵۰ طراحی</small>
+</button>
+
+</div>
+
+<div id="result" class="result">
+
+<div id="generatedCode" class="code">
+-
+</div>
+
+<div id="generatedInfo" class="small">
+-
+</div>
+
+<div class="grid">
+
+<button class="dark" onclick="copyCode()">
+📋 کپی
+</button>
+
+<button class="dark" onclick="shareCode()">
+📤 ارسال
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- مدیریت -->
+
+<div class="card">
+
+<h2>📊 مدیریت</h2>
+
+<div class="grid">
+
+<button class="dark" onclick="loadCodes()">
+🎟️ کدها
+</button>
+
+<button class="dark" onclick="loadCustomers()">
+👤 مشتری‌ها
+</button>
+
+</div>
+
+<div id="list"></div>
+
+</div>
+
+</div>
+
+
+<div id="toast" class="toast"></div>
+
+
+<script>
+
+let lastCode = "";
+
+
+function getAPI(){
+
+return document
+.getElementById("api")
+.value
+.trim()
+.replace(/\/+$/,"");
+
+}
+
+
+function getKey(){
+
+return document
+.getElementById("adminKey")
+.value
+.trim();
+
+}
+
+
+function headers(json=false){
+
+const h={
+"X-Admin-Key":getKey()
+};
+
+if(json){
+h["Content-Type"]="application/json";
+}
+
+return h;
+
+}
+
+
+function showToast(text){
+
+const t=document.getElementById("toast");
+
+t.textContent=text;
+
+t.style.display="block";
+
+clearTimeout(window.toastTimer);
+
+window.toastTimer=setTimeout(()=>{
+t.style.display="none";
+},2500);
+
+}
+
+
+async function apiRequest(path,options={}){
+
+const response=await fetch(
+getAPI()+path,
+{
+...options,
+headers:{
+...headers(Boolean(options.body)),
+...(options.headers||{})
+}
+}
+);
+
+const text=await response.text();
+
+let data;
+
+try{
+data=JSON.parse(text);
+}
+catch{
+throw new Error("پاسخ سرور نامعتبر است");
+}
+
+if(!response.ok || data.ok===false){
+
+throw new Error(
+data.error || "خطای سرور"
+);
+
+}
+
+return data;
+
+}
+
+
+/* تست */
+
+async function testConnection(){
+
+const status=document.getElementById("status");
+
+status.textContent="⏳ در حال اتصال...";
+
+try{
+
+const data=await apiRequest(
+"/api/health",
+{
+method:"GET"
+}
+);
+
+status.innerHTML=
+"<span class='green'>● Backend آنلاین است</span>";
+
+showToast("اتصال موفق شد ✅");
+
+}
+catch(error){
+
+status.innerHTML=
+"<span class='red'>● "+error.message+"</span>";
+
+showToast(error.message);
+
+}
+
+}
+
+
+/* ساخت کد */
+
+async function createCode(plan){
+
+if(!getKey()){
+
+showToast("ADMIN KEY را وارد کن");
+
+return;
+
+}
+
+try{
+
+const data=await apiRequest(
+"/api/admin/create-code",
+{
+method:"POST",
+body:JSON.stringify({
+plan:plan
+})
+}
+);
+
+lastCode=data.code;
+
+document.getElementById(
+"generatedCode"
+).textContent=data.code;
+
+document.getElementById(
+"generatedInfo"
+).textContent=
+data.plan+
+" • "+
+data.credits+
+" طراحی";
+
+document.getElementById(
+"result"
+).style.display="block";
+
+showToast("کد ساخته شد 🎉");
+
+loadCodes();
+
+}
+catch(error){
+
+showToast(error.message);
+
+}
+
+}
+
+
+/* کپی */
+
+async function copyCode(){
+
+if(!lastCode)return;
+
+try{
+
+await navigator.clipboard.writeText(
+lastCode
+);
+
+showToast("کد کپی شد 📋");
+
+}
+catch{
+
+showToast("کپی انجام نشد");
+
+}
+
+}
+
+
+/* اشتراک */
+
+async function shareCode(){
+
+if(!lastCode)return;
+
+const text=
+"کد اشتراک ADPIX\n"+
+lastCode;
+
+if(navigator.share){
+
+try{
+
+await navigator.share({
+text:text
+});
+
+}
+catch{}
+
+}
+else{
+
+await navigator.clipboard.writeText(text);
+
+showToast("متن کپی شد");
+
+}
+
+}
+
+
+/* نمایش کدها */
+
+async function loadCodes(){
+
+if(!getKey()){
+
+showToast("ADMIN KEY را وارد کن");
+
+return;
+
+}
+
+try{
+
+const data=await apiRequest(
+"/api/admin/codes",
+{
+method:"GET"
+}
+);
+
+let html=
+"<p>تعداد کدها: "+
+data.codes.length+
+"</p>";
+
+data.codes.forEach(item=>{
+
+const used=
+Number(item.used)===1;
+
+html+=`
+
+<div class="item">
+
+<code>
+${escapeHTML(item.code)}
+</code>
+
+<div class="${
+used ? "red":"green"
+}">
+${
+used
+?"🔴 مصرف شده"
+:"🟢 آزاد"
+}
+</div>
+
+<div class="small">
+
+${escapeHTML(item.plan)}
+ •
+${item.credits} طراحی
+
+</div>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"list"
+).innerHTML=html;
+
+}
+catch(error){
+
+showToast(error.message);
+
+}
+
+}
+
+
+/* مشتری‌ها */
+
+async function loadCustomers(){
+
+if(!getKey()){
+
+showToast("ADMIN KEY را وارد کن");
+
+return;
+
+}
+
+try{
+
+const data=await apiRequest(
+"/api/admin/customers",
+{
+method:"GET"
+}
+);
+
+let html=
+"<p>تعداد مشتری‌ها: "+
+data.customers.length+
+"</p>";
+
+data.customers.forEach(item=>{
+
+html+=`
+
+<div class="item">
+
+<code>
+${escapeHTML(item.id)}
+</code>
+
+<div class="small">
+
+پلن:
+${escapeHTML(item.plan || "Free")}
+
+<br>
+
+اعتبار:
+${item.credits}
+
+</div>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"list"
+).innerHTML=html;
+
+}
+catch(error){
+
+showToast(error.message);
+
+}
+
+}
+
+
+/* امنیت نمایش متن */
+
+function escapeHTML(value){
+
+return String(value ?? "")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+</script>
+
+</body>
+</html>
