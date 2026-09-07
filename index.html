@@ -2,3056 +2,1861 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07070b">
-<meta name="description" content="ADPIX Studio - ساخت تبلیغ حرفه‌ای برای محصولات">
-<title>ADPIX Studio</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08070d">
+<title>ADPIX V2 — AI Ad Studio</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+  --bg:#07060b;
+  --panel:#101019;
+  --panel2:#171622;
+  --line:rgba(255,255,255,.09);
+  --text:#fff;
+  --muted:#a9a6b5;
+  --purple:#9b5cff;
+  --purple2:#6c35ff;
+  --pink:#ff3d9a;
+  --green:#29df9a;
+  --danger:#ff4d6d;
+  --radius:22px;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  font-family:
-    Tahoma,
-    Arial,
-    sans-serif;
-  background:#06060a;
-  color:#fff;
-  min-height:100vh;
+  margin:0;
+  background:
+    radial-gradient(circle at 80% -10%,rgba(125,58,255,.22),transparent 35%),
+    radial-gradient(circle at 10% 30%,rgba(255,0,128,.08),transparent 28%),
+    var(--bg);
+  color:var(--text);
+  font-family:Vazirmatn,Tahoma,sans-serif;
 }
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
 
-button,
-input,
-textarea,
-select{
-  font-family:inherit;
-}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-thumb{background:#292532;border-radius:20px}
 
-button{
-  cursor:pointer;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-/* =========================
-   APP
-========================= */
-
-.app{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-}
-
-/* =========================
-   HEADER
-========================= */
-
+/* HEADER */
 .header{
   position:sticky;
   top:0;
   z-index:50;
-  height:70px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 22px;
-  background:rgba(6,6,10,.88);
   backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(255,255,255,.07);
+  background:rgba(7,6,11,.78);
+  border-bottom:1px solid var(--line);
 }
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.brand-logo{
-  width:42px;
-  height:42px;
-  border-radius:13px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:1000;
-  font-size:17px;
-  background:
-    linear-gradient(135deg,#7c3aed,#db2777);
-  box-shadow:
-    0 8px 30px rgba(124,58,237,.3);
-}
-
-.brand-text{
-  font-weight:1000;
-  font-size:20px;
-}
-
-.brand-text span{
-  color:#a855f7;
-}
-
-.header-actions{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-.header-btn{
-  border:1px solid rgba(255,255,255,.08);
-  background:#111117;
-  color:#fff;
-  padding:9px 13px;
-  border-radius:11px;
-  font-size:12px;
-}
-
-.header-btn:hover{
-  background:#18181f;
-}
-
-.instagram-btn{
-  background:
-    linear-gradient(135deg,#7c3aed,#db2777);
-  border:none;
-}
-
-/* =========================
-   MAIN
-========================= */
-
-.main{
-  width:min(1400px,96%);
+.header-inner{
+  max-width:1500px;
   margin:auto;
-  padding:25px 0 50px;
-  flex:1;
-}
-
-.workspace{
-  display:grid;
-  grid-template-columns:380px minmax(0,1fr);
-  gap:25px;
-  align-items:start;
-}
-
-/* =========================
-   PANEL
-========================= */
-
-.panel{
-  background:
-    linear-gradient(145deg,#101017,#09090d);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:23px;
-  overflow:hidden;
-}
-
-.panel-header{
-  padding:20px;
-  border-bottom:1px solid rgba(255,255,255,.07);
-}
-
-.panel-title{
-  font-size:19px;
-  font-weight:1000;
-}
-
-.panel-subtitle{
-  margin-top:5px;
-  color:#777;
-  font-size:12px;
-}
-
-.panel-body{
-  padding:18px;
-}
-
-/* =========================
-   UPLOAD
-========================= */
-
-.upload-box{
-  position:relative;
-  min-height:180px;
-  border:1px dashed rgba(168,85,247,.55);
-  border-radius:18px;
-  background:
-    radial-gradient(
-      circle at 50% 30%,
-      rgba(168,85,247,.12),
-      transparent 60%
-    ),
-    #0c0c12;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-  transition:.2s;
-  overflow:hidden;
-}
-
-.upload-box:hover{
-  border-color:#c084fc;
-  background:#111019;
-}
-
-.upload-box.drag{
-  border-color:#fff;
-  transform:scale(1.01);
-}
-
-.upload-icon{
-  font-size:42px;
-  margin-bottom:8px;
-}
-
-.upload-title{
-  font-weight:bold;
-  font-size:14px;
-}
-
-.upload-desc{
-  color:#777;
-  font-size:11px;
-  margin-top:5px;
-}
-
-.upload-input{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  opacity:0;
-  cursor:pointer;
-}
-
-.image-status{
-  margin-top:10px;
-  font-size:11px;
-  color:#888;
-  text-align:center;
-}
-
-/* =========================
-   FORM
-========================= */
-
-.form-group{
-  margin-top:17px;
-}
-
-.form-label{
-  display:block;
-  margin-bottom:8px;
-  color:#aaa;
-  font-size:12px;
-  font-weight:bold;
-}
-
-.input,
-.textarea,
-.select{
-  width:100%;
-  border:1px solid rgba(255,255,255,.08);
-  outline:none;
-  color:#fff;
-  background:#0b0b10;
-  border-radius:13px;
-  padding:12px 13px;
-  font-size:13px;
-  transition:.2s;
-}
-
-.input:focus,
-.textarea:focus,
-.select:focus{
-  border-color:#8b5cf6;
-  box-shadow:0 0 0 3px rgba(139,92,246,.1);
-}
-
-.textarea{
-  resize:vertical;
-  min-height:85px;
-}
-
-.select{
-  appearance:auto;
-}
-
-.row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-/* =========================
-   CHOICES
-========================= */
-
-.choice-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
-}
-
-.choice{
-  position:relative;
-}
-
-.choice input{
-  position:absolute;
-  opacity:0;
-}
-
-.choice label{
-  display:block;
-  border:1px solid rgba(255,255,255,.08);
-  background:#0b0b10;
-  padding:12px 8px;
-  border-radius:13px;
-  text-align:center;
-  color:#aaa;
-  font-size:12px;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.choice label:hover{
-  background:#12121a;
-  color:#fff;
-}
-
-.choice input:checked + label{
-  border-color:#8b5cf6;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(124,58,237,.22),
-      rgba(219,39,119,.12)
-    );
-  color:#fff;
-  box-shadow:
-    inset 0 0 0 1px rgba(168,85,247,.15);
-}
-
-.choice-emoji{
-  display:block;
-  font-size:20px;
-  margin-bottom:4px;
-}
-
-/* =========================
-   ACTIONS
-========================= */
-
-.action-buttons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
-  margin-top:18px;
-}
-
-.primary-btn,
-.secondary-btn,
-.danger-btn{
-  border:none;
-  border-radius:14px;
-  padding:13px;
-  font-weight:bold;
-  font-size:13px;
-}
-
-.primary-btn{
-  background:
-    linear-gradient(135deg,#7c3aed,#c026d3);
-  color:#fff;
-  box-shadow:
-    0 12px 35px rgba(124,58,237,.2);
-}
-
-.secondary-btn{
-  background:#17171f;
-  border:1px solid rgba(255,255,255,.08);
-  color:#fff;
-}
-
-.danger-btn{
-  background:#241016;
-  color:#fca5a5;
-  border:1px solid rgba(239,68,68,.15);
-}
-
-.primary-btn:hover,
-.secondary-btn:hover,
-.danger-btn:hover{
-  transform:translateY(-1px);
-}
-
-/* =========================
-   PREVIEW AREA
-========================= */
-
-.preview-panel{
-  min-width:0;
-}
-
-.preview-top{
+  padding:14px 22px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:15px;
-  margin-bottom:13px;
 }
-
-.preview-title{
-  font-weight:1000;
-  font-size:18px;
-}
-
-.preview-info{
-  color:#777;
-  font-size:11px;
-}
-
-.preview-stage{
-  min-height:760px;
-  border-radius:25px;
-  border:1px solid rgba(255,255,255,.07);
-  background:
-    radial-gradient(
-      circle at 50% 35%,
-      rgba(124,58,237,.15),
-      transparent 35%
-    ),
-    #09090e;
+.logo{
   display:flex;
   align-items:center;
-  justify-content:center;
-  padding:35px;
-  overflow:hidden;
+  gap:11px;
+  font-size:22px;
+  font-weight:900;
+}
+.logo-mark{
+  width:42px;height:42px;
+  display:grid;place-items:center;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  box-shadow:0 0 30px rgba(155,92,255,.3);
+}
+.logo small{
+  display:block;
+  font-size:10px;
+  color:var(--muted);
+  font-weight:500;
+  margin-top:-2px;
+}
+.header-actions{display:flex;gap:9px}
+.top-btn{
+  border:1px solid var(--line);
+  background:#111019;
+  color:white;
+  border-radius:13px;
+  padding:10px 15px;
+}
+
+/* LAYOUT */
+.app{
+  max-width:1500px;
+  margin:auto;
+  padding:24px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:430px minmax(0,1fr);
+  gap:22px;
+  align-items:start;
+}
+.panel{
+  background:linear-gradient(180deg,rgba(24,22,34,.96),rgba(13,12,20,.96));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:0 25px 80px rgba(0,0,0,.28);
+}
+.controls{
+  padding:20px;
+  position:sticky;
+  top:78px;
+  max-height:calc(100vh - 95px);
+  overflow:auto;
+}
+.preview-panel{
+  min-height:760px;
+  padding:18px;
+}
+
+/* HERO */
+.hero{
+  padding:4px 2px 20px;
+}
+.hero h1{
+  margin:0;
+  font-size:31px;
+  line-height:1.25;
+}
+.gradient{
+  background:linear-gradient(90deg,#fff,#bd8cff,#ff5fb1);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.hero p{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* SECTIONS */
+.section{
+  border-top:1px solid var(--line);
+  padding:18px 0;
+}
+.section:first-of-type{border-top:0}
+.section-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:11px;
+}
+.section-title strong{font-size:14px}
+.section-title span{font-size:11px;color:var(--muted)}
+
+.label{
+  display:block;
+  color:#ddd9e7;
+  font-size:12px;
+  margin:0 0 7px;
+}
+.input,
+.select,
+.textarea{
+  width:100%;
+  border:1px solid var(--line);
+  background:#0b0a11;
+  color:white;
+  outline:none;
+  border-radius:13px;
+  padding:12px 13px;
+  transition:.2s;
+}
+.input:focus,
+.select:focus,
+.textarea:focus{
+  border-color:rgba(155,92,255,.8);
+  box-shadow:0 0 0 3px rgba(155,92,255,.09);
+}
+.textarea{
+  min-height:90px;
+  resize:vertical;
+}
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+
+/* UPLOAD */
+.upload{
+  min-height:135px;
+  border:1.5px dashed #4a415d;
+  background:
+    radial-gradient(circle at center,rgba(155,92,255,.1),transparent 60%),
+    #0b0a11;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:15px;
+  transition:.2s;
+}
+.upload.drag{
+  border-color:var(--purple);
+  background:#151021;
+}
+.upload-icon{
+  font-size:35px;
+  margin-bottom:3px;
+}
+.upload strong{font-size:13px}
+.upload small{
+  display:block;
+  color:var(--muted);
+  margin-top:5px;
+}
+#fileInput{display:none}
+
+/* CHIPS */
+.chips{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
+}
+.chip{
+  min-height:54px;
+  border:1px solid var(--line);
+  background:#0d0c13;
+  color:#ddd;
+  border-radius:13px;
+  padding:8px 5px;
+  font-size:11px;
+  transition:.18s;
+}
+.chip b{
+  display:block;
+  font-size:18px;
+  margin-bottom:1px;
+}
+.chip.active{
+  border-color:var(--purple);
+  background:rgba(155,92,255,.13);
+  box-shadow:0 0 0 1px rgba(155,92,255,.15);
+}
+
+/* COLOR */
+.colors{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+.color{
+  width:31px;height:31px;
+  border-radius:50%;
+  border:2px solid transparent;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.2);
+}
+.color.active{
+  border-color:white;
+  transform:scale(1.12);
+}
+
+/* BADGES */
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+.badge-option{
+  border:1px solid var(--line);
+  background:#0c0b12;
+  color:#ddd;
+  padding:8px 10px;
+  border-radius:10px;
+  font-size:11px;
+}
+.badge-option.active{
+  background:rgba(155,92,255,.15);
+  border-color:var(--purple);
+}
+
+/* BUTTONS */
+.main-btn{
+  width:100%;
+  border:0;
+  color:white;
+  border-radius:16px;
+  padding:15px;
+  font-size:15px;
+  font-weight:800;
+  background:linear-gradient(135deg,#8e4dff,#d52dff);
+  box-shadow:0 14px 35px rgba(145,65,255,.27);
+}
+.main-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.secondary-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:8px;
+}
+.secondary{
+  border:1px solid var(--line);
+  background:#111019;
+  color:white;
+  border-radius:13px;
+  padding:11px;
+}
+.danger{
+  border-color:rgba(255,77,109,.2);
+  color:#ff8ca0;
+}
+
+/* PREVIEW */
+.preview-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.preview-title strong{font-size:16px}
+.preview-title small{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  margin-top:3px;
+}
+.preview-actions{display:flex;gap:7px}
+.icon-btn{
+  border:1px solid var(--line);
+  background:#111019;
+  color:white;
+  border-radius:12px;
+  padding:10px 12px;
 }
 
 .canvas-wrap{
-  max-width:100%;
-  max-height:700px;
-  position:relative;
+  min-height:650px;
+  display:grid;
+  place-items:center;
+  background:
+    linear-gradient(45deg,#101019 25%,transparent 25%) 0 0/22px 22px,
+    linear-gradient(-45deg,#101019 25%,transparent 25%) 0 0/22px 22px,
+    #0a0910;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:20px;
+  overflow:hidden;
 }
-
-#posterCanvas{
+#poster{
   display:block;
   max-width:100%;
-  max-height:700px;
+  max-height:650px;
   width:auto;
   height:auto;
-  border-radius:8px;
-  box-shadow:
-    0 35px 90px rgba(0,0,0,.55);
-  background:#111;
-}
-
-/* =========================
-   BOTTOM TOOLS
-========================= */
-
-.tools{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:15px;
-}
-
-.tool-btn{
-  border:1px solid rgba(255,255,255,.08);
-  background:#101017;
-  color:#fff;
   border-radius:12px;
-  padding:10px 15px;
-  font-size:12px;
+  box-shadow:0 30px 80px rgba(0,0,0,.55);
 }
 
-.tool-btn:hover{
-  background:#17171f;
-}
-
-/* =========================
-   TIPS
-========================= */
-
-.tips{
-  margin-top:15px;
+.variants{
+  margin-top:13px;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
 }
-
-.tip{
-  background:#0d0d13;
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:14px;
-  padding:13px;
-  text-align:center;
-  color:#777;
+.variant{
+  border:1px solid var(--line);
+  background:#0e0d14;
+  border-radius:13px;
+  color:white;
+  padding:10px 5px;
   font-size:11px;
 }
-
-.tip strong{
-  display:block;
-  color:#bbb;
-  margin-bottom:3px;
+.variant.active{
+  border-color:var(--purple);
+  background:rgba(155,92,255,.12);
 }
 
-/* =========================
-   TOAST
-========================= */
+/* STATUS */
+.status{
+  margin-top:12px;
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:11px;
+}
+.dot{
+  display:inline-block;
+  width:7px;height:7px;
+  background:var(--green);
+  border-radius:50%;
+  margin-left:5px;
+}
 
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:none;
+  place-items:center;
+  padding:18px;
+  background:rgba(0,0,0,.75);
+  backdrop-filter:blur(12px);
+}
+.modal.show{display:grid}
+.modal-card{
+  width:min(520px,100%);
+  background:#13111b;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:20px;
+  max-height:90vh;
+  overflow:auto;
+}
+.modal-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+.close{
+  border:1px solid var(--line);
+  background:#0d0c12;
+  color:white;
+  width:36px;height:36px;
+  border-radius:10px;
+}
+
+/* TOAST */
 .toast{
   position:fixed;
-  z-index:999;
-  bottom:25px;
   left:50%;
-  transform:translate(-50%,20px);
-  background:#18181f;
-  border:1px solid rgba(255,255,255,.1);
-  box-shadow:0 20px 50px rgba(0,0,0,.5);
-  color:#fff;
-  padding:12px 18px;
+  bottom:22px;
+  transform:translate(-50%,120px);
+  z-index:200;
+  background:#fff;
+  color:#111;
+  padding:12px 17px;
   border-radius:14px;
   font-size:12px;
-  opacity:0;
-  pointer-events:none;
+  font-weight:700;
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
   transition:.3s;
-  white-space:nowrap;
 }
+.toast.show{transform:translate(-50%,0)}
 
-.toast.show{
-  opacity:1;
-  transform:translate(-50%,0);
-}
-
-/* =========================
-   LOADING
-========================= */
-
+/* LOADING */
 .loading{
   position:fixed;
   inset:0;
-  z-index:500;
-  background:rgba(4,4,7,.78);
-  backdrop-filter:blur(12px);
+  z-index:150;
   display:none;
-  align-items:center;
-  justify-content:center;
+  place-items:center;
+  background:rgba(4,3,8,.8);
+  backdrop-filter:blur(10px);
 }
-
-.loading.show{
-  display:flex;
-}
-
-.loading-card{
-  width:min(340px,90%);
-  background:#101017;
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:22px;
-  padding:30px;
-  text-align:center;
-}
-
-.spinner{
-  width:45px;
-  height:45px;
+.loading.show{display:grid}
+.loader-box{text-align:center}
+.loader{
+  width:48px;height:48px;
+  margin:auto auto 13px;
+  border:3px solid rgba(255,255,255,.12);
+  border-top-color:#a762ff;
   border-radius:50%;
-  border:4px solid #28282f;
-  border-top-color:#a855f7;
-  animation:spin .8s linear infinite;
-  margin:0 auto 17px;
+  animation:spin .7s linear infinite;
 }
+@keyframes spin{to{transform:rotate(360deg)}}
 
-@keyframes spin{
-  to{transform:rotate(360deg)}
-}
-
-.loading-card h3{
-  font-size:16px;
-}
-
-.loading-card p{
-  color:#777;
-  font-size:11px;
-  margin-top:5px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
+/* MOBILE */
 @media(max-width:1050px){
-
-  .workspace{
-    grid-template-columns:330px minmax(0,1fr);
+  .grid{grid-template-columns:1fr}
+  .controls{
+    position:relative;
+    top:0;
+    max-height:none;
   }
-
-  .preview-stage{
-    min-height:650px;
-  }
-
+  .preview-panel{min-height:unset}
+  .canvas-wrap{min-height:550px}
 }
-
-@media(max-width:850px){
-
-  .header{
-    padding:0 12px;
-  }
-
-  .brand-text{
-    font-size:17px;
-  }
-
-  .header-btn span{
-    display:none;
-  }
-
-  .main{
-    width:94%;
-    padding-top:15px;
-  }
-
-  .workspace{
-    grid-template-columns:1fr;
-  }
-
-  .preview-panel{
-    order:-1;
-  }
-
-  .preview-stage{
-    min-height:auto;
-    padding:20px;
-  }
-
-  #posterCanvas{
-    max-height:70vh;
-  }
-
-  .tips{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:500px){
-
-  .header{
-    height:62px;
-  }
-
-  .brand-logo{
-    width:36px;
-    height:36px;
-    font-size:14px;
-  }
-
-  .brand-text{
-    font-size:15px;
-  }
-
-  .instagram-btn{
-    display:none;
-  }
-
-  .panel-header{
-    padding:16px;
-  }
-
-  .panel-body{
-    padding:15px;
-  }
-
-  .preview-stage{
-    padding:12px;
-    border-radius:18px;
-  }
-
-  #posterCanvas{
-    max-height:65vh;
-  }
-
-  .row{
-    grid-template-columns:1fr;
-  }
-
-  .action-buttons{
-    grid-template-columns:1fr;
-  }
+@media(max-width:600px){
+  .app{padding:12px}
+  .header-inner{padding:11px 13px}
+  .logo{font-size:18px}
+  .logo-mark{width:37px;height:37px}
+  .top-btn{padding:9px 10px;font-size:11px}
+  .hero h1{font-size:25px}
+  .panel{border-radius:18px}
+  .controls,.preview-panel{padding:14px}
+  .chips{grid-template-columns:repeat(3,1fr)}
+  .canvas-wrap{padding:10px;min-height:430px}
+  #poster{max-height:530px}
+  .preview-actions .text-btn{display:none}
 }
 </style>
 </head>
 
 <body>
 
-<div class="app">
-
-<!-- =========================
-     HEADER
-========================= -->
-
 <header class="header">
-
-  <a href="../" class="brand">
-
-    <div class="brand-logo">
-      AD
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-mark">✦</div>
+      <div>
+        ADPIX
+        <small>AI AD STUDIO • V2</small>
+      </div>
     </div>
 
-    <div class="brand-text">
-      AD<span>PIX</span>
+    <div class="header-actions">
+      <a class="top-btn" href="https://www.instagram.com/f2fweb/" target="_blank">Instagram ↗</a>
+      <button class="top-btn" onclick="openProjects()">پروژه‌ها</button>
     </div>
-
-  </a>
-
-  <div class="header-actions">
-
-    <button
-      class="header-btn"
-      id="saveBtn"
-      type="button">
-      💾 <span>ذخیره</span>
-    </button>
-
-    <a
-      class="header-btn instagram-btn"
-      href="https://www.instagram.com/f2fweb/"
-      target="_blank"
-      rel="noopener">
-      💬 <span>@f2fweb</span>
-    </a>
-
   </div>
-
 </header>
 
+<main class="app">
 
-<!-- =========================
-     MAIN
-========================= -->
+<div class="grid">
 
-<main class="main">
+<!-- ================= CONTROLS ================= -->
+<section class="panel controls">
 
-<div class="workspace">
-
-
-<!-- =========================
-     LEFT CONTROL PANEL
-========================= -->
-
-<section class="panel">
-
-  <div class="panel-header">
-
-    <div class="panel-title">
-      ساخت تبلیغ
-    </div>
-
-    <div class="panel-subtitle">
-      اطلاعات محصولت را وارد کن
-    </div>
-
+  <div class="hero">
+    <h1>تبلیغ محصولت رو <span class="gradient">بساز.</span></h1>
+    <p>عکس محصولت رو بده و یک پوستر آماده اینستاگرام طراحی کن.</p>
   </div>
 
+  <!-- UPLOAD -->
+  <div class="section">
+    <div class="section-title">
+      <strong>📸 عکس محصول</strong>
+      <span>PNG / JPG / WEBP</span>
+    </div>
 
-  <div class="panel-body">
+    <label class="upload" id="dropZone">
+      <input id="fileInput" type="file" accept="image/*">
+      <div>
+        <div class="upload-icon">🖼️</div>
+        <strong id="uploadText">برای انتخاب عکس ضربه بزن</strong>
+        <small>یا عکس را اینجا بکش و رها کن</small>
+      </div>
+    </label>
+  </div>
 
+  <!-- INFO -->
+  <div class="section">
+    <div class="section-title">
+      <strong>📝 اطلاعات محصول</strong>
+      <span>اختیاری</span>
+    </div>
 
-    <!-- UPLOAD -->
+    <label class="label">نام محصول</label>
+    <input id="productName" class="input" placeholder="مثلاً کت چرم کلاسیک">
 
-    <div
-      class="upload-box"
-      id="uploadBox">
+    <div style="height:9px"></div>
+
+    <div class="row">
+      <div>
+        <label class="label">برند</label>
+        <input id="brand" class="input" placeholder="مثلاً ADPIX">
+      </div>
 
       <div>
+        <label class="label">قیمت</label>
+        <input id="price" class="input" inputmode="numeric" placeholder="1,990,000">
+      </div>
+    </div>
 
-        <div class="upload-icon">
-          📸
-        </div>
+    <div style="height:9px"></div>
 
-        <div class="upload-title">
-          عکس محصول را انتخاب کن
-        </div>
-
-        <div class="upload-desc">
-          JPG / PNG / WEBP
-        </div>
-
+    <div class="row">
+      <div>
+        <label class="label">تخفیف</label>
+        <input id="discount" class="input" placeholder="30%">
       </div>
 
-      <input
-        class="upload-input"
-        id="imageInput"
-        type="file"
-        accept="image/*">
-
-    </div>
-
-    <div
-      class="image-status"
-      id="imageStatus">
-      هنوز عکسی انتخاب نشده
-    </div>
-
-
-    <!-- PRODUCT NAME -->
-
-    <div class="form-group">
-
-      <label class="form-label">
-        نام محصول
-      </label>
-
-      <input
-        class="input"
-        id="productName"
-        type="text"
-        placeholder="مثلاً کتونی Air Max"
-        maxlength="40">
-
-    </div>
-
-
-    <!-- BRAND -->
-
-    <div class="form-group">
-
-      <label class="form-label">
-        برند
-      </label>
-
-      <input
-        class="input"
-        id="brand"
-        type="text"
-        placeholder="مثلاً Nike"
-        maxlength="25">
-
-    </div>
-
-
-    <!-- PRICE -->
-
-    <div class="form-group">
-
-      <div class="row">
-
-        <div>
-
-          <label class="form-label">
-            قیمت
-          </label>
-
-          <input
-            class="input"
-            id="price"
-            type="text"
-            inputmode="numeric"
-            placeholder="899000">
-
-        </div>
-
-        <div>
-
-          <label class="form-label">
-            تخفیف
-          </label>
-
-          <input
-            class="input"
-            id="discount"
-            type="text"
-            inputmode="numeric"
-            placeholder="20%">
-
-        </div>
-
+      <div>
+        <label class="label">CTA</label>
+        <input id="cta" class="input" value="همین حالا سفارش بده">
       </div>
+    </div>
+  </div>
 
+  <!-- CATEGORY -->
+  <div class="section">
+    <div class="section-title">
+      <strong>🛍️ دسته‌بندی</strong>
+      <span>۱۲ مدل</span>
     </div>
 
+    <div class="chips" id="categories">
+      <button class="chip active" data-value="fashion"><b>👕</b>لباس</button>
+      <button class="chip" data-value="shoes"><b>👟</b>کفش</button>
+      <button class="chip" data-value="perfume"><b>🧴</b>عطر</button>
+      <button class="chip" data-value="beauty"><b>💄</b>آرایشی</button>
+      <button class="chip" data-value="accessory"><b>💍</b>اکسسوری</button>
+      <button class="chip" data-value="food"><b>🍔</b>غذا</button>
+      <button class="chip" data-value="phone"><b>📱</b>موبایل</button>
+      <button class="chip" data-value="laptop"><b>💻</b>لپ‌تاپ</button>
+      <button class="chip" data-value="watch"><b>⌚</b>ساعت</button>
+      <button class="chip" data-value="jewelry"><b>💎</b>جواهرات</button>
+      <button class="chip" data-value="car"><b>🚘</b>خودرو</button>
+      <button class="chip" data-value="store"><b>🛒</b>فروشگاهی</button>
+    </div>
+  </div>
 
-    <!-- CATEGORY -->
-
-    <div class="form-group">
-
-      <label class="form-label">
-        دسته‌بندی
-      </label>
-
-      <div class="choice-grid">
-
-        <div class="choice">
-          <input
-            type="radio"
-            name="category"
-            id="catFashion"
-            value="fashion"
-            checked>
-          <label for="catFashion">
-            <span class="choice-emoji">👕</span>
-            لباس و فشن
-          </label>
-        </div>
-
-        <div class="choice">
-          <input
-            type="radio"
-            name="category"
-            id="catBeauty"
-            value="beauty">
-          <label for="catBeauty">
-            <span class="choice-emoji">💄</span>
-            زیبایی
-          </label>
-        </div>
-
-        <div class="choice">
-          <input
-            type="radio"
-            name="category"
-            id="catFood"
-            value="food">
-          <label for="catFood">
-            <span class="choice-emoji">🍔</span>
-            غذا
-          </label>
-        </div>
-
-        <div class="choice">
-          <input
-            type="radio"
-            name="category"
-            id="catTech"
-            value="tech">
-          <label for="catTech">
-            <span class="choice-emoji">🎧</span>
-            تکنولوژی
-          </label>
-        </div>
-
-      </div>
-
+  <!-- STYLE -->
+  <div class="section">
+    <div class="section-title">
+      <strong>🎨 استایل تبلیغ</strong>
+      <span>۱۰ مدل</span>
     </div>
 
+    <div class="chips" id="styles">
+      <button class="chip active" data-value="luxury"><b>👑</b>لوکس</button>
+      <button class="chip" data-value="minimal"><b>◻️</b>مینیمال</button>
+      <button class="chip" data-value="dark"><b>🌑</b>دارک</button>
+      <button class="chip" data-value="neon"><b>💜</b>نئونی</button>
+      <button class="chip" data-value="fire"><b>🔥</b>آتشی</button>
+      <button class="chip" data-value="chrome"><b>🪩</b>کرومی</button>
+      <button class="chip" data-value="glass"><b>🧊</b>شیشه‌ای</button>
+      <button class="chip" data-value="studio"><b>📸</b>استودیو</button>
+      <button class="chip" data-value="street"><b>🏙️</b>خیابانی</button>
+      <button class="chip" data-value="organic"><b>🌿</b>طبیعی</button>
+    </div>
+  </div>
 
-    <!-- STYLE -->
-
-    <div class="form-group">
-
-      <label class="form-label">
-        استایل تبلیغ
-      </label>
-
-      <div class="choice-grid">
-
-        <div class="choice">
-          <input
-            type="radio"
-            name="style"
-            id="styleLuxury"
-            value="luxury"
-            checked>
-          <label for="styleLuxury">
-            <span class="choice-emoji">👑</span>
-            لوکس
-          </label>
-        </div>
-
-        <div class="choice">
-          <input
-            type="radio"
-            name="style"
-            id="styleMinimal"
-            value="minimal">
-          <label for="styleMinimal">
-            <span class="choice-emoji">✨</span>
-            مینیمال
-          </label>
-        </div>
-
-        <div class="choice">
-          <input
-            type="radio"
-            name="style"
-            id="styleSport"
-            value="sport">
-          <label for="styleSport">
-            <span class="choice-emoji">⚡</span>
-            اسپرت
-          </label>
-        </div>
-
-        <div class="choice">
-          <input
-            type="radio"
-            name="style"
-            id="styleNeon"
-            value="neon">
-          <label for="styleNeon">
-            <span class="choice-emoji">🔥</span>
-            نئونی
-          </label>
-        </div>
-
-      </div>
-
+  <!-- FORMAT -->
+  <div class="section">
+    <div class="section-title">
+      <strong>📐 فرمت خروجی</strong>
+      <span>۶ مدل</span>
     </div>
 
+    <select id="format" class="select">
+      <option value="story">استوری — 9:16</option>
+      <option value="portrait">پست — 4:5</option>
+      <option value="square">پست — 1:1</option>
+      <option value="banner">بنر — 16:9</option>
+      <option value="wide">تبلیغ افقی — 3:2</option>
+      <option value="whatsapp">واتساپ — 4:5</option>
+    </select>
+  </div>
 
-    <!-- FORMAT -->
-
-    <div class="form-group">
-
-      <label class="form-label">
-        فرمت خروجی
-      </label>
-
-      <select
-        class="select"
-        id="format">
-
-        <option value="story">
-          استوری 9:16
-        </option>
-
-        <option value="portrait">
-          پست 4:5
-        </option>
-
-        <option value="square">
-          پست 1:1
-        </option>
-
-      </select>
-
+  <!-- COLOR -->
+  <div class="section">
+    <div class="section-title">
+      <strong>🌈 رنگ اصلی</strong>
+      <span>تم تبلیغ</span>
     </div>
 
+    <div class="colors" id="colors">
+      <button class="color active" style="background:#8b4dff" data-color="#8b4dff"></button>
+      <button class="color" style="background:#ff2d7a" data-color="#ff2d7a"></button>
+      <button class="color" style="background:#00d4ff" data-color="#00d4ff"></button>
+      <button class="color" style="background:#00e59a" data-color="#00e59a"></button>
+      <button class="color" style="background:#ff9f1a" data-color="#ff9f1a"></button>
+      <button class="color" style="background:#ff3b30" data-color="#ff3b30"></button>
+      <button class="color" style="background:#fff" data-color="#ffffff"></button>
+      <button class="color" style="background:#111" data-color="#111111"></button>
+    </div>
+  </div>
 
-    <!-- SCENARIO -->
-
-    <div class="form-group">
-
-      <label class="form-label">
-        متن تبلیغ / سناریو
-      </label>
-
-      <textarea
-        class="textarea"
-        id="scenario"
-        maxlength="160"
-        placeholder="مثلاً تخفیف ویژه فقط تا امشب!"></textarea>
-
+  <!-- BADGE -->
+  <div class="section">
+    <div class="section-title">
+      <strong>🏷️ Badge</strong>
+      <span>روی پوستر</span>
     </div>
 
+    <div class="badges" id="badges">
+      <button class="badge-option active" data-badge="none">بدون Badge</button>
+      <button class="badge-option" data-badge="sale">🔥 SALE</button>
+      <button class="badge-option" data-badge="new">NEW</button>
+      <button class="badge-option" data-badge="best">BEST SELLER</button>
+      <button class="badge-option" data-badge="limited">LIMITED</button>
+      <button class="badge-option" data-badge="special">SPECIAL</button>
+    </div>
+  </div>
 
-    <!-- ACTION -->
-
-    <div class="action-buttons">
-
-      <button
-        class="primary-btn"
-        id="generateBtn"
-        type="button">
-        ✨ ساخت تبلیغ
-      </button>
-
-      <button
-        class="secondary-btn"
-        id="resetBtn"
-        type="button">
-        ↺ پاک کردن
-      </button>
-
+  <!-- TEXT -->
+  <div class="section">
+    <div class="section-title">
+      <strong>✍️ سناریو تبلیغ</strong>
+      <span>متن سفارشی</span>
     </div>
 
+    <textarea id="scenario" class="textarea" placeholder="مثلاً: حس لوکس و خاص، مناسب مشتری‌های شیک‌پسند، با تأکید روی تخفیف و خرید فوری..."></textarea>
+  </div>
+
+  <!-- ACTION -->
+  <div class="section">
+    <button class="main-btn" onclick="generatePoster(true)">
+      ✨ ساخت تبلیغ حرفه‌ای
+    </button>
+
+    <div class="secondary-row">
+      <button class="secondary" onclick="generateVariants()">🔄 ۴ طرح متفاوت</button>
+      <button class="secondary" onclick="randomize()">🎲 پیشنهاد تصادفی</button>
+    </div>
+
+    <div class="secondary-row">
+      <button class="secondary" onclick="saveProject()">💾 ذخیره</button>
+      <button class="secondary danger" onclick="resetAll()">↺ پاک کردن</button>
+    </div>
   </div>
 
 </section>
 
-
-<!-- =========================
-     PREVIEW
-========================= -->
-
-<section class="preview-panel">
+<!-- ================= PREVIEW ================= -->
+<section class="panel preview-panel">
 
   <div class="preview-top">
-
-    <div>
-      <div class="preview-title">
-        پیش‌نمایش تبلیغ
-      </div>
-
-      <div
-        class="preview-info"
-        id="previewInfo">
-        استوری 9:16
-      </div>
+    <div class="preview-title">
+      <strong>پیش‌نمایش تبلیغ</strong>
+      <small id="sizeText">1080 × 1920</small>
     </div>
 
+    <div class="preview-actions">
+      <button class="icon-btn" onclick="downloadPoster()">⬇️ <span class="text-btn">دانلود</span></button>
+      <button class="icon-btn" onclick="sharePoster()">↗️ <span class="text-btn">اشتراک</span></button>
+      <button class="icon-btn" onclick="openFullscreen()">⛶</button>
+    </div>
   </div>
 
-
-  <div class="preview-stage">
-
-    <div class="canvas-wrap">
-
-      <canvas
-        id="posterCanvas"
-        width="1080"
-        height="1920">
-      </canvas>
-
-    </div>
-
+  <div class="canvas-wrap">
+    <canvas id="poster"></canvas>
   </div>
 
-
-  <div class="tools">
-
-    <button
-      class="tool-btn"
-      id="downloadBtn"
-      type="button">
-      ⬇️ دانلود PNG
-    </button>
-
-    <button
-      class="tool-btn"
-      id="shareBtn"
-      type="button">
-      📤 اشتراک‌گذاری
-    </button>
-
-    <button
-      class="tool-btn"
-      id="saveProjectBtn"
-      type="button">
-      💾 ذخیره پروژه
-    </button>
-
+  <div class="variants">
+    <button class="variant active" onclick="setVariant(0)">طرح ۱<br>اصلی</button>
+    <button class="variant" onclick="setVariant(1)">طرح ۲<br>تیره</button>
+    <button class="variant" onclick="setVariant(2)">طرح ۳<br>تمرکز محصول</button>
+    <button class="variant" onclick="setVariant(3)">طرح ۴<br>فروش</button>
   </div>
 
-
-  <div class="tips">
-
-    <div class="tip">
-      <strong>📸 عکس خوب</strong>
-      عکس واضح نتیجه بهتری می‌دهد.
-    </div>
-
-    <div class="tip">
-      <strong>💰 قیمت</strong>
-      قیمت و تخفیف را وارد کن.
-    </div>
-
-    <div class="tip">
-      <strong>🚀 انتشار</strong>
-      PNG را مستقیماً در اینستاگرام منتشر کن.
-    </div>
-
+  <div class="status">
+    <span><i class="dot"></i> آماده ساخت</span>
+    <span id="statusText">ADPIX V2</span>
   </div>
 
 </section>
 
 </div>
-
 </main>
 
-
-<!-- =========================
-     TOAST
-========================= -->
-
-<div
-  class="toast"
-  id="toast">
-</div>
-
-
-<!-- =========================
-     LOADING
-========================= -->
-
-<div
-  class="loading"
-  id="loading">
-
-  <div class="loading-card">
-
-    <div class="spinner"></div>
-
-    <h3>
-      در حال ساخت تبلیغ...
-    </h3>
-
-    <p>
-      طرح محصولت در حال آماده‌سازی است
-    </p>
-
+<!-- PROJECT MODAL -->
+<div class="modal" id="projectModal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <strong>💾 پروژه‌های ذخیره‌شده</strong>
+      <button class="close" onclick="closeProjects()">×</button>
+    </div>
+    <div id="projectsList"></div>
   </div>
-
 </div>
 
+<!-- LOADING -->
+<div class="loading" id="loading">
+  <div class="loader-box">
+    <div class="loader"></div>
+    <strong>در حال ساخت تبلیغ...</strong>
+    <div style="color:#aaa;font-size:11px;margin-top:5px">ADPIX V2</div>
+  </div>
+</div>
+
+<div class="toast" id="toast">انجام شد</div>
 
 <script>
-
 /* =========================================================
-   ADPIX STUDIO
-   Canvas Poster Generator
-========================================================= */
+   ADPIX V2
+   Static Canvas Advertising Studio
+   ========================================================= */
 
-
-/* =========================
-   ELEMENTS
-========================= */
-
-const canvas =
-  document.getElementById("posterCanvas");
-
-const ctx =
-  canvas.getContext("2d");
-
-const imageInput =
-  document.getElementById("imageInput");
-
-const uploadBox =
-  document.getElementById("uploadBox");
-
-const imageStatus =
-  document.getElementById("imageStatus");
-
-const productName =
-  document.getElementById("productName");
-
-const brand =
-  document.getElementById("brand");
-
-const price =
-  document.getElementById("price");
-
-const discount =
-  document.getElementById("discount");
-
-const scenario =
-  document.getElementById("scenario");
-
-const format =
-  document.getElementById("format");
-
-const generateBtn =
-  document.getElementById("generateBtn");
-
-const downloadBtn =
-  document.getElementById("downloadBtn");
-
-const shareBtn =
-  document.getElementById("shareBtn");
-
-const saveProjectBtn =
-  document.getElementById("saveProjectBtn");
-
-const saveBtn =
-  document.getElementById("saveBtn");
-
-const resetBtn =
-  document.getElementById("resetBtn");
-
-const toast =
-  document.getElementById("toast");
-
-const loading =
-  document.getElementById("loading");
-
-const previewInfo =
-  document.getElementById("previewInfo");
-
-
-/* =========================
-   STATE
-========================= */
+const canvas = document.getElementById("poster");
+const ctx = canvas.getContext("2d");
 
 let productImage = null;
+let category = "fashion";
+let style = "luxury";
+let accent = "#8b4dff";
+let badge = "none";
+let variant = 0;
 
-let imageObjectURL = null;
-
-let generated = false;
-
-
-/* =========================
-   DEFAULT DATA
-========================= */
-
-const defaultData = {
-  productName:"",
-  brand:"",
-  price:"",
-  discount:"",
-  category:"fashion",
-  style:"luxury",
-  format:"story",
-  scenario:""
+const categoryNames = {
+  fashion:"لباس",
+  shoes:"کفش",
+  perfume:"عطر",
+  beauty:"آرایشی",
+  accessory:"اکسسوری",
+  food:"غذا",
+  phone:"موبایل",
+  laptop:"لپ‌تاپ",
+  watch:"ساعت",
+  jewelry:"جواهرات",
+  car:"خودرو",
+  store:"فروشگاهی"
 };
 
+const styleNames = {
+  luxury:"لوکس",
+  minimal:"مینیمال",
+  dark:"دارک",
+  neon:"نئونی",
+  fire:"آتشی",
+  chrome:"کرومی",
+  glass:"شیشه‌ای",
+  studio:"استودیو",
+  street:"خیابانی",
+  organic:"طبیعی"
+};
 
-/* =========================
-   HELPERS
-========================= */
+const formatSizes = {
+  story:[1080,1920],
+  portrait:[1080,1350],
+  square:[1080,1080],
+  banner:[1920,1080],
+  wide:[1500,1000],
+  whatsapp:[1080,1350]
+};
 
-function showToast(message){
+const $ = id => document.getElementById(id);
 
-  toast.textContent = message;
-
-  toast.classList.add("show");
-
-  clearTimeout(showToast.timer);
-
-  showToast.timer =
-    setTimeout(()=>{
-      toast.classList.remove("show");
-    },2600);
+function toast(message){
+  const el=$("toast");
+  el.textContent=message;
+  el.classList.add("show");
+  clearTimeout(window.__toast);
+  window.__toast=setTimeout(()=>el.classList.remove("show"),2200);
 }
 
-
-function showLoading(){
-
-  loading.classList.add("show");
-
+function loading(show){
+  $("loading").classList.toggle("show",show);
 }
 
+/* ================= UPLOAD ================= */
 
-function hideLoading(){
+const dropZone=$("dropZone");
+const fileInput=$("fileInput");
 
-  loading.classList.remove("show");
+dropZone.addEventListener("click",()=>fileInput.click());
 
-}
-
-
-function sleep(ms){
-
-  return new Promise(
-    resolve => setTimeout(resolve,ms)
-  );
-
-}
-
-
-/* =========================
-   RADIO VALUE
-========================= */
-
-function getRadio(name){
-
-  const checked =
-    document.querySelector(
-      `input[name="${name}"]:checked`
-    );
-
-  return checked
-    ? checked.value
-    : "";
-
-}
-
-
-function setRadio(name,value){
-
-  const radio =
-    document.querySelector(
-      `input[name="${name}"][value="${value}"]`
-    );
-
-  if(radio){
-    radio.checked = true;
-  }
-
-}
-
-
-/* =========================
-   FORMAT
-========================= */
-
-function getCanvasSize(){
-
-  switch(format.value){
-
-    case "square":
-      return {
-        width:1080,
-        height:1080,
-        label:"پست 1:1"
-      };
-
-    case "portrait":
-      return {
-        width:1080,
-        height:1350,
-        label:"پست 4:5"
-      };
-
-    default:
-      return {
-        width:1080,
-        height:1920,
-        label:"استوری 9:16"
-      };
-
-  }
-
-}
-
-
-function updateCanvasSize(){
-
-  const size =
-    getCanvasSize();
-
-  canvas.width =
-    size.width;
-
-  canvas.height =
-    size.height;
-
-  previewInfo.textContent =
-    size.label;
-
-  drawPoster();
-
-}
-
-
-/* =========================
-   IMAGE UPLOAD
-========================= */
-
-imageInput.addEventListener(
-  "change",
-  handleImage
-);
-
-
-async function handleImage(event){
-
-  const file =
-    event.target.files[0];
-
-  if(!file){
-    return;
-  }
-
-  if(!file.type.startsWith("image/")){
-
-    showToast(
-      "لطفاً یک فایل تصویری انتخاب کن."
-    );
-
-    return;
-  }
-
-  if(imageObjectURL){
-    URL.revokeObjectURL(
-      imageObjectURL
-    );
-  }
-
-  imageObjectURL =
-    URL.createObjectURL(file);
-
-  const img =
-    new Image();
-
-  img.onload = ()=>{
-
-    productImage = img;
-
-    imageStatus.textContent =
-      `✓ ${file.name}`;
-
-    drawPoster();
-
-    showToast(
-      "عکس محصول با موفقیت اضافه شد."
-    );
-
-  };
-
-  img.onerror = ()=>{
-
-    showToast(
-      "خواندن عکس انجام نشد."
-    );
-
-  };
-
-  img.src =
-    imageObjectURL;
-
-}
-
-
-/* =========================
-   DRAG DROP
-========================= */
-
-[
-  "dragenter",
-  "dragover"
-].forEach(eventName=>{
-
-  uploadBox.addEventListener(
-    eventName,
-    event=>{
-      event.preventDefault();
-      uploadBox.classList.add("drag");
-    }
-  );
-
+fileInput.addEventListener("change",e=>{
+  if(e.target.files[0]) loadImage(e.target.files[0]);
 });
 
-
-[
-  "dragleave",
-  "drop"
-].forEach(eventName=>{
-
-  uploadBox.addEventListener(
-    eventName,
-    event=>{
-      event.preventDefault();
-      uploadBox.classList.remove("drag");
-    }
-  );
-
-});
-
-
-uploadBox.addEventListener(
-  "drop",
-  event=>{
-
-    const file =
-      event.dataTransfer.files[0];
-
-    if(!file){
-      return;
-    }
-
-    if(!file.type.startsWith("image/")){
-
-      showToast(
-        "فقط فایل تصویری انتخاب کن."
-      );
-
-      return;
-    }
-
-    const dataTransfer =
-      new DataTransfer();
-
-    dataTransfer.items.add(file);
-
-    imageInput.files =
-      dataTransfer.files;
-
-    handleImage({
-      target:{
-        files:[file]
-      }
-    });
-
-  }
-);
-
-
-/* =========================
-   COLORS
-========================= */
-
-function getStyleColors(){
-
-  const style =
-    getRadio("style");
-
-  if(style === "minimal"){
-
-    return {
-      background:"#f4f1eb",
-      background2:"#ddd7cd",
-      text:"#111111",
-      muted:"#555555",
-      accent:"#111111",
-      card:"#ffffff"
-    };
-
-  }
-
-  if(style === "sport"){
-
-    return {
-      background:"#06111c",
-      background2:"#0d2940",
-      text:"#ffffff",
-      muted:"#a9c1d2",
-      accent:"#38bdf8",
-      card:"#10283b"
-    };
-
-  }
-
-  if(style === "neon"){
-
-    return {
-      background:"#08040d",
-      background2:"#20052a",
-      text:"#ffffff",
-      muted:"#cbb4d5",
-      accent:"#e879f9",
-      card:"#160b20"
-    };
-
-  }
-
-  return {
-
-    background:"#08070a",
-    background2:"#24162e",
-    text:"#ffffff",
-    muted:"#b5aeb9",
-    accent:"#c084fc",
-    card:"#16111b"
-
-  };
-
-}
-
-
-/* =========================
-   CATEGORY TEXT
-========================= */
-
-function getCategoryText(){
-
-  const category =
-    getRadio("category");
-
-  const map = {
-
-    fashion:"FASHION",
-
-    beauty:"BEAUTY",
-
-    food:"FOOD",
-
-    tech:"TECH"
-
-  };
-
-  return map[category] || "PRODUCT";
-
-}
-
-
-/* =========================
-   BACKGROUND
-========================= */
-
-function drawBackground(colors){
-
-  const w =
-    canvas.width;
-
-  const h =
-    canvas.height;
-
-  const gradient =
-    ctx.createLinearGradient(
-      0,
-      0,
-      w,
-      h
-    );
-
-  gradient.addColorStop(
-    0,
-    colors.background
-  );
-
-  gradient.addColorStop(
-    1,
-    colors.background2
-  );
-
-  ctx.fillStyle =
-    gradient;
-
-  ctx.fillRect(
-    0,
-    0,
-    w,
-    h
-  );
-
-
-  /* Glow */
-
-  const glow =
-    ctx.createRadialGradient(
-      w*.5,
-      h*.36,
-      20,
-      w*.5,
-      h*.36,
-      h*.55
-    );
-
-  glow.addColorStop(
-    0,
-    hexToRgba(
-      colors.accent,
-      .22
-    )
-  );
-
-  glow.addColorStop(
-    1,
-    "rgba(0,0,0,0)"
-  );
-
-  ctx.fillStyle =
-    glow;
-
-  ctx.fillRect(
-    0,
-    0,
-    w,
-    h
-  );
-
-
-  /* Decorative circles */
-
-  ctx.globalAlpha = .08;
-
-  for(let i=0;i<8;i++){
-
-    const x =
-      (i*173)%w;
-
-    const y =
-      (i*311)%h;
-
-    const r =
-      80+(i*27);
-
-    ctx.beginPath();
-
-    ctx.arc(
-      x,
-      y,
-      r,
-      0,
-      Math.PI*2
-    );
-
-    ctx.fillStyle =
-      colors.accent;
-
-    ctx.fill();
-
-  }
-
-  ctx.globalAlpha = 1;
-
-}
-
-
-/* =========================
-   HEX TO RGBA
-========================= */
-
-function hexToRgba(hex,alpha){
-
-  let h =
-    hex.replace("#","");
-
-  if(h.length === 3){
-
-    h =
-      h.split("")
-       .map(x=>x+x)
-       .join("");
-
-  }
-
-  const r =
-    parseInt(
-      h.substring(0,2),
-      16
-    );
-
-  const g =
-    parseInt(
-      h.substring(2,4),
-      16
-    );
-
-  const b =
-    parseInt(
-      h.substring(4,6),
-      16
-    );
-
-  return `rgba(${r},${g},${b},${alpha})`;
-
-}
-
-
-/* =========================
-   ROUNDED RECT
-========================= */
-
-function roundedRect(
-  x,
-  y,
-  w,
-  h,
-  r
-){
-
-  const radius =
-    Math.min(
-      r,
-      w/2,
-      h/2
-    );
-
-  ctx.beginPath();
-
-  ctx.moveTo(
-    x+radius,
-    y
-  );
-
-  ctx.arcTo(
-    x+w,
-    y,
-    x+w,
-    y+h,
-    radius
-  );
-
-  ctx.arcTo(
-    x+w,
-    y+h,
-    x,
-    y+h,
-    radius
-  );
-
-  ctx.arcTo(
-    x,
-    y+h,
-    x,
-    y,
-    radius
-  );
-
-  ctx.arcTo(
-    x,
-    y,
-    x+w,
-    y,
-    radius
-  );
-
-  ctx.closePath();
-
-}
-
-
-/* =========================
-   TEXT WRAP
-========================= */
-
-function wrapText(
-  text,
-  maxWidth,
-  fontSize,
-  weight="700"
-){
-
-  ctx.font =
-    `${weight} ${fontSize}px Tahoma`;
-
-  const words =
-    String(text || "")
-      .split(/\s+/)
-      .filter(Boolean);
-
-  const lines = [];
-
-  let line = "";
-
-  words.forEach(word=>{
-
-    const test =
-      line
-        ? line+" "+word
-        : word;
-
-    const width =
-      ctx.measureText(test).width;
-
-    if(
-      width > maxWidth &&
-      line
-    ){
-
-      lines.push(line);
-
-      line = word;
-
-    }else{
-
-      line = test;
-
-    }
-
+["dragenter","dragover"].forEach(ev=>{
+  dropZone.addEventListener(ev,e=>{
+    e.preventDefault();
+    dropZone.classList.add("drag");
   });
+});
 
-  if(line){
-    lines.push(line);
-  }
+["dragleave","drop"].forEach(ev=>{
+  dropZone.addEventListener(ev,e=>{
+    e.preventDefault();
+    dropZone.classList.remove("drag");
+  });
+});
 
-  return lines;
+dropZone.addEventListener("drop",e=>{
+  const file=e.dataTransfer.files[0];
+  if(file && file.type.startsWith("image/")) loadImage(file);
+});
 
+function loadImage(file){
+  const reader=new FileReader();
+
+  reader.onload=e=>{
+    const img=new Image();
+
+    img.onload=()=>{
+      productImage=img;
+      $("uploadText").textContent="✓ عکس محصول انتخاب شد";
+      generatePoster(false);
+      toast("عکس محصول اضافه شد");
+    };
+
+    img.src=e.target.result;
+  };
+
+  reader.readAsDataURL(file);
 }
 
+/* ================= CHIPS ================= */
 
-/* =========================
-   DRAW PRODUCT IMAGE
-========================= */
+document.querySelectorAll("#categories .chip").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll("#categories .chip").forEach(x=>x.classList.remove("active"));
+    btn.classList.add("active");
+    category=btn.dataset.value;
+    generatePoster(false);
+  });
+});
 
-function drawProductImage(
-  img,
-  x,
-  y,
-  w,
-  h,
-  radius
-){
+document.querySelectorAll("#styles .chip").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll("#styles .chip").forEach(x=>x.classList.remove("active"));
+    btn.classList.add("active");
+    style=btn.dataset.value;
+    generatePoster(false);
+  });
+});
 
-  if(!img){
+document.querySelectorAll(".color").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".color").forEach(x=>x.classList.remove("active"));
+    btn.classList.add("active");
+    accent=btn.dataset.color;
+    generatePoster(false);
+  });
+});
 
-    /* Placeholder */
+document.querySelectorAll(".badge-option").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".badge-option").forEach(x=>x.classList.remove("active"));
+    btn.classList.add("active");
+    badge=btn.dataset.badge;
+    generatePoster(false);
+  });
+});
 
-    roundedRect(
-      x,
-      y,
-      w,
-      h,
-      radius
-    );
+$("format").addEventListener("change",()=>generatePoster(false));
 
-    ctx.fillStyle =
-      "rgba(255,255,255,.05)";
+["productName","brand","price","discount","cta","scenario"].forEach(id=>{
+  $(id).addEventListener("input",()=>{
+    generatePoster(false);
+  });
+});
 
-    ctx.fill();
+/* ================= FORMAT ================= */
 
-    ctx.font =
-      "bold 90px Arial";
+function getSize(){
+  return formatSizes[$("format").value] || formatSizes.story;
+}
 
-    ctx.textAlign =
-      "center";
+function updateSize(){
+  const [w,h]=getSize();
+  $("sizeText").textContent=`${w} × ${h}`;
+}
 
-    ctx.textBaseline =
-      "middle";
+/* ================= HELPERS ================= */
 
-    ctx.fillStyle =
-      "rgba(255,255,255,.35)";
+function hexToRgb(hex){
+  hex=hex.replace("#","");
+  if(hex.length===3) hex=hex.split("").map(x=>x+x).join("");
+  return {
+    r:parseInt(hex.substring(0,2),16),
+    g:parseInt(hex.substring(2,4),16),
+    b:parseInt(hex.substring(4,6),16)
+  };
+}
 
-    ctx.fillText(
-      "📸",
-      x+w/2,
-      y+h/2
-    );
+function rgba(hex,a){
+  const c=hexToRgb(hex);
+  return `rgba(${c.r},${c.g},${c.b},${a})`;
+}
 
-    ctx.textBaseline =
-      "alphabetic";
+function roundRect(c,x,y,w,h,r,fill=true,stroke=false){
+  c.beginPath();
+  c.roundRect(x,y,w,h,r);
+  if(fill)c.fill();
+  if(stroke)c.stroke();
+}
 
-    return;
+function fitImage(img,x,y,w,h){
+  const ir=img.width/img.height;
+  const br=w/h;
 
+  let dw,dh,dx,dy;
+
+  if(ir>br){
+    dh=h;
+    dw=h*ir;
+    dx=x+(w-dw)/2;
+    dy=y;
+  }else{
+    dw=w;
+    dh=w/ir;
+    dx=x;
+    dy=y+(h-dh)/2;
   }
-
 
   ctx.save();
-
-  roundedRect(
-    x,
-    y,
-    w,
-    h,
-    radius
-  );
-
+  ctx.beginPath();
+  ctx.rect(x,y,w,h);
   ctx.clip();
+  ctx.drawImage(img,dx,dy,dw,dh);
+  ctx.restore();
+}
 
+function textFit(text,maxWidth,maxSize,minSize=22,font="Vazirmatn"){
+  let size=maxSize;
 
-  const iw =
-    img.naturalWidth ||
-    img.width;
+  while(size>minSize){
+    ctx.font=`800 ${size}px ${font}`;
+    if(ctx.measureText(text).width<=maxWidth)return size;
+    size-=2;
+  }
 
-  const ih =
-    img.naturalHeight ||
-    img.height;
+  return minSize;
+}
 
-  const imageRatio =
-    iw/ih;
+function centerText(text,x,y,maxWidth,size,weight=800){
+  ctx.font=`${weight} ${size}px Vazirmatn`;
+  ctx.textAlign="center";
+  ctx.textBaseline="middle";
 
-  const boxRatio =
-    w/h;
+  const words=text.split(" ");
+  let lines=[];
+  let line="";
 
-  let dw;
-  let dh;
-  let dx;
-  let dy;
+  for(const word of words){
+    const test=line?line+" "+word:word;
 
+    if(ctx.measureText(test).width>maxWidth && line){
+      lines.push(line);
+      line=word;
+    }else{
+      line=test;
+    }
+  }
 
-  if(imageRatio > boxRatio){
+  if(line)lines.push(line);
 
-    dh = h;
-    dw = h*imageRatio;
+  const lh=size*1.3;
 
-    dx =
-      x+(w-dw)/2;
+  lines.forEach((l,i)=>{
+    ctx.fillText(l,x,y+(i-(lines.length-1)/2)*lh);
+  });
 
-    dy = y;
+  return lines.length;
+}
+
+function shadow(color="rgba(0,0,0,.4)",blur=35){
+  ctx.shadowColor=color;
+  ctx.shadowBlur=blur;
+  ctx.shadowOffsetX=0;
+  ctx.shadowOffsetY=15;
+}
+
+/* ================= BACKGROUNDS ================= */
+
+function background(w,h){
+  const rgb=hexToRgb(accent);
+
+  if(style==="minimal"){
+    ctx.fillStyle="#f4f3f0";
+    ctx.fillRect(0,0,w,h);
+
+    ctx.fillStyle=rgba(accent,.12);
+    ctx.beginPath();
+    ctx.arc(w*.82,h*.15,w*.3,0,Math.PI*2);
+    ctx.fill();
+
+  }else if(style==="organic"){
+    ctx.fillStyle="#e8eee5";
+    ctx.fillRect(0,0,w,h);
+
+    ctx.fillStyle="rgba(40,80,50,.12)";
+    for(let i=0;i<8;i++){
+      ctx.beginPath();
+      ctx.arc(
+        Math.random()*w,
+        Math.random()*h,
+        80+Math.random()*180,
+        0,Math.PI*2
+      );
+      ctx.fill();
+    }
+
+  }else if(style==="fire"){
+    const g=ctx.createLinearGradient(0,0,w,h);
+    g.addColorStop(0,"#130308");
+    g.addColorStop(.5,"#401006");
+    g.addColorStop(1,"#090607");
+    ctx.fillStyle=g;
+    ctx.fillRect(0,0,w,h);
+
+    for(let i=0;i<30;i++){
+      ctx.fillStyle=`rgba(255,${50+Math.random()*100},20,${.04+Math.random()*.1})`;
+      ctx.beginPath();
+      ctx.arc(Math.random()*w,Math.random()*h,10+Math.random()*70,0,Math.PI*2);
+      ctx.fill();
+    }
+
+  }else if(style==="chrome"){
+    const g=ctx.createLinearGradient(0,0,w,h);
+    g.addColorStop(0,"#050507");
+    g.addColorStop(.25,"#62626b");
+    g.addColorStop(.4,"#111116");
+    g.addColorStop(.6,"#a0a0aa");
+    g.addColorStop(.8,"#15151b");
+    g.addColorStop(1,"#000");
+    ctx.fillStyle=g;
+    ctx.fillRect(0,0,w,h);
+
+  }else if(style==="glass"){
+    ctx.fillStyle="#07121c";
+    ctx.fillRect(0,0,w,h);
+
+    const g=ctx.createRadialGradient(
+      w*.2,h*.2,10,
+      w*.2,h*.2,w*.7
+    );
+    g.addColorStop(0,rgba(accent,.5));
+    g.addColorStop(1,"transparent");
+
+    ctx.fillStyle=g;
+    ctx.fillRect(0,0,w,h);
+
+    ctx.strokeStyle="rgba(255,255,255,.1)";
+    ctx.lineWidth=2;
+
+    for(let i=0;i<10;i++){
+      ctx.beginPath();
+      ctx.arc(Math.random()*w,Math.random()*h,60+Math.random()*150,0,Math.PI*2);
+      ctx.stroke();
+    }
+
+  }else if(style==="studio"){
+    ctx.fillStyle="#eeeeee";
+    ctx.fillRect(0,0,w,h);
+
+    const g=ctx.createRadialGradient(
+      w*.5,h*.35,10,
+      w*.5,h*.35,w*.75
+    );
+    g.addColorStop(0,"#fff");
+    g.addColorStop(1,"#c8c8c8");
+
+    ctx.fillStyle=g;
+    ctx.fillRect(0,0,w,h);
+
+  }else if(style==="street"){
+    ctx.fillStyle="#090a0d";
+    ctx.fillRect(0,0,w,h);
+
+    ctx.strokeStyle="rgba(255,255,255,.06)";
+    ctx.lineWidth=4;
+
+    for(let x=-h;x<w;x+=70){
+      ctx.beginPath();
+      ctx.moveTo(x,0);
+      ctx.lineTo(x+h,h);
+      ctx.stroke();
+    }
+
+    ctx.fillStyle=rgba(accent,.12);
+    ctx.fillRect(0,0,w,h);
+
+  }else if(style==="neon"){
+    ctx.fillStyle="#05040b";
+    ctx.fillRect(0,0,w,h);
+
+    const g=ctx.createRadialGradient(w*.5,h*.35,10,w*.5,h*.35,w*.7);
+    g.addColorStop(0,rgba(accent,.55));
+    g.addColorStop(.5,rgba(accent,.1));
+    g.addColorStop(1,"transparent");
+
+    ctx.fillStyle=g;
+    ctx.fillRect(0,0,w,h);
 
   }else{
+    // luxury / dark default
+    const g=ctx.createLinearGradient(0,0,w,h);
 
-    dw = w;
-    dh = w/imageRatio;
+    if(style==="dark"){
+      g.addColorStop(0,"#030305");
+      g.addColorStop(.55,"#111018");
+      g.addColorStop(1,"#050507");
+    }else{
+      g.addColorStop(0,"#050309");
+      g.addColorStop(.45,rgba(accent,.18));
+      g.addColorStop(1,"#08060d");
+    }
 
-    dx = x;
+    ctx.fillStyle=g;
+    ctx.fillRect(0,0,w,h);
 
-    dy =
-      y+(h-dh)/2;
+    const rg=ctx.createRadialGradient(w*.8,h*.2,10,w*.8,h*.2,w*.65);
+    rg.addColorStop(0,rgba(accent,.32));
+    rg.addColorStop(1,"transparent");
 
+    ctx.fillStyle=rg;
+    ctx.fillRect(0,0,w,h);
   }
 
-
-  ctx.drawImage(
-    img,
-    dx,
-    dy,
-    dw,
-    dh
-  );
-
-  ctx.restore();
-
-
-  /* Border */
-
-  ctx.save();
-
-  roundedRect(
-    x,
-    y,
-    w,
-    h,
-    radius
-  );
-
-  ctx.strokeStyle =
-    "rgba(255,255,255,.14)";
-
-  ctx.lineWidth = 2;
-
-  ctx.stroke();
-
-  ctx.restore();
-
-}
-
-
-/* =========================
-   MAIN POSTER
-========================= */
-
-function drawPoster(){
-
-  const colors =
-    getStyleColors();
-
-  const w =
-    canvas.width;
-
-  const h =
-    canvas.height;
-
-
-  ctx.clearRect(
-    0,
-    0,
-    w,
-    h
-  );
-
-
-  drawBackground(colors);
-
-
-  /* ===================================
-     TOP LABEL
-  =================================== */
-
-  ctx.textAlign =
-    "right";
-
-  ctx.textBaseline =
-    "alphabetic";
-
-  ctx.font =
-    "bold 28px Tahoma";
-
-  ctx.fillStyle =
-    colors.accent;
-
-  ctx.fillText(
-    "ADPIX",
-    w-70,
-    85
-  );
-
-
-  ctx.font =
-    "bold 19px Tahoma";
-
-  ctx.fillStyle =
-    colors.muted;
-
-  ctx.fillText(
-    getCategoryText(),
-    w-70,
-    120
-  );
-
-
-  /* ===================================
-     PRODUCT IMAGE
-  =================================== */
-
-  const imageW =
-    w*.72;
-
-  const imageH =
-    h*.43;
-
-  const imageX =
-    (w-imageW)/2;
-
-  const imageY =
-    h*.18;
-
-
-  /* Shadow */
-
-  ctx.save();
-
-  ctx.shadowColor =
-    "rgba(0,0,0,.55)";
-
-  ctx.shadowBlur =
-    55;
-
-  ctx.shadowOffsetY =
-    30;
-
-  roundedRect(
-    imageX,
-    imageY,
-    imageW,
-    imageH,
-    42
-  );
-
-  ctx.fillStyle =
-    colors.card;
-
-  ctx.fill();
-
-  ctx.restore();
-
-
-  drawProductImage(
-    productImage,
-    imageX,
-    imageY,
-    imageW,
-    imageH,
-    42
-  );
-
-
-  /* ===================================
-     PRODUCT NAME
-  =================================== */
-
-  const name =
-    productName.value.trim()
-    || "نام محصول";
-
-
-  const lines =
-    wrapText(
-      name,
-      w*.82,
-      h>1500 ? 64 : 48,
-      "900"
-    );
-
-
-  ctx.textAlign =
-    "center";
-
-  ctx.fillStyle =
-    colors.text;
-
-  const nameFont =
-    h>1500 ? 64 : 48;
-
-  ctx.font =
-    `900 ${nameFont}px Tahoma`;
-
-  let nameY =
-    h*.68;
-
-
-  lines.slice(0,2)
-    .forEach((line,index)=>{
-
-      ctx.fillText(
-        line,
-        w/2,
-        nameY+
-        index*
-        (nameFont*1.15)
-      );
-
-    });
-
-
-  /* ===================================
-     BRAND
-  =================================== */
-
-  const brandText =
-    brand.value.trim();
-
-
-  if(brandText){
-
-    ctx.font =
-      `bold ${h>1500 ? 27 : 22}px Tahoma`;
-
-    ctx.fillStyle =
-      colors.muted;
-
-    ctx.fillText(
-      brandText.toUpperCase(),
-      w/2,
-      nameY+
-      lines.slice(0,2).length*
-      (nameFont*1.15)+
-      15
-    );
-
-  }
-
-
-  /* ===================================
-     SCENARIO
-  =================================== */
-
-  const scenarioText =
-    scenario.value.trim();
-
-
-  if(scenarioText){
-
-    const scenarioLines =
-      wrapText(
-        scenarioText,
-        w*.72,
-        h>1500 ? 29 : 22,
-        "500"
-      );
-
-
-    ctx.font =
-      `500 ${h>1500 ? 29 : 22}px Tahoma`;
-
-    ctx.fillStyle =
-      colors.muted;
-
-
-    const scenarioY =
-      h*.79;
-
-
-    scenarioLines
-      .slice(0,2)
-      .forEach(
-        (line,index)=>{
-
-          ctx.fillText(
-            line,
-            w/2,
-            scenarioY+
-            index*38
-          );
-
-        }
-      );
-
-  }
-
-
-  /* ===================================
-     PRICE CARD
-  =================================== */
-
-  const priceText =
-    price.value.trim();
-
-
-  const discountText =
-    discount.value.trim();
-
-
-  if(
-    priceText ||
-    discountText
-  ){
-
-    const cardW =
-      w*.68;
-
-    const cardH =
-      h>1500 ? 150 : 115;
-
-    const cardX =
-      (w-cardW)/2;
-
-    const cardY =
-      h*.84;
-
-
+  // decorative glow
+  if(style!=="minimal" && style!=="studio"){
     ctx.save();
+    ctx.globalCompositeOperation="screen";
 
-    roundedRect(
-      cardX,
-      cardY,
-      cardW,
-      cardH,
-      28
+    const g=ctx.createRadialGradient(
+      w*.15,h*.75,10,
+      w*.15,h*.75,w*.5
     );
+    g.addColorStop(0,rgba(accent,.16));
+    g.addColorStop(1,"transparent");
 
-    ctx.fillStyle =
-      hexToRgba(
-        colors.card,
-        .92
-      );
-
-    ctx.fill();
-
-    ctx.strokeStyle =
-      hexToRgba(
-        colors.accent,
-        .25
-      );
-
-    ctx.lineWidth = 2;
-
-    ctx.stroke();
-
+    ctx.fillStyle=g;
+    ctx.fillRect(0,0,w,h);
     ctx.restore();
-
-
-    ctx.textAlign =
-      "right";
-
-    if(priceText){
-
-      ctx.font =
-        `900 ${h>1500 ? 38 : 30}px Tahoma`;
-
-      ctx.fillStyle =
-        colors.text;
-
-      ctx.fillText(
-        formatPrice(priceText),
-        cardX+cardW-30,
-        cardY+
-        (h>1500 ? 65 : 52)
-      );
-
-      ctx.font =
-        `500 ${h>1500 ? 18 : 15}px Tahoma`;
-
-      ctx.fillStyle =
-        colors.muted;
-
-      ctx.fillText(
-        "تومان",
-        cardX+cardW-30,
-        cardY+
-        (h>1500 ? 95 : 80)
-      );
-
-    }
-
-
-    if(discountText){
-
-      ctx.textAlign =
-        "left";
-
-      const badgeW =
-        h>1500 ? 150 : 115;
-
-      const badgeH =
-        h>1500 ? 65 : 52;
-
-      const badgeX =
-        cardX+30;
-
-      const badgeY =
-        cardY+
-        (cardH-badgeH)/2;
-
-
-      roundedRect(
-        badgeX,
-        badgeY,
-        badgeW,
-        badgeH,
-        18
-      );
-
-      ctx.fillStyle =
-        colors.accent;
-
-      ctx.fill();
-
-
-      ctx.fillStyle =
-        "#07070a";
-
-      ctx.font =
-        `900 ${h>1500 ? 25 : 20}px Tahoma`;
-
-      ctx.textAlign =
-        "center";
-
-      ctx.textBaseline =
-        "middle";
-
-      ctx.fillText(
-        discountText.includes("%")
-          ? discountText
-          : discountText+"%",
-        badgeX+badgeW/2,
-        badgeY+badgeH/2
-      );
-
-      ctx.textBaseline =
-        "alphabetic";
-
-    }
-
   }
-
-
-  /* ===================================
-     FOOTER
-  =================================== */
-
-  ctx.textAlign =
-    "center";
-
-  ctx.font =
-    `500 ${h>1500 ? 18 : 14}px Tahoma`;
-
-  ctx.fillStyle =
-    "rgba(255,255,255,.4)";
-
-  ctx.fillText(
-    "ساخته‌شده با ADPIX",
-    w/2,
-    h-45
-  );
-
-
-  generated = true;
-
 }
 
+/* ================= PRODUCT ================= */
 
-/* =========================
-   PRICE FORMAT
-========================= */
+function drawProduct(w,h){
+  if(!productImage){
+    // Placeholder
+    ctx.save();
+    ctx.fillStyle=style==="minimal"||style==="studio" ? "#ddd" : "rgba(255,255,255,.06)";
+    roundRect(ctx,w*.15,h*.27,w*.7,h*.4,35,true);
 
-function formatPrice(value){
+    ctx.fillStyle=style==="minimal"||style==="studio" ? "#777" : "#888";
+    ctx.font="700 70px Vazirmatn";
+    ctx.textAlign="center";
+    ctx.textBaseline="middle";
+    ctx.fillText("📦",w*.5,h*.47);
 
-  const clean =
-    String(value)
-      .replace(/[^\d]/g,"");
-
-  if(!clean){
-    return value;
+    ctx.font="500 25px Vazirmatn";
+    ctx.fillText("عکس محصول",w*.5,h*.57);
+    ctx.restore();
+    return;
   }
 
-  return Number(clean)
-    .toLocaleString("en-US");
+  let x=w*.09;
+  let y=h*.25;
+  let pw=w*.82;
+  let ph=h*.47;
 
+  if(variant===1){
+    x=w*.16;
+    y=h*.31;
+    pw=w*.68;
+    ph=h*.39;
+  }
+
+  if(variant===2){
+    x=w*.06;
+    y=h*.23;
+    pw=w*.88;
+    ph=h*.52;
+  }
+
+  if(variant===3){
+    x=w*.12;
+    y=h*.28;
+    pw=w*.76;
+    ph=h*.44;
+  }
+
+  shadow(rgba(accent,.2),55);
+  fitImage(productImage,x,y,pw,ph);
+  ctx.shadowColor="transparent";
 }
 
-
-/* =========================
-   INPUT LISTENERS
-========================= */
-
-[
-  productName,
-  brand,
-  price,
-  discount,
-  scenario
-].forEach(input=>{
-
-  input.addEventListener(
-    "input",
-    drawPoster
-  );
-
-});
-
-
-format.addEventListener(
-  "change",
-  updateCanvasSize
-);
-
-
-document
-  .querySelectorAll(
-    'input[name="style"], input[name="category"]'
-  )
-  .forEach(input=>{
-
-    input.addEventListener(
-      "change",
-      drawPoster
-    );
-
-  });
-
-
-/* =========================
-   GENERATE
-========================= */
-
-generateBtn.addEventListener(
-  "click",
-  async()=>{
-
-    showLoading();
-
-    await sleep(650);
-
-    drawPoster();
-
-    hideLoading();
-
-    showToast(
-      "🎉 تبلیغ با موفقیت ساخته شد."
-    );
-
-    document
-      .querySelector(".preview-panel")
-      .scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      });
-
-  }
-);
-
-
-/* =========================
-   DOWNLOAD
-========================= */
-
-downloadBtn.addEventListener(
-  "click",
-  ()=>{
-
-    drawPoster();
-
-    const link =
-      document.createElement("a");
-
-    const name =
-      productName.value.trim()
-      || "adpix-ad";
-
-    link.download =
-      `ADPIX-${safeFileName(name)}.png`;
-
-    link.href =
-      canvas.toDataURL(
-        "image/png",
-        1
-      );
-
-    link.click();
-
-    showToast(
-      "⬇️ تصویر دانلود شد."
-    );
-
-  }
-);
-
-
-/* =========================
-   SAFE FILE NAME
-========================= */
-
-function safeFileName(name){
-
-  return name
-    .replace(
-      /[<>:"/\\|?*\x00-\x1F]/g,
-      ""
-    )
-    .replace(
-      /\s+/g,
-      "-"
-    )
-    .slice(0,50)
-    || "ad";
-
-}
-
-
-/* =========================
-   SHARE
-========================= */
-
-shareBtn.addEventListener(
-  "click",
-  async()=>{
-
-    drawPoster();
-
-    canvas.toBlob(
-      async blob=>{
-
-        if(!blob){
-
-          showToast(
-            "اشتراک‌گذاری انجام نشد."
-          );
-
-          return;
-
-        }
-
-
-        const file =
-          new File(
-            [blob],
-            "ADPIX-ad.png",
-            {
-              type:"image/png"
-            }
-          );
-
-
-        if(
-          navigator.share &&
-          navigator.canShare &&
-          navigator.canShare({
-            files:[file]
-          })
-        ){
-
-          try{
-
-            await navigator.share({
-              title:"ADPIX",
-              text:"تبلیغ ساخته‌شده با ADPIX",
-              files:[file]
-            });
-
-            showToast(
-              "📤 اشتراک‌گذاری انجام شد."
-            );
-
-          }catch(error){
-
-            if(error.name !== "AbortError"){
-
-              showToast(
-                "اشتراک‌گذاری لغو شد."
-              );
-
-            }
-
-          }
-
-        }else{
-
-          showToast(
-            "در این دستگاه Share فایل پشتیبانی نمی‌شود؛ PNG را دانلود کن."
-          );
-
-        }
-
-      },
-      "image/png",
-      1
-    );
-
-  }
-);
-
-
-/* =========================
-   COLLECT DATA
-========================= */
-
-function collectData(){
-
-  return {
-
-    productName:
-      productName.value,
-
-    brand:
-      brand.value,
-
-    price:
-      price.value,
-
-    discount:
-      discount.value,
-
-    category:
-      getRadio("category"),
-
-    style:
-      getRadio("style"),
-
-    format:
-      format.value,
-
-    scenario:
-      scenario.value
-
+/* ================= BADGE ================= */
+
+function drawBadge(w,h){
+  if(badge==="none")return;
+
+  const labels={
+    sale:"🔥 SALE",
+    new:"NEW",
+    best:"BEST SELLER",
+    limited:"LIMITED",
+    special:"SPECIAL"
   };
 
+  const text=labels[badge]||"SALE";
+
+  const bw=Math.min(w*.4,270);
+  const bh=Math.max(55,w*.065);
+
+  let x=w*.07;
+  let y=h*.07;
+
+  if(variant===3){
+    x=w*.58;
+    y=h*.1;
+  }
+
+  ctx.save();
+  ctx.fillStyle=accent;
+  shadow(rgba(accent,.4),25);
+  roundRect(ctx,x,y,bw,bh,bh/2,true);
+
+  ctx.shadowColor="transparent";
+  ctx.fillStyle="#fff";
+  ctx.font=`900 ${Math.max(20,bh*.34)}px Vazirmatn`;
+  ctx.textAlign="center";
+  ctx.textBaseline="middle";
+  ctx.fillText(text,x+bw/2,y+bh/2);
+  ctx.restore();
 }
 
+/* ================= TEXT ================= */
 
-/* =========================
-   SAVE PROJECT
-========================= */
+function drawTexts(w,h){
+  const name=$("productName").value.trim() || categoryNames[category];
+  const brand=$("brand").value.trim() || "ADPIX";
+  const price=$("price").value.trim();
+  const discount=$("discount").value.trim();
+  const cta=$("cta").value.trim() || "همین حالا سفارش بده";
+
+  const light=style==="minimal"||style==="studio"||style==="organic";
+  const primary=light?"#101010":"#fff";
+  const secondary=light?"#555":"rgba(255,255,255,.68)";
+
+  let titleY=h*.73;
+
+  if(variant===1) titleY=h*.70;
+  if(variant===2) titleY=h*.78;
+  if(variant===3) titleY=h*.69;
+
+  ctx.save();
+
+  ctx.fillStyle=secondary;
+  ctx.font=`700 ${Math.max(18,w*.018)}px Vazirmatn`;
+  ctx.textAlign="center";
+  ctx.fillText(brand.toUpperCase(),w*.5,titleY-Math.max(30,w*.035));
+
+  const titleSize=textFit(name,w*.82,Math.max(50,w*.075),28);
+  ctx.fillStyle=primary;
+
+  centerText(
+    name,
+    w*.5,
+    titleY,
+    w*.82,
+    titleSize,
+    900
+  );
+
+  // Price
+  if(price){
+    ctx.font=`800 ${Math.max(24,w*.034)}px Vazirmatn`;
+    ctx.fillStyle=primary;
+    ctx.textAlign="center";
+    ctx.fillText(price+" تومان",w*.5,h*.84);
+  }
+
+  // Discount
+  if(discount){
+    ctx.fillStyle=accent;
+    ctx.font=`900 ${Math.max(24,w*.04)}px Vazirmatn`;
+    ctx.fillText("٪"+discount.replace("%",""),w*.5,h*.895);
+  }
+
+  // CTA
+  const ctaW=w*.58;
+  const ctaH=Math.max(65,h*.055);
+  const ctaY=h*.92;
+
+  ctx.fillStyle=accent;
+  shadow(rgba(accent,.3),25);
+  roundRect(ctx,w*.5-ctaW/2,ctaY-ctaH/2,ctaW,ctaH,ctaH/2,true);
+
+  ctx.shadowColor="transparent";
+  ctx.fillStyle="#fff";
+  ctx.font=`800 ${Math.max(18,w*.023)}px Vazirmatn`;
+  ctx.fillText(cta,w*.5,ctaY);
+
+  ctx.restore();
+}
+
+/* ================= DECOR ================= */
+
+function decorations(w,h){
+  if(style==="minimal"||style==="studio")return;
+
+  ctx.save();
+
+  ctx.globalAlpha=.22;
+  ctx.strokeStyle=accent;
+  ctx.lineWidth=Math.max(2,w*.002);
+
+  ctx.beginPath();
+  ctx.arc(w*.08,h*.88,w*.2,Math.PI,Math.PI*1.5);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(w*.92,h*.16,w*.16,0,Math.PI/2);
+  ctx.stroke();
+
+  if(style==="neon"||style==="fire"){
+    ctx.globalAlpha=.16;
+    for(let i=0;i<20;i++){
+      ctx.fillStyle=accent;
+      ctx.beginPath();
+      ctx.arc(
+        Math.random()*w,
+        Math.random()*h,
+        2+Math.random()*7,
+        0,Math.PI*2
+      );
+      ctx.fill();
+    }
+  }
+
+  ctx.restore();
+}
+
+/* ================= GENERATE ================= */
+
+function generatePoster(showLoading=true){
+  if(showLoading)loading(true);
+
+  setTimeout(()=>{
+    const [w,h]=getSize();
+
+    canvas.width=w;
+    canvas.height=h;
+
+    updateSize();
+
+    background(w,h);
+    decorations(w,h);
+    drawProduct(w,h);
+    drawBadge(w,h);
+    drawTexts(w,h);
+
+    $("statusText").textContent =
+      `${styleNames[style]} • ${categoryNames[category]}`;
+
+    if(showLoading){
+      loading(false);
+      toast("تبلیغ آماده شد ✨");
+    }
+  },showLoading?350:0);
+}
+
+/* ================= VARIANTS ================= */
+
+function setVariant(v){
+  variant=v;
+
+  document.querySelectorAll(".variant").forEach((x,i)=>{
+    x.classList.toggle("active",i===v);
+  });
+
+  generatePoster(false);
+}
+
+function generateVariants(){
+  loading(true);
+
+  setTimeout(()=>{
+    variant=Math.floor(Math.random()*4);
+
+    document.querySelectorAll(".variant").forEach((x,i)=>{
+      x.classList.toggle("active",i===variant);
+    });
+
+    generatePoster(false);
+    loading(false);
+    toast("۴ سبک طراحی آماده شد؛ بین طرح‌ها انتخاب کن 🔥");
+  },450);
+}
+
+/* ================= RANDOM ================= */
+
+function randomize(){
+  const cats=Object.keys(categoryNames);
+  const styles=Object.keys(styleNames);
+  const colors=[...document.querySelectorAll(".color")];
+
+  category=cats[Math.floor(Math.random()*cats.length)];
+  style=styles[Math.floor(Math.random()*styles.length)];
+
+  document.querySelectorAll("#categories .chip").forEach(x=>{
+    x.classList.toggle("active",x.dataset.value===category);
+  });
+
+  document.querySelectorAll("#styles .chip").forEach(x=>{
+    x.classList.toggle("active",x.dataset.value===style);
+  });
+
+  const color=colors[Math.floor(Math.random()*colors.length)];
+  colors.forEach(x=>x.classList.remove("active"));
+  color.classList.add("active");
+  accent=color.dataset.color;
+
+  variant=Math.floor(Math.random()*4);
+
+  document.querySelectorAll(".variant").forEach((x,i)=>{
+    x.classList.toggle("active",i===variant);
+  });
+
+  generatePoster(true);
+}
+
+/* ================= DOWNLOAD ================= */
+
+function downloadPoster(){
+  try{
+    const link=document.createElement("a");
+    link.download="ADPIX-ad.png";
+    link.href=canvas.toDataURL("image/png",1);
+    link.click();
+    toast("تصویر دانلود شد 📥");
+  }catch(e){
+    toast("دانلود انجام نشد");
+  }
+}
+
+/* ================= SHARE ================= */
+
+async function sharePoster(){
+  try{
+    canvas.toBlob(async blob=>{
+      if(!blob)return;
+
+      const file=new File([blob],"ADPIX-ad.png",{type:"image/png"});
+
+      if(navigator.share && navigator.canShare && navigator.canShare({files:[file]})){
+        await navigator.share({
+          title:"ADPIX",
+          text:"تبلیغ محصول ساخته‌شده با ADPIX",
+          files:[file]
+        });
+      }else{
+        downloadPoster();
+        toast("اشتراک‌گذاری مستقیم پشتیبانی نمی‌شود؛ فایل دانلود شد");
+      }
+    },"image/png");
+  }catch(e){
+    toast("اشتراک‌گذاری لغو شد");
+  }
+}
+
+/* ================= FULLSCREEN ================= */
+
+function openFullscreen(){
+  if(canvas.requestFullscreen){
+    canvas.requestFullscreen();
+  }else{
+    toast("تمام‌صفحه پشتیبانی نمی‌شود");
+  }
+}
+
+/* ================= SAVE ================= */
+
+function getProjectData(){
+  return {
+    id:Date.now(),
+    name:$("productName").value || "پروژه بدون نام",
+    productName:$("productName").value,
+    brand:$("brand").value,
+    price:$("price").value,
+    discount:$("discount").value,
+    cta:$("cta").value,
+    scenario:$("scenario").value,
+    category,
+    style,
+    accent,
+    badge,
+    format:$("format").value,
+    variant,
+    image:productImage ? productImage.src : null,
+    date:new Date().toLocaleString("fa-IR")
+  };
+}
 
 function saveProject(){
+  const projects=JSON.parse(localStorage.getItem("adpix_projects")||"[]");
 
-  const data =
-    collectData();
+  projects.unshift(getProjectData());
 
+  localStorage.setItem(
+    "adpix_projects",
+    JSON.stringify(projects.slice(0,20))
+  );
+
+  toast("پروژه ذخیره شد 💾");
+}
+
+function openProjects(){
+  renderProjects();
+  $("projectModal").classList.add("show");
+}
+
+function closeProjects(){
+  $("projectModal").classList.remove("show");
+}
+
+function renderProjects(){
+  const projects=JSON.parse(localStorage.getItem("adpix_projects")||"[]");
+  const box=$("projectsList");
+
+  if(!projects.length){
+    box.innerHTML=`
+      <div style="text-align:center;padding:35px;color:#999">
+        هنوز پروژه‌ای ذخیره نکردی.
+      </div>
+    `;
+    return;
+  }
+
+  box.innerHTML=projects.map((p,i)=>`
+    <div style="
+      border:1px solid rgba(255,255,255,.08);
+      background:#0c0b12;
+      padding:12px;
+      border-radius:15px;
+      margin-bottom:8px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    ">
+      ${p.image
+        ? `<img src="${p.image}" style="width:55px;height:55px;object-fit:cover;border-radius:10px">`
+        : `<div style="width:55px;height:55px;border-radius:10px;background:#21162e;display:grid;place-items:center">✦</div>`
+      }
+
+      <div style="flex:1">
+        <strong style="font-size:12px">${escapeHtml(p.name)}</strong>
+        <div style="font-size:10px;color:#777;margin-top:3px">${p.date}</div>
+      </div>
+
+      <button
+        onclick="loadProject(${i})"
+        style="border:1px solid rgba(255,255,255,.08);background:#171520;color:#fff;border-radius:9px;padding:8px">
+        باز کردن
+      </button>
+
+      <button
+        onclick="deleteProject(${i})"
+        style="border:1px solid rgba(255,77,109,.15);background:#1b0d12;color:#ff7188;border-radius:9px;padding:8px">
+        حذف
+      </button>
+    </div>
+  `).join("");
+}
+
+function escapeHtml(str){
+  return String(str||"")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function loadProject(i){
+  const projects=JSON.parse(localStorage.getItem("adpix_projects")||"[]");
+  const p=projects[i];
+
+  if(!p)return;
+
+  $("productName").value=p.productName||"";
+  $("brand").value=p.brand||"";
+  $("price").value=p.price||"";
+  $("discount").value=p.discount||"";
+  $("cta").value=p.cta||"همین حالا سفارش بده";
+  $("scenario").value=p.scenario||"";
+  $("format").value=p.format||"story";
+
+  category=p.category||"fashion";
+  style=p.style||"luxury";
+  accent=p.accent||"#8b4dff";
+  badge=p.badge||"none";
+  variant=p.variant||0;
+
+  document.querySelectorAll("#categories .chip").forEach(x=>{
+    x.classList.toggle("active",x.dataset.value===category);
+  });
+
+  document.querySelectorAll("#styles .chip").forEach(x=>{
+    x.classList.toggle("active",x.dataset.value===style);
+  });
+
+  document.querySelectorAll(".color").forEach(x=>{
+    x.classList.toggle("active",x.dataset.color===accent);
+  });
+
+  document.querySelectorAll(".badge-option").forEach(x=>{
+    x.classList.toggle("active",x.dataset.badge===badge);
+  });
+
+  if(p.image){
+    const img=new Image();
+    img.onload=()=>{
+      productImage=img;
+      $("uploadText").textContent="✓ عکس محصول انتخاب شد";
+      generatePoster(false);
+    };
+    img.src=p.image;
+  }else{
+    productImage=null;
+    generatePoster(false);
+  }
+
+  document.querySelectorAll(".variant").forEach((x,j)=>{
+    x.classList.toggle("active",j===variant);
+  });
+
+  closeProjects();
+  toast("پروژه باز شد");
+}
+
+function deleteProject(i){
+  const projects=JSON.parse(localStorage.getItem("adpix_projects")||"[]");
+  projects.splice(i,1);
+  localStorage.setItem("adpix_projects",JSON.stringify(projects));
+  renderProjects();
+  toast("پروژه حذف شد");
+}
+
+/* ================= RESET ================= */
+
+function resetAll(){
+  if(!confirm("همه اطلاعات فرم پاک شود؟"))return;
+
+  $("productName").value="";
+  $("brand").value="";
+  $("price").value="";
+  $("discount").value="";
+  $("cta").value="همین حالا سفارش بده";
+  $("scenario").value="";
+
+  productImage=null;
+  $("uploadText").textContent="برای انتخاب عکس ضربه بزن";
+
+  category="fashion";
+  style="luxury";
+  accent="#8b4dff";
+  badge="none";
+  variant=0;
+
+  document.querySelectorAll("#categories .chip").forEach(x=>{
+    x.classList.toggle("active",x.dataset.value==="fashion");
+  });
+
+  document.querySelectorAll("#styles .chip").forEach(x=>{
+    x.classList.toggle("active",x.dataset.value==="luxury");
+  });
+
+  document.querySelectorAll(".color").forEach(x=>{
+    x.classList.toggle("active",x.dataset.color==="#8b4dff");
+  });
+
+  document.querySelectorAll(".badge-option").forEach(x=>{
+    x.classList.toggle("active",x.dataset.badge==="none");
+  });
+
+  document.querySelectorAll(".variant").forEach((x,i)=>{
+    x.classList.toggle("active",i===0);
+  });
+
+  $("format").value="story";
+
+  generatePoster(false);
+  toast("فرم پاک شد");
+}
+
+/* ================= KEYBOARD ================= */
+
+document.addEventListener("keydown",e=>{
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="s"){
+    e.preventDefault();
+    saveProject();
+  }
+
+  if(e.key==="Escape"){
+    closeProjects();
+  }
+});
+
+/* ================= INIT ================= */
+
+window.addEventListener("load",()=>{
+  updateSize();
+  generatePoster(false);
+});
+
+/* ================= PWA-STYLE APP SUPPORT ================= */
+
+let deferredPrompt=null;
+
+window.addEventListener("beforeinstallprompt",e=>{
+  e.preventDefault();
+  deferredPrompt=e;
+});
+
+/* ================= AUTO SAVE FORM ================= */
+
+setInterval(()=>{
+  const draft={
+    productName:$("productName").value,
+    brand:$("brand").value,
+    price:$("price").value,
+    discount:$("discount").value,
+    cta:$("cta").value,
+    scenario:$("scenario").value,
+    category,
+    style,
+    accent,
+    badge,
+    format:$("format").value,
+    variant
+  };
+
+  localStorage.setItem("adpix_draft",JSON.stringify(draft));
+},5000);
+
+/* ================= RESTORE DRAFT ================= */
+
+(function restoreDraft(){
   try{
-
-    localStorage.setItem(
-      "ADPIX_PROJECT",
-      JSON.stringify(data)
-    );
-
-    showToast(
-      "💾 پروژه ذخیره شد."
-    );
-
-  }catch(error){
-
-    showToast(
-      "ذخیره پروژه انجام نشد."
-    );
-
-  }
-
-}
-
-
-saveProjectBtn.addEventListener(
-  "click",
-  saveProject
-);
-
-saveBtn.addEventListener(
-  "click",
-  saveProject
-);
-
-
-/* =========================
-   LOAD PROJECT
-========================= */
-
-function loadProject(){
-
-  try{
-
-    const raw =
-      localStorage.getItem(
-        "ADPIX_PROJECT"
-      );
-
-    if(!raw){
-      return;
-    }
-
-    const data =
-      JSON.parse(raw);
-
-    if(!data){
-      return;
-    }
-
-
-    productName.value =
-      data.productName || "";
-
-    brand.value =
-      data.brand || "";
-
-    price.value =
-      data.price || "";
-
-    discount.value =
-      data.discount || "";
-
-    scenario.value =
-      data.scenario || "";
-
-
-    if(data.category){
-
-      setRadio(
-        "category",
-        data.category
-      );
-
-    }
-
-
-    if(data.style){
-
-      setRadio(
-        "style",
-        data.style
-      );
-
-    }
-
-
-    if(data.format){
-
-      format.value =
-        data.format;
-
-    }
-
-
-    updateCanvasSize();
-
-  }catch(error){
-
-    console.log(
-      "Could not load project",
-      error
-    );
-
-  }
-
-}
-
-
-/* =========================
-   RESET
-========================= */
-
-resetBtn.addEventListener(
-  "click",
-  ()=>{
-
-    const ok =
-      confirm(
-        "همه اطلاعات فرم پاک شود؟"
-      );
-
-    if(!ok){
-      return;
-    }
-
-
-    productName.value =
-      "";
-
-    brand.value =
-      "";
-
-    price.value =
-      "";
-
-    discount.value =
-      "";
-
-    scenario.value =
-      "";
-
-
-    setRadio(
-      "category",
-      "fashion"
-    );
-
-    setRadio(
-      "style",
-      "luxury"
-    );
-
-    format.value =
-      "story";
-
-
-    productImage =
-      null;
-
-
-    if(imageObjectURL){
-
-      URL.revokeObjectURL(
-        imageObjectURL
-      );
-
-      imageObjectURL =
-        null;
-
-    }
-
-
-    imageInput.value =
-      "";
-
-    imageStatus.textContent =
-      "هنوز عکسی انتخاب نشده";
-
-
-    localStorage.removeItem(
-      "ADPIX_PROJECT"
-    );
-
-
-    updateCanvasSize();
-
-    showToast(
-      "فرم پاک شد."
-    );
-
-  }
-);
-
-
-/* =========================
-   KEYBOARD SHORTCUT
-========================= */
-
-document.addEventListener(
-  "keydown",
-  event=>{
-
-    if(
-      (event.ctrlKey ||
-       event.metaKey) &&
-      event.key.toLowerCase()==="s"
-    ){
-
-      event.preventDefault();
-
-      saveProject();
-
-    }
-
-  }
-);
-
-
-/* =========================
-   INITIALIZE
-========================= */
-
-loadProject();
-
-updateCanvasSize();
-
-
-/* =========================
-   DEFAULT DEMO DATA
-========================= */
-
-if(
-  !productName.value
-){
-
-  productName.value =
-    "NEW PRODUCT";
-
-}
-
-if(
-  !scenario.value
-){
-
-  scenario.value =
-    "تخفیف ویژه فقط تا امشب!";
-
-}
-
-drawPoster();
+    const d=JSON.parse(localStorage.getItem("adpix_draft"));
+    if(!d)return;
+
+    $("productName").value=d.productName||"";
+    $("brand").value=d.brand||"";
+    $("price").value=d.price||"";
+    $("discount").value=d.discount||"";
+    $("cta").value=d.cta||"همین حالا سفارش بده";
+    $("scenario").value=d.scenario||"";
+
+    category=d.category||"fashion";
+    style=d.style||"luxury";
+    accent=d.accent||"#8b4dff";
+    badge=d.badge||"none";
+    variant=d.variant||0;
+    $("format").value=d.format||"story";
+
+    setTimeout(()=>{
+      document.querySelectorAll("#categories .chip").forEach(x=>{
+        x.classList.toggle("active",x.dataset.value===category);
+      });
+
+      document.querySelectorAll("#styles .chip").forEach(x=>{
+        x.classList.toggle("active",x.dataset.value===style);
+      });
+
+      document.querySelectorAll(".color").forEach(x=>{
+        x.classList.toggle("active",x.dataset.color===accent);
+      });
+
+      document.querySelectorAll(".badge-option").forEach(x=>{
+        x.classList.toggle("active",x.dataset.badge===badge);
+      });
+
+      document.querySelectorAll(".variant").forEach((x,i)=>{
+        x.classList.toggle("active",i===variant);
+      });
+
+      generatePoster(false);
+    },50);
+
+  }catch(e){}
+})();
 
 </script>
 
