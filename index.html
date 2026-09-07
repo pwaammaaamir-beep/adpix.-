@@ -2,505 +2,533 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08060d">
-<meta name="description" content="ADPIX - ساخت تبلیغ حرفه‌ای برای محصولات اینستاگرامی">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 <title>ADPIX — ساخت تبلیغ حرفه‌ای</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-*{box-sizing:border-box}
-
-html{scroll-behavior:smooth}
+:root{
+  --bg:#07070a;
+  --card:#111116;
+  --card2:#17171d;
+  --border:rgba(255,255,255,.09);
+  --text:#fff;
+  --muted:#9898a5;
+  --purple:#8b5cf6;
+  --purple2:#6d28d9;
+  --pink:#ec4899;
+  --green:#22c55e;
+  --red:#ef4444;
+}
 
 body{
-margin:0;
-font-family:Vazirmatn,Arial,sans-serif;
-background:
-radial-gradient(circle at 10% 0%,#7c3aed35,transparent 30%),
-radial-gradient(circle at 100% 20%,#ec489928,transparent 30%),
-#07060b;
-color:#fff;
-min-height:100vh;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 20% 0%,rgba(139,92,246,.18),transparent 30%),
+    radial-gradient(circle at 100% 20%,rgba(236,72,153,.12),transparent 25%),
+    var(--bg);
+  color:var(--text);
+  font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
 }
 
-button,input,select,textarea{font-family:inherit}
-
-button{cursor:pointer}
-
-.container{
-width:min(1180px,94%);
-margin:auto;
-padding:15px 0 55px;
+button,
+input,
+textarea,
+select{
+  font-family:inherit;
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:12px 0 25px;
+button{
+  cursor:pointer;
+}
+
+.app{
+  width:100%;
+  max-width:1100px;
+  margin:auto;
+  padding:18px;
+}
+
+/* HEADER */
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 0 25px;
 }
 
 .logo{
-font-size:31px;
-font-weight:900;
-letter-spacing:2px;
+  font-size:25px;
+  font-weight:1000;
+  letter-spacing:1px;
 }
 
-.logo span{color:#a855f7}
+.logo span{
+  color:#a78bfa;
+}
 
 .instagram{
-text-decoration:none;
-color:#fff;
-background:#ffffff0d;
-border:1px solid #ffffff18;
-padding:12px 18px;
-border-radius:15px;
-font-weight:800;
-transition:.2s;
+  color:#fff;
+  text-decoration:none;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--border);
+  padding:9px 14px;
+  border-radius:999px;
+  font-size:13px;
 }
 
-.instagram:hover{
-background:#a855f71a;
-transform:translateY(-2px);
-}
+/* HERO */
 
 .hero{
-margin-bottom:27px;
+  text-align:center;
+  padding:25px 10px 35px;
 }
 
 .hero h1{
-font-size:clamp(34px,6vw,62px);
-line-height:1.08;
-margin:0 0 13px;
-font-weight:900;
+  font-size:clamp(30px,7vw,58px);
+  line-height:1.15;
+  font-weight:1000;
 }
 
 .hero h1 span{
-background:linear-gradient(90deg,#c084fc,#f472b6);
--webkit-background-clip:text;
-background-clip:text;
-color:transparent;
+  background:linear-gradient(90deg,#a78bfa,#ec4899);
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
 .hero p{
-color:#aaa;
-font-size:17px;
-margin:0;
+  margin-top:15px;
+  color:var(--muted);
+  font-size:15px;
 }
 
-.layout{
-display:grid;
-grid-template-columns:430px 1fr;
-gap:20px;
-align-items:start;
+/* FREE COUNTER */
+
+.counter{
+  margin:0 auto 20px;
+  max-width:650px;
+  padding:15px 18px;
+  border-radius:18px;
+  background:linear-gradient(
+    135deg,
+    rgba(139,92,246,.16),
+    rgba(236,72,153,.08)
+  );
+  border:1px solid rgba(139,92,246,.25);
+}
+
+.counter-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.counter-title{
+  font-weight:900;
+}
+
+.counter-number{
+  color:#c4b5fd;
+  font-weight:1000;
+}
+
+.progress{
+  width:100%;
+  height:8px;
+  background:#22222a;
+  border-radius:99px;
+  overflow:hidden;
+}
+
+.progress-bar{
+  height:100%;
+  width:100%;
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  border-radius:99px;
+  transition:.4s;
+}
+
+/* MAIN GRID */
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
 
 .card{
-background:#0d0b14ed;
-border:1px solid #ffffff13;
-border-radius:27px;
-padding:21px;
-box-shadow:0 25px 90px #0009;
-backdrop-filter:blur(20px);
+  background:rgba(17,17,22,.88);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.2);
 }
 
-.card h2{
-margin:0 0 18px;
-font-size:21px;
+.card-title{
+  font-size:18px;
+  font-weight:1000;
+  margin-bottom:16px;
 }
 
-.label{
-display:block;
-font-size:14px;
-font-weight:700;
-color:#aaa;
-margin:17px 0 8px;
-}
-
-input,
-select,
-textarea{
-width:100%;
-border:1px solid #ffffff14;
-background:#15121e;
-color:#fff;
-padding:15px;
-border-radius:15px;
-outline:none;
-font-size:15px;
-transition:.2s;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-border-color:#a855f7;
-box-shadow:0 0 0 3px #a855f720;
-}
-
-textarea{
-min-height:115px;
-resize:vertical;
-}
-
-.row{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
+/* UPLOAD */
 
 .upload{
-display:block;
-border:2px dashed #8b5cf680;
-background:#8b5cf70b;
-border-radius:21px;
-padding:27px 15px;
-text-align:center;
-cursor:pointer;
-transition:.25s;
+  min-height:250px;
+  border:2px dashed rgba(139,92,246,.35);
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:10px;
+  padding:20px;
+  text-align:center;
+  background:rgba(139,92,246,.04);
+  transition:.2s;
 }
 
 .upload:hover{
-background:#8b5cf718;
-transform:translateY(-2px);
+  border-color:#a78bfa;
+  background:rgba(139,92,246,.08);
 }
 
 .upload-icon{
-font-size:42px;
+  font-size:48px;
 }
 
 .upload strong{
-display:block;
-font-size:18px;
-margin:8px 0;
+  font-size:17px;
 }
 
 .upload small{
-color:#777;
+  color:var(--muted);
 }
 
-#file{
-display:none;
+#fileInput{
+  display:none;
 }
 
-.preview-img{
-display:none;
-width:100%;
-max-height:220px;
-object-fit:contain;
-border-radius:15px;
-margin-top:12px;
+.preview-image{
+  display:none;
+  max-width:100%;
+  max-height:270px;
+  border-radius:16px;
+  object-fit:contain;
 }
 
-.options{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:9px;
+/* FORM */
+
+.form-group{
+  margin-bottom:14px;
+}
+
+label{
+  display:block;
+  margin-bottom:7px;
+  font-size:13px;
+  color:#cfcfd7;
+  font-weight:700;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  border:1px solid var(--border);
+  background:#0b0b0f;
+  color:#fff;
+  border-radius:13px;
+  padding:13px;
+  outline:none;
+  font-size:14px;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  border-color:#8b5cf6;
+  box-shadow:0 0 0 3px rgba(139,92,246,.1);
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+/* OPTIONS */
+
+.option-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
 }
 
 .option{
-border:1px solid #ffffff12;
-background:#13101a;
-color:#ccc;
-padding:14px 8px;
-border-radius:15px;
-font-weight:700;
-font-size:14px;
-transition:.2s;
-}
-
-.option:hover{
-transform:translateY(-2px);
+  border:1px solid var(--border);
+  background:#0d0d12;
+  color:#ddd;
+  border-radius:12px;
+  padding:12px 5px;
+  font-size:12px;
+  text-align:center;
+  transition:.2s;
 }
 
 .option.active{
-background:#8b5cf725;
-border-color:#a855f7;
-color:#fff;
-box-shadow:0 0 0 1px #a855f755;
+  border-color:#8b5cf6;
+  background:rgba(139,92,246,.16);
+  color:#fff;
 }
 
-.badges{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
+/* BUTTON */
+
+.generate{
+  width:100%;
+  margin-top:5px;
+  border:0;
+  color:white;
+  padding:16px;
+  border-radius:15px;
+  font-size:16px;
+  font-weight:1000;
+  background:linear-gradient(135deg,#7c3aed,#db2777);
+  box-shadow:0 12px 35px rgba(124,58,237,.25);
+  transition:.2s;
 }
 
-.badge{
-border:1px solid #ffffff14;
-background:#ffffff08;
-color:#aaa;
-padding:10px 13px;
-border-radius:50px;
-font-size:13px;
-cursor:pointer;
+.generate:hover{
+  transform:translateY(-2px);
 }
 
-.badge.active{
-color:#fff;
-border-color:#a855f7;
-background:#a855f720;
+.generate:active{
+  transform:scale(.98);
+}
+
+/* OUTPUT */
+
+.output-card{
+  margin-top:18px;
+  display:none;
+}
+
+.canvas-wrap{
+  background:#08080b;
+  border-radius:20px;
+  padding:15px;
+  text-align:center;
+}
+
+#posterCanvas{
+  max-width:100%;
+  border-radius:14px;
+  display:block;
+  margin:auto;
 }
 
 .actions{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin-top:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:12px;
 }
 
-.primary{
-border:0;
-border-radius:16px;
-padding:17px;
-font-size:15px;
-font-weight:900;
-color:#fff;
-background:linear-gradient(135deg,#7c3aed,#db2777);
-box-shadow:0 15px 35px #7c3aed35;
+.action{
+  border:1px solid var(--border);
+  background:#15151b;
+  color:#fff;
+  border-radius:12px;
+  padding:12px 7px;
+  font-size:13px;
 }
 
-.secondary{
-border:1px solid #ffffff15;
-border-radius:16px;
-background:#ffffff08;
-color:#fff;
-font-weight:800;
-padding:17px;
-}
-
-.preview{
-position:sticky;
-top:15px;
-}
-
-.preview-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:14px;
-}
-
-.preview-top span{
-color:#999;
-font-size:13px;
-}
-
-canvas{
-display:block;
-width:100%;
-height:auto;
-border-radius:21px;
-background:#111;
-box-shadow:0 25px 80px #0008;
-}
-
-.preview-actions{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:9px;
-margin-top:12px;
-}
-
-.preview-actions button{
-border:1px solid #ffffff13;
-background:#ffffff09;
-color:#fff;
-padding:14px 8px;
-border-radius:14px;
-font-weight:800;
-}
-
-.tip{
-color:#777;
-font-size:12px;
-line-height:1.8;
-margin-top:12px;
-}
-
-/* SUBSCRIPTION */
+/* SUBS */
 
 .subscription{
-margin-top:22px;
-padding:27px;
-border-radius:26px;
-border:1px solid #a855f744;
-background:
-radial-gradient(circle at 90% 0%,#a855f725,transparent 40%),
-linear-gradient(135deg,#151022,#0b0910);
-box-shadow:0 20px 70px #0008;
-text-align:center;
-}
-
-.subscription h2{
-margin:0 0 8px;
-font-size:27px;
-font-weight:900;
-}
-
-.subscription > p{
-color:#aaa;
-margin:0 0 22px;
-font-size:14px;
+  margin-top:18px;
 }
 
 .plans{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:11px;
-margin-bottom:19px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
 }
 
 .plan{
-background:#ffffff08;
-border:1px solid #ffffff12;
-border-radius:18px;
-padding:18px 10px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px;
+  background:#0d0d12;
 }
 
 .plan.pro{
-border-color:#a855f766;
-background:#a855f714;
-box-shadow:0 0 30px #a855f712;
+  border-color:rgba(236,72,153,.35);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(236,72,153,.09),
+      rgba(139,92,246,.07)
+    );
 }
 
-.plan strong{
-display:block;
-font-size:17px;
-margin-bottom:8px;
+.plan h3{
+  margin-bottom:8px;
 }
 
-.plan .plan-price{
-font-size:18px;
-font-weight:900;
+.plan .price{
+  font-size:24px;
+  font-weight:1000;
+  margin-bottom:5px;
 }
 
 .plan small{
-display:block;
-color:#888;
-margin-top:6px;
+  color:var(--muted);
 }
 
 .dm-button{
-display:block;
-width:100%;
-text-decoration:none;
-color:#fff;
-font-weight:900;
-font-size:16px;
-padding:17px;
-border-radius:16px;
-background:linear-gradient(135deg,#7c3aed,#db2777);
-box-shadow:0 14px 35px #7c3aed40;
-transition:.2s;
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+  margin-top:14px;
+  background:linear-gradient(135deg,#7c3aed,#db2777);
+  padding:13px;
+  border-radius:13px;
+  font-weight:900;
 }
 
-.dm-button:hover{
-transform:translateY(-2px);
-box-shadow:0 18px 40px #7c3aed55;
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  backdrop-filter:blur(8px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  z-index:999;
 }
 
-.dm-note{
-color:#777;
-font-size:11px;
-margin-top:10px;
+.modal.show{
+  display:flex;
 }
 
-/* FOOTER */
-
-footer{
-text-align:center;
-color:#666;
-font-size:12px;
-padding:25px 0 0;
+.modal-box{
+  width:100%;
+  max-width:450px;
+  background:#111116;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:25px;
+  padding:25px;
+  text-align:center;
+  box-shadow:0 30px 100px rgba(0,0,0,.5);
+  animation:pop .2s ease;
 }
 
-footer a{
-color:#a855f7;
-text-decoration:none;
+@keyframes pop{
+  from{
+    opacity:0;
+    transform:scale(.94);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+.modal-icon{
+  font-size:45px;
+  margin-bottom:10px;
+}
+
+.modal h2{
+  margin-bottom:10px;
+}
+
+.modal p{
+  color:var(--muted);
+  line-height:1.8;
+  font-size:14px;
+}
+
+.close{
+  margin-top:10px;
+  width:100%;
+  padding:12px;
+  border:1px solid var(--border);
+  color:#ddd;
+  background:#18181e;
+  border-radius:12px;
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%) translateY(20px);
+  background:#18181e;
+  border:1px solid var(--border);
+  color:white;
+  padding:12px 18px;
+  border-radius:999px;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:2000;
+  font-size:13px;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
 }
 
 /* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:750px){
 
-.container{
-width:94%;
-padding-top:10px;
-}
+  .app{
+    padding:12px;
+  }
 
-header{
-padding-bottom:18px;
-}
+  .grid{
+    grid-template-columns:1fr;
+  }
 
-.logo{
-font-size:25px;
-}
+  .hero{
+    padding-top:15px;
+  }
 
-.instagram{
-padding:10px 13px;
-font-size:13px;
-}
+  .hero h1{
+    font-size:34px;
+  }
 
-.hero h1{
-font-size:35px;
-}
+  .plans{
+    grid-template-columns:1fr;
+  }
 
-.hero p{
-font-size:14px;
-}
+  .actions{
+    grid-template-columns:1fr 1fr 1fr;
+  }
 
-.layout{
-grid-template-columns:1fr;
-}
-
-.preview{
-position:static;
-}
-
-.card{
-padding:16px;
-border-radius:21px;
-}
-
-canvas{
-max-height:none;
-}
-
-}
-
-@media(max-width:600px){
-
-.row{
-grid-template-columns:1fr;
-}
-
-.options{
-grid-template-columns:1fr 1fr;
-}
-
-.actions{
-grid-template-columns:1fr;
-}
-
-.plans{
-grid-template-columns:1fr;
-}
-
-.subscription{
-padding:21px 15px;
-}
-
-.preview-actions{
-grid-template-columns:1fr 1fr 1fr;
-}
-
-.preview-actions button{
-font-size:12px;
-padding:12px 4px;
-}
+  .option-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 
 }
 </style>
@@ -508,449 +536,507 @@ padding:12px 4px;
 
 <body>
 
-<div class="container">
+<div class="app">
 
-<header>
+  <!-- HEADER -->
 
-<div class="logo">
-AD<span>PIX</span>
+  <header class="header">
+
+    <div class="logo">
+      AD<span>PIX</span>
+    </div>
+
+    <a
+      class="instagram"
+      href="https://www.instagram.com/f2fweb/"
+      target="_blank"
+      rel="noopener"
+    >
+      @f2fweb
+    </a>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1>
+      عکس محصولتو
+      <span>تبلیغ کن</span>
+    </h1>
+
+    <p>
+      با یک عکس ساده، یک پوستر تبلیغاتی آماده فروش بساز.
+    </p>
+
+  </section>
+
+
+  <!-- COUNTER -->
+
+  <section class="counter">
+
+    <div class="counter-top">
+
+      <div class="counter-title">
+        🎁 استفاده رایگان
+      </div>
+
+      <div
+        class="counter-number"
+        id="remainingText"
+      >
+        ۵ طراحی رایگان باقی مانده
+      </div>
+
+    </div>
+
+    <div class="progress">
+
+      <div
+        class="progress-bar"
+        id="progressBar"
+      ></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MAIN -->
+
+  <main class="grid">
+
+
+    <!-- UPLOAD -->
+
+    <section class="card">
+
+      <div class="card-title">
+        📸 عکس محصول
+      </div>
+
+      <label
+        class="upload"
+        for="fileInput"
+        id="uploadBox"
+      >
+
+        <div
+          class="upload-icon"
+          id="uploadIcon"
+        >
+          📷
+        </div>
+
+        <strong id="uploadTitle">
+          عکس محصول را انتخاب کن
+        </strong>
+
+        <small>
+          JPG / PNG / WEBP
+        </small>
+
+        <img
+          id="previewImage"
+          class="preview-image"
+          alt="پیش‌نمایش محصول"
+        >
+
+      </label>
+
+      <input
+        id="fileInput"
+        type="file"
+        accept="image/*"
+      >
+
+    </section>
+
+
+    <!-- DETAILS -->
+
+    <section class="card">
+
+      <div class="card-title">
+        ✨ اطلاعات محصول
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          نام محصول
+        </label>
+
+        <input
+          id="productName"
+          type="text"
+          placeholder="مثلاً کتونی"
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>
+          برند
+        </label>
+
+        <input
+          id="brand"
+          type="text"
+          placeholder="مثلاً Nike"
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>
+          قیمت
+        </label>
+
+        <input
+          id="price"
+          type="text"
+          inputmode="numeric"
+          placeholder="1,990,000"
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>
+          تخفیف
+        </label>
+
+        <input
+          id="discount"
+          type="text"
+          placeholder="مثلاً 20%"
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>
+          دسته‌بندی
+        </label>
+
+        <div class="option-grid">
+
+          <button class="option active" data-category="fashion">
+            👕 پوشاک
+          </button>
+
+          <button class="option" data-category="beauty">
+            💄 زیبایی
+          </button>
+
+          <button class="option" data-category="food">
+            🍔 غذا
+          </button>
+
+          <button class="option" data-category="tech">
+            📱 تکنولوژی
+          </button>
+
+          <button class="option" data-category="shoes">
+            👟 کفش
+          </button>
+
+          <button class="option" data-category="accessory">
+            👜 اکسسوری
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>
+          استایل تبلیغ
+        </label>
+
+        <div class="option-grid">
+
+          <button class="option active" data-style="luxury">
+            ✨ لوکس
+          </button>
+
+          <button class="option" data-style="minimal">
+            ◻️ مینیمال
+          </button>
+
+          <button class="option" data-style="dark">
+            🖤 دارک
+          </button>
+
+          <button class="option" data-style="neon">
+            💜 نئون
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>
+          فرمت
+        </label>
+
+        <select id="format">
+
+          <option value="story">
+            استوری 9:16
+          </option>
+
+          <option value="post">
+            پست 1:1
+          </option>
+
+          <option value="portrait">
+            پست 4:5
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <button
+        class="generate"
+        id="generateBtn"
+      >
+        🚀 ساخت تبلیغ
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- OUTPUT -->
+
+  <section
+    class="card output-card"
+    id="outputCard"
+  >
+
+    <div class="card-title">
+      🎨 تبلیغ آماده شد
+    </div>
+
+    <div class="canvas-wrap">
+
+      <canvas id="posterCanvas"></canvas>
+
+    </div>
+
+    <div class="actions">
+
+      <button
+        class="action"
+        id="downloadBtn"
+      >
+        ⬇️ دانلود
+      </button>
+
+      <button
+        class="action"
+        id="shareBtn"
+      >
+        📤 اشتراک‌گذاری
+      </button>
+
+      <button
+        class="action"
+        id="resetBtn"
+      >
+        🔄 ساخت جدید
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- SUBSCRIPTION -->
+
+  <section class="card subscription">
+
+    <div class="card-title">
+      💎 اشتراک ADPIX
+    </div>
+
+    <div class="plans">
+
+      <div class="plan">
+
+        <h3>
+          ⭐ Starter
+        </h3>
+
+        <div class="price">
+          ۹۹٬۰۰۰ تومان
+        </div>
+
+        <small>
+          ۳۰ طراحی
+        </small>
+
+      </div>
+
+
+      <div class="plan pro">
+
+        <h3>
+          👑 Pro
+        </h3>
+
+        <div class="price">
+          ۲۹۹٬۰۰۰ تومان
+        </div>
+
+        <small>
+          ۱۵۰ طراحی
+        </small>
+
+      </div>
+
+    </div>
+
+    <a
+      class="dm-button"
+      href="https://www.instagram.com/f2fweb/"
+      target="_blank"
+      rel="noopener"
+    >
+      💬 برای خرید اشتراک به دایرکت پیام دهید
+    </a>
+
+  </section>
+
 </div>
 
-<a
-class="instagram"
-href="https://www.instagram.com/f2fweb/"
-target="_blank"
-rel="noopener"
->
-💬 @f2fweb
-</a>
 
-</header>
-
-
-<section class="hero">
-
-<h1>
-از عکس محصولت،
-<span>تبلیغی بساز که بفروشه.</span>
-</h1>
-
-<p>
-عکس محصولت رو بده و یک پوستر حرفه‌ای آماده انتشار بساز.
-</p>
-
-</section>
-
-
-<div class="layout">
-
-<!-- FORM -->
-
-<section class="card">
-
-<h2>✨ ساخت تبلیغ حرفه‌ای</h2>
-
-
-<label class="upload" for="file">
-
-<div class="upload-icon">📸</div>
-
-<strong>
-عکس محصولت رو انتخاب کن
-</strong>
-
-<small>
-JPG / PNG / WEBP
-</small>
-
-<img
-id="previewImg"
-class="preview-img"
-alt="پیش‌نمایش محصول"
->
-
-</label>
-
-<input
-id="file"
-type="file"
-accept="image/*"
->
-
-
-<div class="row">
-
-<div>
-
-<label class="label">
-نام محصول
-</label>
-
-<input
-id="productName"
-placeholder="مثلاً کتونی Air Max"
->
-
-</div>
-
-<div>
-
-<label class="label">
-برند
-</label>
-
-<input
-id="brand"
-placeholder="مثلاً Nike"
->
-
-</div>
-
-</div>
-
-
-<div class="row">
-
-<div>
-
-<label class="label">
-قیمت
-</label>
-
-<input
-id="price"
-class="price"
-inputmode="numeric"
-value="1,990,000"
->
-
-</div>
-
-<div>
-
-<label class="label">
-تخفیف
-</label>
-
-<input
-id="discount"
-inputmode="numeric"
-placeholder="20%"
->
-
-</div>
-
-</div>
-
-
-<label class="label">
-دسته‌بندی
-</label>
+<!-- LIMIT MODAL -->
 
 <div
-class="options"
-id="categories"
+  class="modal"
+  id="limitModal"
 >
 
-<button class="option active" data-value="fashion">
-👕 لباس
-</button>
+  <div class="modal-box">
 
-<button class="option" data-value="shoes">
-👟 کفش
-</button>
+    <div class="modal-icon">
+      🔥
+    </div>
 
-<button class="option" data-value="beauty">
-💄 زیبایی
-</button>
+    <h2>
+      استفاده رایگان شما تمام شد
+    </h2>
 
-<button class="option" data-value="perfume">
-🌸 عطر
-</button>
+    <p>
+      برای ادامه ساخت تبلیغ، اشتراک ADPIX را فعال کنید.
+    </p>
 
-<button class="option" data-value="food">
-🍔 غذا
-</button>
+    <br>
 
-<button class="option" data-value="tech">
-🎧 تکنولوژی
-</button>
+    <p>
+      ⭐ Starter — ۹۹٬۰۰۰ تومان — ۳۰ طراحی
+      <br>
+      👑 Pro — ۲۹۹٬۰۰۰ تومان — ۱۵۰ طراحی
+    </p>
 
-<button class="option" data-value="watch">
-⌚ ساعت
-</button>
+    <a
+      class="dm-button"
+      href="https://www.instagram.com/f2fweb/"
+      target="_blank"
+      rel="noopener"
+    >
+      💬 خرید اشتراک از دایرکت @f2fweb
+    </a>
 
-<button class="option" data-value="accessory">
-💎 اکسسوری
-</button>
+    <button
+      class="close"
+      onclick="closeModal()"
+    >
+      بستن
+    </button>
+
+  </div>
 
 </div>
 
 
-<label class="label">
-استایل تبلیغ
-</label>
+<!-- TOAST -->
 
 <div
-class="options"
-id="styles"
->
-
-<button class="option active" data-value="luxury">
-👑 لوکس
-</button>
-
-<button class="option" data-value="minimal">
-✨ مینیمال
-</button>
-
-<button class="option" data-value="dark">
-🖤 دارک
-</button>
-
-<button class="option" data-value="neon">
-⚡ نئونی
-</button>
-
-<button class="option" data-value="fire">
-🔥 فایر
-</button>
-
-<button class="option" data-value="chrome">
-💿 کروم
-</button>
-
-</div>
-
-
-<label class="label">
-فرمت خروجی
-</label>
-
-<select id="format">
-
-<option value="story">
-استوری — 9:16
-</option>
-
-<option value="post">
-پست — 4:5
-</option>
-
-<option value="square">
-مربع — 1:1
-</option>
-
-</select>
-
-
-<label class="label">
-برچسب تبلیغ
-</label>
-
-<div class="badges">
-
-<button class="badge active" data-badge="SALE">
-🔥 تخفیف ویژه
-</button>
-
-<button class="badge" data-badge="NEW">
-✨ جدید
-</button>
-
-<button class="badge" data-badge="HOT">
-🔥 پرفروش
-</button>
-
-<button class="badge" data-badge="LIMIT">
-⏳ محدود
-</button>
-
-</div>
-
-
-<label class="label">
-متن تبلیغ
-</label>
-
-<textarea
-id="scenario"
-placeholder="مثلاً کالکشن جدید با ارسال سریع؛ همین امروز سفارش بده..."
-></textarea>
-
-
-<div class="actions">
-
-<button
-class="primary"
-id="generate"
->
-✨ ساخت تبلیغ
-</button>
-
-<button
-class="secondary"
-id="reset"
->
-↺ پاک کردن
-</button>
-
-</div>
-
-</section>
-
-
-<!-- PREVIEW -->
-
-<section class="card preview">
-
-<div class="preview-top">
-
-<h2>
-پیش‌نمایش تبلیغ
-</h2>
-
-<span id="formatText">
-استوری 9:16
-</span>
-
-</div>
-
-<canvas id="canvas"></canvas>
-
-
-<div class="preview-actions">
-
-<button id="download">
-⬇️ دانلود
-</button>
-
-<button id="share">
-📤 اشتراک
-</button>
-
-<button id="save">
-💾 ذخیره
-</button>
-
-</div>
-
-<div class="tip">
-💎 برای نتیجه بهتر، عکس واضح و با نور مناسب انتخاب کن.
-</div>
-
-</section>
-
-</div>
-
-
-<!-- SUBSCRIPTION -->
-
-<section class="subscription">
-
-<h2>
-💎 اشتراک ADPIX
-</h2>
-
-<p>
-برای استفاده بیشتر و ساخت تبلیغ‌های بیشتر، پلن مناسب خودت رو انتخاب کن.
-</p>
-
-
-<div class="plans">
-
-<div class="plan">
-
-<strong>
-🟢 رایگان
-</strong>
-
-<div class="plan-price">
-۰ تومان
-</div>
-
-<small>
-۳ طراحی
-</small>
-
-</div>
-
-
-<div class="plan">
-
-<strong>
-⭐ Starter
-</strong>
-
-<div class="plan-price">
-۹۹,۰۰۰ تومان
-</div>
-
-<small>
-۳۰ طراحی
-</small>
-
-</div>
-
-
-<div class="plan pro">
-
-<strong>
-👑 Pro
-</strong>
-
-<div class="plan-price">
-۲۹۹,۰۰۰ تومان
-</div>
-
-<small>
-۱۵۰ طراحی
-</small>
-
-</div>
-
-</div>
-
-
-<a
-class="dm-button"
-href="https://www.instagram.com/f2fweb/"
-target="_blank"
-rel="noopener"
->
-💬 برای خرید اشتراک به دایرکت پیام دهید
-</a>
-
-
-<div class="dm-note">
-فعال‌سازی اشتراک و پشتیبانی از طریق @f2fweb
-</div>
-
-</section>
-
-
-<footer>
-
-ADPIX © 2026 — ساخته شده برای فروشنده‌های اینستاگرامی
-
-<br>
-
-<a
-href="https://www.instagram.com/f2fweb/"
-target="_blank"
-rel="noopener"
->
-@f2fweb
-</a>
-
-</footer>
-
-</div>
+  class="toast"
+  id="toast"
+></div>
 
 
 <script>
 
-const $ = id => document.getElementById(id);
+/* =========================================
+   ADPIX — STEP 1
+   FREE 5 DESIGNS
+========================================= */
+
+const FREE_LIMIT = 5;
+
+const STORAGE_KEY = "adpix_free_used_v1";
+
+
+/* ---------- ELEMENTS ---------- */
+
+const fileInput =
+  document.getElementById("fileInput");
+
+const previewImage =
+  document.getElementById("previewImage");
+
+const uploadIcon =
+  document.getElementById("uploadIcon");
+
+const uploadTitle =
+  document.getElementById("uploadTitle");
+
+const generateBtn =
+  document.getElementById("generateBtn");
+
+const outputCard =
+  document.getElementById("outputCard");
+
+const posterCanvas =
+  document.getElementById("posterCanvas");
+
+const remainingText =
+  document.getElementById("remainingText");
+
+const progressBar =
+  document.getElementById("progressBar");
+
+const limitModal =
+  document.getElementById("limitModal");
+
+const toast =
+  document.getElementById("toast");
+
 
 let productImage = null;
 
@@ -958,785 +1044,969 @@ let selectedCategory = "fashion";
 
 let selectedStyle = "luxury";
 
-let selectedBadge = "SALE";
+
+/* ---------- STORAGE ---------- */
+
+function getUsed(){
+
+  return Number(
+    localStorage.getItem(STORAGE_KEY) || 0
+  );
+
+}
 
 
-/* PRICE */
+function setUsed(value){
 
-$("price").addEventListener("input",function(){
+  localStorage.setItem(
+    STORAGE_KEY,
+    String(value)
+  );
 
-let value =
-this.value.replace(/\D/g,"");
-
-this.value =
-value
-? Number(value).toLocaleString("en-US")
-: "";
-
-});
+}
 
 
-/* DISCOUNT */
+/* ---------- PERSIAN NUMBERS ---------- */
 
-$("discount").addEventListener("input",function(){
+function persianNumber(number){
 
-let value =
-this.value.replace(/\D/g,"");
+  return String(number)
+    .replace(/\d/g,function(d){
+      return "۰۱۲۳۴۵۶۷۸۹"[d];
+    });
 
-this.value =
-value
-? value + "%"
-: "";
-
-});
+}
 
 
-/* IMAGE */
+/* ---------- COUNTER ---------- */
 
-$("file").addEventListener("change",function(event){
+function updateCounter(){
 
-const file =
-event.target.files[0];
+  const used = getUsed();
 
-if(!file)return;
+  const remaining =
+    Math.max(
+      FREE_LIMIT - used,
+      0
+    );
 
-const reader =
-new FileReader();
+  if(remaining > 0){
 
-reader.onload =
-function(){
+    remainingText.textContent =
+      persianNumber(remaining) +
+      " طراحی رایگان باقی مانده";
 
-productImage =
-new Image();
+  }else{
 
-productImage.onload =
-function(){
+    remainingText.textContent =
+      "استفاده رایگان تمام شده";
 
-$("previewImg").src =
-productImage.src;
-
-$("previewImg").style.display =
-"block";
-
-render();
-
-};
-
-productImage.src =
-reader.result;
-
-};
-
-reader.readAsDataURL(file);
-
-});
+  }
 
 
-/* CATEGORY */
+  const percentage =
+    (remaining / FREE_LIMIT) * 100;
+
+  progressBar.style.width =
+    percentage + "%";
+
+}
+
+
+/* ---------- TOAST ---------- */
+
+function showToast(message){
+
+  toast.textContent = message;
+
+  toast.classList.add("show");
+
+  setTimeout(function(){
+
+    toast.classList.remove("show");
+
+  },2500);
+
+}
+
+
+/* ---------- MODAL ---------- */
+
+function openModal(){
+
+  limitModal.classList.add("show");
+
+}
+
+
+function closeModal(){
+
+  limitModal.classList.remove("show");
+
+}
+
+
+/* ---------- IMAGE UPLOAD ---------- */
+
+fileInput.addEventListener(
+  "change",
+  function(){
+
+    const file =
+      this.files[0];
+
+    if(!file){
+      return;
+    }
+
+
+    if(!file.type.startsWith("image/")){
+
+      showToast(
+        "لطفاً یک عکس معتبر انتخاب کن."
+      );
+
+      return;
+
+    }
+
+
+    const reader =
+      new FileReader();
+
+
+    reader.onload =
+      function(event){
+
+        productImage =
+          new Image();
+
+
+        productImage.onload =
+          function(){
+
+            previewImage.src =
+              event.target.result;
+
+            previewImage.style.display =
+              "block";
+
+            uploadIcon.style.display =
+              "none";
+
+            uploadTitle.textContent =
+              "عکس محصول انتخاب شد";
+
+          };
+
+
+        productImage.src =
+          event.target.result;
+
+      };
+
+
+    reader.readAsDataURL(file);
+
+  }
+);
+
+
+/* ---------- OPTIONS ---------- */
 
 document
-.querySelectorAll("#categories .option")
-.forEach(button=>{
+.querySelectorAll("[data-category]")
+.forEach(function(button){
 
-button.addEventListener("click",function(){
+  button.addEventListener(
+    "click",
+    function(){
+
+      document
+      .querySelectorAll("[data-category]")
+      .forEach(function(btn){
+        btn.classList.remove("active");
+      });
+
+      this.classList.add("active");
+
+      selectedCategory =
+        this.dataset.category;
+
+    }
+  );
+
+});
+
 
 document
-.querySelectorAll("#categories .option")
-.forEach(x=>
-x.classList.remove("active")
-);
+.querySelectorAll("[data-style]")
+.forEach(function(button){
 
-this.classList.add("active");
+  button.addEventListener(
+    "click",
+    function(){
 
-selectedCategory =
-this.dataset.value;
+      document
+      .querySelectorAll("[data-style]")
+      .forEach(function(btn){
+        btn.classList.remove("active");
+      });
 
-render();
+      this.classList.add("active");
 
-});
+      selectedStyle =
+        this.dataset.style;
 
-});
-
-
-/* STYLE */
-
-document
-.querySelectorAll("#styles .option")
-.forEach(button=>{
-
-button.addEventListener("click",function(){
-
-document
-.querySelectorAll("#styles .option")
-.forEach(x=>
-x.classList.remove("active")
-);
-
-this.classList.add("active");
-
-selectedStyle =
-this.dataset.value;
-
-render();
-
-});
+    }
+  );
 
 });
 
 
-/* BADGE */
+/* ---------- GENERATE ---------- */
 
-document
-.querySelectorAll(".badge")
-.forEach(button=>{
+generateBtn.addEventListener(
+  "click",
+  function(){
 
-button.addEventListener("click",function(){
+    const used =
+      getUsed();
 
-document
-.querySelectorAll(".badge")
-.forEach(x=>
-x.classList.remove("active")
+
+    /* LIMIT */
+
+    if(used >= FREE_LIMIT){
+
+      openModal();
+
+      return;
+
+    }
+
+
+    /* IMAGE */
+
+    if(!productImage){
+
+      showToast(
+        "اول عکس محصول را انتخاب کن 📸"
+      );
+
+      return;
+
+    }
+
+
+    /* NAME */
+
+    const productName =
+      document
+      .getElementById("productName")
+      .value
+      .trim();
+
+
+    if(!productName){
+
+      showToast(
+        "نام محصول را وارد کن."
+      );
+
+      return;
+
+    }
+
+
+    const brand =
+      document
+      .getElementById("brand")
+      .value
+      .trim();
+
+
+    const price =
+      document
+      .getElementById("price")
+      .value
+      .trim();
+
+
+    const discount =
+      document
+      .getElementById("discount")
+      .value
+      .trim();
+
+
+    const format =
+      document
+      .getElementById("format")
+      .value;
+
+
+    /* CREATE */
+
+    generatePoster({
+      productName,
+      brand,
+      price,
+      discount,
+      format,
+      category:selectedCategory,
+      style:selectedStyle
+    });
+
+
+    /* COUNT */
+
+    const newUsed =
+      used + 1;
+
+    setUsed(newUsed);
+
+    updateCounter();
+
+
+    /*
+      AFTER 5TH DESIGN
+      GENERATION IS ALLOWED
+      THEN MODAL OPENS
+    */
+
+    if(newUsed >= FREE_LIMIT){
+
+      setTimeout(function(){
+
+        openModal();
+
+      },700);
+
+    }
+
+  }
 );
 
-this.classList.add("active");
 
-selectedBadge =
-this.dataset.badge;
+/* ---------- POSTER ---------- */
 
-render();
+function generatePoster(data){
 
-});
-
-});
+  let width;
+  let height;
 
 
-/* FORMAT */
+  if(data.format === "story"){
 
-$("format").addEventListener(
-"change",
-function(){
+    width = 1080;
+    height = 1920;
 
-let text =
-this.value==="story"
-? "استوری 9:16"
-: this.value==="post"
-? "پست 4:5"
-: "مربع 1:1";
+  }else if(data.format === "portrait"){
 
-$("formatText").textContent =
-text;
+    width = 1080;
+    height = 1350;
 
-render();
+  }else{
+
+    width = 1080;
+    height = 1080;
+
+  }
+
+
+  posterCanvas.width =
+    width;
+
+  posterCanvas.height =
+    height;
+
+
+  const ctx =
+    posterCanvas.getContext("2d");
+
+
+  /* BACKGROUND */
+
+  let gradient;
+
+
+  if(data.style === "neon"){
+
+    gradient =
+      ctx.createLinearGradient(
+        0,0,
+        width,height
+      );
+
+    gradient.addColorStop(
+      0,
+      "#17102e"
+    );
+
+    gradient.addColorStop(
+      .5,
+      "#09090f"
+    );
+
+    gradient.addColorStop(
+      1,
+      "#24102a"
+    );
+
+  }else if(data.style === "luxury"){
+
+    gradient =
+      ctx.createLinearGradient(
+        0,0,
+        width,height
+      );
+
+    gradient.addColorStop(
+      0,
+      "#151515"
+    );
+
+    gradient.addColorStop(
+      1,
+      "#050505"
+    );
+
+  }else if(data.style === "minimal"){
+
+    gradient =
+      ctx.createLinearGradient(
+        0,0,
+        width,height
+      );
+
+    gradient.addColorStop(
+      0,
+      "#ffffff"
+    );
+
+    gradient.addColorStop(
+      1,
+      "#eeeeee"
+    );
+
+  }else{
+
+    gradient =
+      ctx.createLinearGradient(
+        0,0,
+        width,height
+      );
+
+    gradient.addColorStop(
+      0,
+      "#111111"
+    );
+
+    gradient.addColorStop(
+      1,
+      "#020202"
+    );
+
+  }
+
+
+  ctx.fillStyle =
+    gradient;
+
+  ctx.fillRect(
+    0,
+    0,
+    width,
+    height
+  );
+
+
+  /* DECORATION */
+
+  if(data.style === "neon"){
+
+    ctx.beginPath();
+
+    ctx.arc(
+      width * .8,
+      height * .12,
+      width * .25,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fillStyle =
+      "rgba(139,92,246,.18)";
+
+    ctx.fill();
+
+  }
+
+
+  /* CAMPAIGN LABEL */
+
+  ctx.textAlign =
+    "right";
+
+  ctx.direction =
+    "rtl";
+
+
+  ctx.font =
+    "bold 38px Arial";
+
+  ctx.fillStyle =
+    data.style === "minimal"
+      ? "#111"
+      : "#ffffff";
+
+
+  ctx.fillText(
+    "پیشنهاد ویژه",
+    width - 70,
+    90
+  );
+
+
+  /* DISCOUNT */
+
+  if(data.discount){
+
+    ctx.fillStyle =
+      "#ef4444";
+
+    roundRect(
+      ctx,
+      70,
+      55,
+      220,
+      80,
+      40
+    );
+
+    ctx.fill();
+
+    ctx.fillStyle =
+      "#fff";
+
+    ctx.textAlign =
+      "center";
+
+    ctx.font =
+      "bold 34px Arial";
+
+    ctx.fillText(
+      "🔥 " + data.discount + " تخفیف",
+      180,
+      107
+    );
+
+  }
+
+
+  /* PRODUCT IMAGE */
+
+  const maxW =
+    width * .72;
+
+  const maxH =
+    height * .46;
+
+
+  const ratio =
+    Math.min(
+      maxW / productImage.width,
+      maxH / productImage.height
+    );
+
+
+  const imageW =
+    productImage.width * ratio;
+
+  const imageH =
+    productImage.height * ratio;
+
+
+  const imageX =
+    (width - imageW) / 2;
+
+  const imageY =
+    height * .22;
+
+
+  ctx.save();
+
+
+  /*
+    Soft shadow around product.
+  */
+
+  ctx.shadowColor =
+    "rgba(0,0,0,.4)";
+
+  ctx.shadowBlur =
+    45;
+
+  ctx.shadowOffsetY =
+    20;
+
+
+  ctx.drawImage(
+    productImage,
+    imageX,
+    imageY,
+    imageW,
+    imageH
+  );
+
+
+  ctx.restore();
+
+
+  /* PRODUCT NAME */
+
+  ctx.textAlign =
+    "center";
+
+  ctx.fillStyle =
+    data.style === "minimal"
+      ? "#111"
+      : "#fff";
+
+
+  ctx.font =
+    "900 72px Arial";
+
+
+  ctx.fillText(
+    data.productName,
+    width / 2,
+    height * .76
+  );
+
+
+  /* BRAND */
+
+  if(data.brand){
+
+    ctx.font =
+      "500 32px Arial";
+
+    ctx.fillStyle =
+      data.style === "minimal"
+        ? "#555"
+        : "#aaa";
+
+
+    ctx.fillText(
+      data.brand,
+      width / 2,
+      height * .81
+    );
+
+  }
+
+
+  /* PRICE */
+
+  if(data.price){
+
+    ctx.font =
+      "900 55px Arial";
+
+    ctx.fillStyle =
+      data.style === "minimal"
+        ? "#111"
+        : "#fff";
+
+
+    ctx.fillText(
+      data.price + " تومان",
+      width / 2,
+      height * .87
+    );
+
+  }
+
+
+  /* CTA */
+
+  ctx.fillStyle =
+    data.style === "minimal"
+      ? "#111"
+      : "#fff";
+
+
+  roundRect(
+    ctx,
+    width * .2,
+    height * .9,
+    width * .6,
+    82,
+    41
+  );
+
+  ctx.fill();
+
+
+  ctx.fillStyle =
+    data.style === "minimal"
+      ? "#fff"
+      : "#111";
+
+
+  ctx.font =
+    "bold 32px Arial";
+
+
+  ctx.fillText(
+    "همین حالا سفارش بده",
+    width / 2,
+    height * .9 + 53
+  );
+
+
+  /* OUTPUT */
+
+  outputCard.style.display =
+    "block";
+
+
+  outputCard.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+
+  showToast(
+    "تبلیغ با موفقیت ساخته شد 🎉"
+  );
 
 }
-);
 
 
-/* CANVAS */
+/* ---------- ROUNDED RECT ---------- */
 
-const canvas =
-$("canvas");
-
-const ctx =
-canvas.getContext("2d");
-
-
-function dimensions(){
-
-if($("format").value==="story")
-return [900,1600];
-
-if($("format").value==="post")
-return [1080,1350];
-
-return [1080,1080];
-
-}
-
-
-function roundedRect(x,y,w,h,r){
-
-ctx.beginPath();
-
-ctx.roundRect(
-x,y,w,h,r
-);
-
-ctx.fill();
-
-}
-
-
-function background(){
-
-let gradient =
-ctx.createLinearGradient(
-0,
-0,
-canvas.width,
-canvas.height
-);
-
-if(selectedStyle==="neon"){
-
-gradient.addColorStop(
-0,
-"#090014"
-);
-
-gradient.addColorStop(
-.5,
-"#4c1d95"
-);
-
-gradient.addColorStop(
-1,
-"#020617"
-);
-
-}
-
-else if(selectedStyle==="fire"){
-
-gradient.addColorStop(
-0,
-"#160604"
-);
-
-gradient.addColorStop(
-.5,
-"#9a3412"
-);
-
-gradient.addColorStop(
-1,
-"#020617"
-);
-
-}
-
-else if(selectedStyle==="chrome"){
-
-gradient.addColorStop(
-0,
-"#111827"
-);
-
-gradient.addColorStop(
-.5,
-"#64748b"
-);
-
-gradient.addColorStop(
-1,
-"#020617"
-);
-
-}
-
-else if(selectedStyle==="minimal"){
-
-gradient.addColorStop(
-0,
-"#fafafa"
-);
-
-gradient.addColorStop(
-1,
-"#d6d3d1"
-);
-
-}
-
-else if(selectedStyle==="dark"){
-
-gradient.addColorStop(
-0,
-"#020204"
-);
-
-gradient.addColorStop(
-.5,
-"#17121f"
-);
-
-gradient.addColorStop(
-1,
-"#030303"
-);
-
-}
-
-else{
-
-gradient.addColorStop(
-0,
-"#12091f"
-);
-
-gradient.addColorStop(
-.5,
-"#32134d"
-);
-
-gradient.addColorStop(
-1,
-"#050509"
-);
-
-}
-
-ctx.fillStyle =
-gradient;
-
-ctx.fillRect(
-0,
-0,
-canvas.width,
-canvas.height
-);
-
-}
-
-
-function text(
-value,
-x,
-y,
-size,
-weight,
-color,
-align="center"
+function roundRect(
+  ctx,
+  x,
+  y,
+  width,
+  height,
+  radius
 ){
 
-ctx.font =
-`${weight} ${size}px Vazirmatn,Arial`;
+  ctx.beginPath();
 
-ctx.fillStyle =
-color;
+  ctx.moveTo(
+    x + radius,
+    y
+  );
 
-ctx.textAlign =
-align;
+  ctx.lineTo(
+    x + width - radius,
+    y
+  );
 
-ctx.fillText(
-value,
-x,
-y
-);
+  ctx.quadraticCurveTo(
+    x + width,
+    y,
+    x + width,
+    y + radius
+  );
 
-}
+  ctx.lineTo(
+    x + width,
+    y + height - radius
+  );
 
+  ctx.quadraticCurveTo(
+    x + width,
+    y + height,
+    x + width - radius,
+    y + height
+  );
 
-function drawProduct(){
+  ctx.lineTo(
+    x + radius,
+    y + height
+  );
 
-if(!productImage)return;
+  ctx.quadraticCurveTo(
+    x,
+    y + height,
+    x,
+    y + height - radius
+  );
 
-let maxWidth =
-canvas.width * .82;
+  ctx.lineTo(
+    x,
+    y + radius
+  );
 
-let maxHeight =
-canvas.height * .48;
+  ctx.quadraticCurveTo(
+    x,
+    y,
+    x + radius,
+    y
+  );
 
-let scale =
-Math.min(
-maxWidth / productImage.width,
-maxHeight / productImage.height
-);
-
-let width =
-productImage.width * scale;
-
-let height =
-productImage.height * scale;
-
-let x =
-(canvas.width-width)/2;
-
-let y =
-canvas.height*.27;
-
-ctx.save();
-
-ctx.shadowColor =
-"#000000bb";
-
-ctx.shadowBlur =
-50;
-
-ctx.drawImage(
-productImage,
-x,
-y,
-width,
-height
-);
-
-ctx.restore();
+  ctx.closePath();
 
 }
 
 
-function render(){
+/* ---------- DOWNLOAD ---------- */
 
-const [width,height] =
-dimensions();
+document
+.getElementById("downloadBtn")
+.addEventListener(
+  "click",
+  function(){
 
-canvas.width =
-width;
+    const link =
+      document.createElement("a");
 
-canvas.height =
-height;
+    link.download =
+      "adpix-product-ad.png";
 
-background();
+    link.href =
+      posterCanvas.toDataURL(
+        "image/png"
+      );
 
+    link.click();
 
-const mainColor =
-selectedStyle==="minimal"
-? "#111"
-: "#fff";
-
-const secondaryColor =
-selectedStyle==="minimal"
-? "#555"
-: "#bbb";
-
-
-/* HEADER */
-
-text(
-"ADPIX",
-width*.08,
-height*.07,
-Math.round(width*.045),
-"900",
-mainColor,
-"left"
-);
-
-text(
-"تبلیغ حرفه‌ای محصول",
-width*.92,
-height*.07,
-Math.round(width*.022),
-"600",
-secondaryColor,
-"right"
+  }
 );
 
 
-/* BADGE */
+/* ---------- SHARE ---------- */
 
-let badgeText =
-selectedBadge==="SALE"
-? "🔥 تخفیف ویژه"
-: selectedBadge==="NEW"
-? "✨ جدید"
-: selectedBadge==="HOT"
-? "🔥 پرفروش"
-: "⏳ محدود";
+document
+.getElementById("shareBtn")
+.addEventListener(
+  "click",
+  async function(){
 
+    try{
 
-ctx.fillStyle =
-selectedStyle==="minimal"
-? "#111"
-: "#a855f7";
-
-roundedRect(
-width*.08,
-height*.105,
-width*.28,
-height*.065,
-20
-);
-
-text(
-badgeText,
-width*.22,
-height*.148,
-Math.round(width*.020),
-"800",
-"#fff"
-);
+      const blob =
+        await new Promise(
+          resolve =>
+            posterCanvas.toBlob(
+              resolve,
+              "image/png"
+            )
+        );
 
 
-/* PRODUCT */
-
-drawProduct();
-
-
-/* DATA */
-
-const productName =
-$("productName").value ||
-"محصول شما";
-
-const brand =
-$("brand").value ||
-"BRAND";
-
-const price =
-$("price").value ||
-"1,990,000";
-
-const discount =
-$("discount").value;
+      const file =
+        new File(
+          [blob],
+          "adpix-ad.png",
+          {
+            type:"image/png"
+          }
+        );
 
 
-text(
-productName,
-width/2,
-height*.72,
-Math.round(width*.045),
-"900",
-mainColor
-);
+      if(
+        navigator.share &&
+        navigator.canShare &&
+        navigator.canShare({
+          files:[file]
+        })
+      ){
 
-text(
-brand,
-width/2,
-height*.765,
-Math.round(width*.025),
-"600",
-secondaryColor
+        await navigator.share({
+          title:"تبلیغ محصول",
+          files:[file]
+        });
+
+      }else{
+
+        showToast(
+          "اشتراک‌گذاری روی این دستگاه پشتیبانی نمی‌شود."
+        );
+
+      }
+
+    }catch(error){
+
+      console.log(error);
+
+    }
+
+  }
 );
 
 
-/* PRICE */
+/* ---------- RESET ---------- */
 
-text(
-price,
-width*.72,
-height*.865,
-Math.round(width*.045),
-"900",
-mainColor
-);
+document
+.getElementById("resetBtn")
+.addEventListener(
+  "click",
+  function(){
 
-text(
-"تومان",
-width*.72,
-height*.90,
-Math.round(width*.018),
-"600",
-secondaryColor
-);
+    document
+    .getElementById("productName")
+    .value = "";
 
+    document
+    .getElementById("brand")
+    .value = "";
 
-/* DISCOUNT */
+    document
+    .getElementById("price")
+    .value = "";
 
-if(discount){
+    document
+    .getElementById("discount")
+    .value = "";
 
-text(
-discount,
-width*.22,
-height*.865,
-Math.round(width*.05),
-"900",
-selectedStyle==="minimal"
-? "#111"
-: "#f0abfc"
-);
+    fileInput.value =
+      "";
 
-text(
-"٪ تخفیف",
-width*.22,
-height*.90,
-Math.round(width*.018),
-"700",
-secondaryColor
-);
+    productImage =
+      null;
 
-}
+    previewImage.style.display =
+      "none";
 
+    uploadIcon.style.display =
+      "block";
 
-/* CTA */
+    uploadTitle.textContent =
+      "عکس محصول را انتخاب کن";
 
-let scenario =
-$("scenario").value ||
-"همین حالا سفارش بده";
+    outputCard.style.display =
+      "none";
 
-if(scenario.length>45){
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
 
-scenario =
-scenario.substring(0,45)+"…";
-
-}
-
-text(
-scenario,
-width/2,
-height*.955,
-Math.round(width*.021),
-"700",
-secondaryColor
-);
-
-}
-
-
-/* GENERATE */
-
-$("generate").addEventListener(
-"click",
-function(){
-
-render();
-
-this.textContent =
-"✓ تبلیغ آماده شد";
-
-setTimeout(
-()=>{
-this.textContent =
-"✨ ساخت تبلیغ";
-},
-1500
-);
-
-}
+  }
 );
 
 
-/* DOWNLOAD */
+/* ---------- START ---------- */
 
-$("download").addEventListener(
-"click",
-function(){
-
-const link =
-document.createElement("a");
-
-link.download =
-"ADPIX-Advertising.png";
-
-link.href =
-canvas.toDataURL("image/png");
-
-link.click();
-
-}
-);
+updateCounter();
 
 
-/* SHARE */
+/*
+  IMPORTANT:
+  This is the frontend MVP.
 
-$("share").addEventListener(
-"click",
-function(){
-
-canvas.toBlob(
-async blob=>{
-
-const file =
-new File(
-[blob],
-"ADPIX.png",
-{
-type:"image/png"
-}
-);
-
-if(
-navigator.share &&
-navigator.canShare &&
-navigator.canShare({
-files:[file]
-})
-){
-
-await navigator.share({
-title:"ADPIX",
-text:"تبلیغ ساخته شده با ADPIX",
-files:[file]
-});
-
-}else{
-
-alert(
-"اشتراک‌گذاری مستقیم فعال نیست؛ از دانلود استفاده کن."
-);
-
-}
-
-}
-);
-
-}
-);
-
-
-/* SAVE */
-
-$("save").addEventListener(
-"click",
-function(){
-
-const data = {
-
-name:$("productName").value,
-
-brand:$("brand").value,
-
-price:$("price").value,
-
-discount:$("discount").value,
-
-scenario:$("scenario").value,
-
-category:selectedCategory,
-
-style:selectedStyle,
-
-badge:selectedBadge
-
-};
-
-localStorage.setItem(
-"ADPIX_PROJECT",
-JSON.stringify(data)
-);
-
-alert(
-"پروژه با موفقیت ذخیره شد ✅"
-);
-
-}
-);
-
-
-/* RESET */
-
-$("reset").addEventListener(
-"click",
-function(){
-
-$("productName").value="";
-
-$("brand").value="";
-
-$("price").value="1,990,000";
-
-$("discount").value="";
-
-$("scenario").value="";
-
-$("file").value="";
-
-$("previewImg").style.display="none";
-
-productImage=null;
-
-render();
-
-}
-);
-
-
-/* INITIAL */
-
-render();
+  Paid subscription will be connected
+  to a backend in the next steps.
+*/
 
 </script>
 
 </body>
-</html>
+  </html>
