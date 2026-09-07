@@ -2,1863 +2,1741 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#08070d">
-<title>ADPIX V2 — AI Ad Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08060d">
+<meta name="description" content="ADPIX - ساخت تبلیغ حرفه‌ای برای محصولات اینستاگرامی">
+<title>ADPIX — ساخت تبلیغ حرفه‌ای</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
 
-:root{
-  --bg:#07060b;
-  --panel:#101019;
-  --panel2:#171622;
-  --line:rgba(255,255,255,.09);
-  --text:#fff;
-  --muted:#a9a6b5;
-  --purple:#9b5cff;
-  --purple2:#6c35ff;
-  --pink:#ff3d9a;
-  --green:#29df9a;
-  --danger:#ff4d6d;
-  --radius:22px;
-}
-
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
+
 body{
-  margin:0;
-  background:
-    radial-gradient(circle at 80% -10%,rgba(125,58,255,.22),transparent 35%),
-    radial-gradient(circle at 10% 30%,rgba(255,0,128,.08),transparent 28%),
-    var(--bg);
-  color:var(--text);
-  font-family:Vazirmatn,Tahoma,sans-serif;
+margin:0;
+font-family:Vazirmatn,Arial,sans-serif;
+background:
+radial-gradient(circle at 10% 0%,#7c3aed35,transparent 30%),
+radial-gradient(circle at 100% 20%,#ec489928,transparent 30%),
+#07060b;
+color:#fff;
+min-height:100vh;
 }
-button,input,select,textarea{font:inherit}
+
+button,input,select,textarea{font-family:inherit}
+
 button{cursor:pointer}
-a{color:inherit;text-decoration:none}
 
-::-webkit-scrollbar{width:8px}
-::-webkit-scrollbar-thumb{background:#292532;border-radius:20px}
+.container{
+width:min(1180px,94%);
+margin:auto;
+padding:15px 0 55px;
+}
 
-/* HEADER */
-.header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  backdrop-filter:blur(20px);
-  background:rgba(7,6,11,.78);
-  border-bottom:1px solid var(--line);
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 0 25px;
 }
-.header-inner{
-  max-width:1500px;
-  margin:auto;
-  padding:14px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
+
 .logo{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  font-size:22px;
-  font-weight:900;
-}
-.logo-mark{
-  width:42px;height:42px;
-  display:grid;place-items:center;
-  border-radius:14px;
-  background:linear-gradient(135deg,var(--purple),var(--pink));
-  box-shadow:0 0 30px rgba(155,92,255,.3);
-}
-.logo small{
-  display:block;
-  font-size:10px;
-  color:var(--muted);
-  font-weight:500;
-  margin-top:-2px;
-}
-.header-actions{display:flex;gap:9px}
-.top-btn{
-  border:1px solid var(--line);
-  background:#111019;
-  color:white;
-  border-radius:13px;
-  padding:10px 15px;
+font-size:31px;
+font-weight:900;
+letter-spacing:2px;
 }
 
-/* LAYOUT */
-.app{
-  max-width:1500px;
-  margin:auto;
-  padding:24px;
-}
-.grid{
-  display:grid;
-  grid-template-columns:430px minmax(0,1fr);
-  gap:22px;
-  align-items:start;
-}
-.panel{
-  background:linear-gradient(180deg,rgba(24,22,34,.96),rgba(13,12,20,.96));
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  box-shadow:0 25px 80px rgba(0,0,0,.28);
-}
-.controls{
-  padding:20px;
-  position:sticky;
-  top:78px;
-  max-height:calc(100vh - 95px);
-  overflow:auto;
-}
-.preview-panel{
-  min-height:760px;
-  padding:18px;
+.logo span{color:#a855f7}
+
+.instagram{
+text-decoration:none;
+color:#fff;
+background:#ffffff0d;
+border:1px solid #ffffff18;
+padding:12px 18px;
+border-radius:15px;
+font-weight:800;
+transition:.2s;
 }
 
-/* HERO */
+.instagram:hover{
+background:#a855f71a;
+transform:translateY(-2px);
+}
+
 .hero{
-  padding:4px 2px 20px;
-}
-.hero h1{
-  margin:0;
-  font-size:31px;
-  line-height:1.25;
-}
-.gradient{
-  background:linear-gradient(90deg,#fff,#bd8cff,#ff5fb1);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-.hero p{
-  margin:8px 0 0;
-  color:var(--muted);
-  font-size:13px;
+margin-bottom:27px;
 }
 
-/* SECTIONS */
-.section{
-  border-top:1px solid var(--line);
-  padding:18px 0;
+.hero h1{
+font-size:clamp(34px,6vw,62px);
+line-height:1.08;
+margin:0 0 13px;
+font-weight:900;
 }
-.section:first-of-type{border-top:0}
-.section-title{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:11px;
+
+.hero h1 span{
+background:linear-gradient(90deg,#c084fc,#f472b6);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
 }
-.section-title strong{font-size:14px}
-.section-title span{font-size:11px;color:var(--muted)}
+
+.hero p{
+color:#aaa;
+font-size:17px;
+margin:0;
+}
+
+.layout{
+display:grid;
+grid-template-columns:430px 1fr;
+gap:20px;
+align-items:start;
+}
+
+.card{
+background:#0d0b14ed;
+border:1px solid #ffffff13;
+border-radius:27px;
+padding:21px;
+box-shadow:0 25px 90px #0009;
+backdrop-filter:blur(20px);
+}
+
+.card h2{
+margin:0 0 18px;
+font-size:21px;
+}
 
 .label{
-  display:block;
-  color:#ddd9e7;
-  font-size:12px;
-  margin:0 0 7px;
+display:block;
+font-size:14px;
+font-weight:700;
+color:#aaa;
+margin:17px 0 8px;
 }
-.input,
-.select,
-.textarea{
-  width:100%;
-  border:1px solid var(--line);
-  background:#0b0a11;
-  color:white;
-  outline:none;
-  border-radius:13px;
-  padding:12px 13px;
-  transition:.2s;
+
+input,
+select,
+textarea{
+width:100%;
+border:1px solid #ffffff14;
+background:#15121e;
+color:#fff;
+padding:15px;
+border-radius:15px;
+outline:none;
+font-size:15px;
+transition:.2s;
 }
-.input:focus,
-.select:focus,
-.textarea:focus{
-  border-color:rgba(155,92,255,.8);
-  box-shadow:0 0 0 3px rgba(155,92,255,.09);
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#a855f7;
+box-shadow:0 0 0 3px #a855f720;
 }
-.textarea{
-  min-height:90px;
-  resize:vertical;
+
+textarea{
+min-height:115px;
+resize:vertical;
 }
+
 .row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
 }
 
-/* UPLOAD */
 .upload{
-  min-height:135px;
-  border:1.5px dashed #4a415d;
-  background:
-    radial-gradient(circle at center,rgba(155,92,255,.1),transparent 60%),
-    #0b0a11;
-  border-radius:18px;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  padding:15px;
-  transition:.2s;
+display:block;
+border:2px dashed #8b5cf680;
+background:#8b5cf70b;
+border-radius:21px;
+padding:27px 15px;
+text-align:center;
+cursor:pointer;
+transition:.25s;
 }
-.upload.drag{
-  border-color:var(--purple);
-  background:#151021;
+
+.upload:hover{
+background:#8b5cf718;
+transform:translateY(-2px);
 }
+
 .upload-icon{
-  font-size:35px;
-  margin-bottom:3px;
+font-size:42px;
 }
-.upload strong{font-size:13px}
+
+.upload strong{
+display:block;
+font-size:18px;
+margin:8px 0;
+}
+
 .upload small{
-  display:block;
-  color:var(--muted);
-  margin-top:5px;
-}
-#fileInput{display:none}
-
-/* CHIPS */
-.chips{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:7px;
-}
-.chip{
-  min-height:54px;
-  border:1px solid var(--line);
-  background:#0d0c13;
-  color:#ddd;
-  border-radius:13px;
-  padding:8px 5px;
-  font-size:11px;
-  transition:.18s;
-}
-.chip b{
-  display:block;
-  font-size:18px;
-  margin-bottom:1px;
-}
-.chip.active{
-  border-color:var(--purple);
-  background:rgba(155,92,255,.13);
-  box-shadow:0 0 0 1px rgba(155,92,255,.15);
+color:#777;
 }
 
-/* COLOR */
-.colors{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-}
-.color{
-  width:31px;height:31px;
-  border-radius:50%;
-  border:2px solid transparent;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.2);
-}
-.color.active{
-  border-color:white;
-  transform:scale(1.12);
+#file{
+display:none;
 }
 
-/* BADGES */
+.preview-img{
+display:none;
+width:100%;
+max-height:220px;
+object-fit:contain;
+border-radius:15px;
+margin-top:12px;
+}
+
+.options{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:9px;
+}
+
+.option{
+border:1px solid #ffffff12;
+background:#13101a;
+color:#ccc;
+padding:14px 8px;
+border-radius:15px;
+font-weight:700;
+font-size:14px;
+transition:.2s;
+}
+
+.option:hover{
+transform:translateY(-2px);
+}
+
+.option.active{
+background:#8b5cf725;
+border-color:#a855f7;
+color:#fff;
+box-shadow:0 0 0 1px #a855f755;
+}
+
 .badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-}
-.badge-option{
-  border:1px solid var(--line);
-  background:#0c0b12;
-  color:#ddd;
-  padding:8px 10px;
-  border-radius:10px;
-  font-size:11px;
-}
-.badge-option.active{
-  background:rgba(155,92,255,.15);
-  border-color:var(--purple);
+display:flex;
+gap:8px;
+flex-wrap:wrap;
 }
 
-/* BUTTONS */
-.main-btn{
-  width:100%;
-  border:0;
-  color:white;
-  border-radius:16px;
-  padding:15px;
-  font-size:15px;
-  font-weight:800;
-  background:linear-gradient(135deg,#8e4dff,#d52dff);
-  box-shadow:0 14px 35px rgba(145,65,255,.27);
+.badge{
+border:1px solid #ffffff14;
+background:#ffffff08;
+color:#aaa;
+padding:10px 13px;
+border-radius:50px;
+font-size:13px;
+cursor:pointer;
 }
-.main-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.secondary-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:8px;
+
+.badge.active{
+color:#fff;
+border-color:#a855f7;
+background:#a855f720;
 }
+
+.actions{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-top:20px;
+}
+
+.primary{
+border:0;
+border-radius:16px;
+padding:17px;
+font-size:15px;
+font-weight:900;
+color:#fff;
+background:linear-gradient(135deg,#7c3aed,#db2777);
+box-shadow:0 15px 35px #7c3aed35;
+}
+
 .secondary{
-  border:1px solid var(--line);
-  background:#111019;
-  color:white;
-  border-radius:13px;
-  padding:11px;
-}
-.danger{
-  border-color:rgba(255,77,109,.2);
-  color:#ff8ca0;
+border:1px solid #ffffff15;
+border-radius:16px;
+background:#ffffff08;
+color:#fff;
+font-weight:800;
+padding:17px;
 }
 
-/* PREVIEW */
+.preview{
+position:sticky;
+top:15px;
+}
+
 .preview-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-bottom:14px;
-}
-.preview-title strong{font-size:16px}
-.preview-title small{
-  display:block;
-  color:var(--muted);
-  font-size:11px;
-  margin-top:3px;
-}
-.preview-actions{display:flex;gap:7px}
-.icon-btn{
-  border:1px solid var(--line);
-  background:#111019;
-  color:white;
-  border-radius:12px;
-  padding:10px 12px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:14px;
 }
 
-.canvas-wrap{
-  min-height:650px;
-  display:grid;
-  place-items:center;
-  background:
-    linear-gradient(45deg,#101019 25%,transparent 25%) 0 0/22px 22px,
-    linear-gradient(-45deg,#101019 25%,transparent 25%) 0 0/22px 22px,
-    #0a0910;
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:20px;
-  overflow:hidden;
-}
-#poster{
-  display:block;
-  max-width:100%;
-  max-height:650px;
-  width:auto;
-  height:auto;
-  border-radius:12px;
-  box-shadow:0 30px 80px rgba(0,0,0,.55);
+.preview-top span{
+color:#999;
+font-size:13px;
 }
 
-.variants{
-  margin-top:13px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
-}
-.variant{
-  border:1px solid var(--line);
-  background:#0e0d14;
-  border-radius:13px;
-  color:white;
-  padding:10px 5px;
-  font-size:11px;
-}
-.variant.active{
-  border-color:var(--purple);
-  background:rgba(155,92,255,.12);
+canvas{
+display:block;
+width:100%;
+height:auto;
+border-radius:21px;
+background:#111;
+box-shadow:0 25px 80px #0008;
 }
 
-/* STATUS */
-.status{
-  margin-top:12px;
-  display:flex;
-  justify-content:space-between;
-  color:var(--muted);
-  font-size:11px;
-}
-.dot{
-  display:inline-block;
-  width:7px;height:7px;
-  background:var(--green);
-  border-radius:50%;
-  margin-left:5px;
+.preview-actions{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:9px;
+margin-top:12px;
 }
 
-/* MODAL */
-.modal{
-  position:fixed;
-  inset:0;
-  z-index:100;
-  display:none;
-  place-items:center;
-  padding:18px;
-  background:rgba(0,0,0,.75);
-  backdrop-filter:blur(12px);
-}
-.modal.show{display:grid}
-.modal-card{
-  width:min(520px,100%);
-  background:#13111b;
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:20px;
-  max-height:90vh;
-  overflow:auto;
-}
-.modal-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:15px;
-}
-.close{
-  border:1px solid var(--line);
-  background:#0d0c12;
-  color:white;
-  width:36px;height:36px;
-  border-radius:10px;
+.preview-actions button{
+border:1px solid #ffffff13;
+background:#ffffff09;
+color:#fff;
+padding:14px 8px;
+border-radius:14px;
+font-weight:800;
 }
 
-/* TOAST */
-.toast{
-  position:fixed;
-  left:50%;
-  bottom:22px;
-  transform:translate(-50%,120px);
-  z-index:200;
-  background:#fff;
-  color:#111;
-  padding:12px 17px;
-  border-radius:14px;
-  font-size:12px;
-  font-weight:700;
-  box-shadow:0 20px 50px rgba(0,0,0,.4);
-  transition:.3s;
+.tip{
+color:#777;
+font-size:12px;
+line-height:1.8;
+margin-top:12px;
 }
-.toast.show{transform:translate(-50%,0)}
 
-/* LOADING */
-.loading{
-  position:fixed;
-  inset:0;
-  z-index:150;
-  display:none;
-  place-items:center;
-  background:rgba(4,3,8,.8);
-  backdrop-filter:blur(10px);
+/* SUBSCRIPTION */
+
+.subscription{
+margin-top:22px;
+padding:27px;
+border-radius:26px;
+border:1px solid #a855f744;
+background:
+radial-gradient(circle at 90% 0%,#a855f725,transparent 40%),
+linear-gradient(135deg,#151022,#0b0910);
+box-shadow:0 20px 70px #0008;
+text-align:center;
 }
-.loading.show{display:grid}
-.loader-box{text-align:center}
-.loader{
-  width:48px;height:48px;
-  margin:auto auto 13px;
-  border:3px solid rgba(255,255,255,.12);
-  border-top-color:#a762ff;
-  border-radius:50%;
-  animation:spin .7s linear infinite;
+
+.subscription h2{
+margin:0 0 8px;
+font-size:27px;
+font-weight:900;
 }
-@keyframes spin{to{transform:rotate(360deg)}}
+
+.subscription > p{
+color:#aaa;
+margin:0 0 22px;
+font-size:14px;
+}
+
+.plans{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:11px;
+margin-bottom:19px;
+}
+
+.plan{
+background:#ffffff08;
+border:1px solid #ffffff12;
+border-radius:18px;
+padding:18px 10px;
+}
+
+.plan.pro{
+border-color:#a855f766;
+background:#a855f714;
+box-shadow:0 0 30px #a855f712;
+}
+
+.plan strong{
+display:block;
+font-size:17px;
+margin-bottom:8px;
+}
+
+.plan .plan-price{
+font-size:18px;
+font-weight:900;
+}
+
+.plan small{
+display:block;
+color:#888;
+margin-top:6px;
+}
+
+.dm-button{
+display:block;
+width:100%;
+text-decoration:none;
+color:#fff;
+font-weight:900;
+font-size:16px;
+padding:17px;
+border-radius:16px;
+background:linear-gradient(135deg,#7c3aed,#db2777);
+box-shadow:0 14px 35px #7c3aed40;
+transition:.2s;
+}
+
+.dm-button:hover{
+transform:translateY(-2px);
+box-shadow:0 18px 40px #7c3aed55;
+}
+
+.dm-note{
+color:#777;
+font-size:11px;
+margin-top:10px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+color:#666;
+font-size:12px;
+padding:25px 0 0;
+}
+
+footer a{
+color:#a855f7;
+text-decoration:none;
+}
 
 /* MOBILE */
-@media(max-width:1050px){
-  .grid{grid-template-columns:1fr}
-  .controls{
-    position:relative;
-    top:0;
-    max-height:none;
-  }
-  .preview-panel{min-height:unset}
-  .canvas-wrap{min-height:550px}
+
+@media(max-width:900px){
+
+.container{
+width:94%;
+padding-top:10px;
 }
+
+header{
+padding-bottom:18px;
+}
+
+.logo{
+font-size:25px;
+}
+
+.instagram{
+padding:10px 13px;
+font-size:13px;
+}
+
+.hero h1{
+font-size:35px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+.layout{
+grid-template-columns:1fr;
+}
+
+.preview{
+position:static;
+}
+
+.card{
+padding:16px;
+border-radius:21px;
+}
+
+canvas{
+max-height:none;
+}
+
+}
+
 @media(max-width:600px){
-  .app{padding:12px}
-  .header-inner{padding:11px 13px}
-  .logo{font-size:18px}
-  .logo-mark{width:37px;height:37px}
-  .top-btn{padding:9px 10px;font-size:11px}
-  .hero h1{font-size:25px}
-  .panel{border-radius:18px}
-  .controls,.preview-panel{padding:14px}
-  .chips{grid-template-columns:repeat(3,1fr)}
-  .canvas-wrap{padding:10px;min-height:430px}
-  #poster{max-height:530px}
-  .preview-actions .text-btn{display:none}
+
+.row{
+grid-template-columns:1fr;
+}
+
+.options{
+grid-template-columns:1fr 1fr;
+}
+
+.actions{
+grid-template-columns:1fr;
+}
+
+.plans{
+grid-template-columns:1fr;
+}
+
+.subscription{
+padding:21px 15px;
+}
+
+.preview-actions{
+grid-template-columns:1fr 1fr 1fr;
+}
+
+.preview-actions button{
+font-size:12px;
+padding:12px 4px;
+}
+
 }
 </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <div class="logo">
-      <div class="logo-mark">✦</div>
-      <div>
-        ADPIX
-        <small>AI AD STUDIO • V2</small>
-      </div>
-    </div>
+<div class="container">
 
-    <div class="header-actions">
-      <a class="top-btn" href="https://www.instagram.com/f2fweb/" target="_blank">Instagram ↗</a>
-      <button class="top-btn" onclick="openProjects()">پروژه‌ها</button>
-    </div>
-  </div>
+<header>
+
+<div class="logo">
+AD<span>PIX</span>
+</div>
+
+<a
+class="instagram"
+href="https://www.instagram.com/f2fweb/"
+target="_blank"
+rel="noopener"
+>
+💬 @f2fweb
+</a>
+
 </header>
 
-<main class="app">
 
-<div class="grid">
+<section class="hero">
 
-<!-- ================= CONTROLS ================= -->
-<section class="panel controls">
+<h1>
+از عکس محصولت،
+<span>تبلیغی بساز که بفروشه.</span>
+</h1>
 
-  <div class="hero">
-    <h1>تبلیغ محصولت رو <span class="gradient">بساز.</span></h1>
-    <p>عکس محصولت رو بده و یک پوستر آماده اینستاگرام طراحی کن.</p>
-  </div>
-
-  <!-- UPLOAD -->
-  <div class="section">
-    <div class="section-title">
-      <strong>📸 عکس محصول</strong>
-      <span>PNG / JPG / WEBP</span>
-    </div>
-
-    <label class="upload" id="dropZone">
-      <input id="fileInput" type="file" accept="image/*">
-      <div>
-        <div class="upload-icon">🖼️</div>
-        <strong id="uploadText">برای انتخاب عکس ضربه بزن</strong>
-        <small>یا عکس را اینجا بکش و رها کن</small>
-      </div>
-    </label>
-  </div>
-
-  <!-- INFO -->
-  <div class="section">
-    <div class="section-title">
-      <strong>📝 اطلاعات محصول</strong>
-      <span>اختیاری</span>
-    </div>
-
-    <label class="label">نام محصول</label>
-    <input id="productName" class="input" placeholder="مثلاً کت چرم کلاسیک">
-
-    <div style="height:9px"></div>
-
-    <div class="row">
-      <div>
-        <label class="label">برند</label>
-        <input id="brand" class="input" placeholder="مثلاً ADPIX">
-      </div>
-
-      <div>
-        <label class="label">قیمت</label>
-        <input id="price" class="input" inputmode="numeric" placeholder="1,990,000">
-      </div>
-    </div>
-
-    <div style="height:9px"></div>
-
-    <div class="row">
-      <div>
-        <label class="label">تخفیف</label>
-        <input id="discount" class="input" placeholder="30%">
-      </div>
-
-      <div>
-        <label class="label">CTA</label>
-        <input id="cta" class="input" value="همین حالا سفارش بده">
-      </div>
-    </div>
-  </div>
-
-  <!-- CATEGORY -->
-  <div class="section">
-    <div class="section-title">
-      <strong>🛍️ دسته‌بندی</strong>
-      <span>۱۲ مدل</span>
-    </div>
-
-    <div class="chips" id="categories">
-      <button class="chip active" data-value="fashion"><b>👕</b>لباس</button>
-      <button class="chip" data-value="shoes"><b>👟</b>کفش</button>
-      <button class="chip" data-value="perfume"><b>🧴</b>عطر</button>
-      <button class="chip" data-value="beauty"><b>💄</b>آرایشی</button>
-      <button class="chip" data-value="accessory"><b>💍</b>اکسسوری</button>
-      <button class="chip" data-value="food"><b>🍔</b>غذا</button>
-      <button class="chip" data-value="phone"><b>📱</b>موبایل</button>
-      <button class="chip" data-value="laptop"><b>💻</b>لپ‌تاپ</button>
-      <button class="chip" data-value="watch"><b>⌚</b>ساعت</button>
-      <button class="chip" data-value="jewelry"><b>💎</b>جواهرات</button>
-      <button class="chip" data-value="car"><b>🚘</b>خودرو</button>
-      <button class="chip" data-value="store"><b>🛒</b>فروشگاهی</button>
-    </div>
-  </div>
-
-  <!-- STYLE -->
-  <div class="section">
-    <div class="section-title">
-      <strong>🎨 استایل تبلیغ</strong>
-      <span>۱۰ مدل</span>
-    </div>
-
-    <div class="chips" id="styles">
-      <button class="chip active" data-value="luxury"><b>👑</b>لوکس</button>
-      <button class="chip" data-value="minimal"><b>◻️</b>مینیمال</button>
-      <button class="chip" data-value="dark"><b>🌑</b>دارک</button>
-      <button class="chip" data-value="neon"><b>💜</b>نئونی</button>
-      <button class="chip" data-value="fire"><b>🔥</b>آتشی</button>
-      <button class="chip" data-value="chrome"><b>🪩</b>کرومی</button>
-      <button class="chip" data-value="glass"><b>🧊</b>شیشه‌ای</button>
-      <button class="chip" data-value="studio"><b>📸</b>استودیو</button>
-      <button class="chip" data-value="street"><b>🏙️</b>خیابانی</button>
-      <button class="chip" data-value="organic"><b>🌿</b>طبیعی</button>
-    </div>
-  </div>
-
-  <!-- FORMAT -->
-  <div class="section">
-    <div class="section-title">
-      <strong>📐 فرمت خروجی</strong>
-      <span>۶ مدل</span>
-    </div>
-
-    <select id="format" class="select">
-      <option value="story">استوری — 9:16</option>
-      <option value="portrait">پست — 4:5</option>
-      <option value="square">پست — 1:1</option>
-      <option value="banner">بنر — 16:9</option>
-      <option value="wide">تبلیغ افقی — 3:2</option>
-      <option value="whatsapp">واتساپ — 4:5</option>
-    </select>
-  </div>
-
-  <!-- COLOR -->
-  <div class="section">
-    <div class="section-title">
-      <strong>🌈 رنگ اصلی</strong>
-      <span>تم تبلیغ</span>
-    </div>
-
-    <div class="colors" id="colors">
-      <button class="color active" style="background:#8b4dff" data-color="#8b4dff"></button>
-      <button class="color" style="background:#ff2d7a" data-color="#ff2d7a"></button>
-      <button class="color" style="background:#00d4ff" data-color="#00d4ff"></button>
-      <button class="color" style="background:#00e59a" data-color="#00e59a"></button>
-      <button class="color" style="background:#ff9f1a" data-color="#ff9f1a"></button>
-      <button class="color" style="background:#ff3b30" data-color="#ff3b30"></button>
-      <button class="color" style="background:#fff" data-color="#ffffff"></button>
-      <button class="color" style="background:#111" data-color="#111111"></button>
-    </div>
-  </div>
-
-  <!-- BADGE -->
-  <div class="section">
-    <div class="section-title">
-      <strong>🏷️ Badge</strong>
-      <span>روی پوستر</span>
-    </div>
-
-    <div class="badges" id="badges">
-      <button class="badge-option active" data-badge="none">بدون Badge</button>
-      <button class="badge-option" data-badge="sale">🔥 SALE</button>
-      <button class="badge-option" data-badge="new">NEW</button>
-      <button class="badge-option" data-badge="best">BEST SELLER</button>
-      <button class="badge-option" data-badge="limited">LIMITED</button>
-      <button class="badge-option" data-badge="special">SPECIAL</button>
-    </div>
-  </div>
-
-  <!-- TEXT -->
-  <div class="section">
-    <div class="section-title">
-      <strong>✍️ سناریو تبلیغ</strong>
-      <span>متن سفارشی</span>
-    </div>
-
-    <textarea id="scenario" class="textarea" placeholder="مثلاً: حس لوکس و خاص، مناسب مشتری‌های شیک‌پسند، با تأکید روی تخفیف و خرید فوری..."></textarea>
-  </div>
-
-  <!-- ACTION -->
-  <div class="section">
-    <button class="main-btn" onclick="generatePoster(true)">
-      ✨ ساخت تبلیغ حرفه‌ای
-    </button>
-
-    <div class="secondary-row">
-      <button class="secondary" onclick="generateVariants()">🔄 ۴ طرح متفاوت</button>
-      <button class="secondary" onclick="randomize()">🎲 پیشنهاد تصادفی</button>
-    </div>
-
-    <div class="secondary-row">
-      <button class="secondary" onclick="saveProject()">💾 ذخیره</button>
-      <button class="secondary danger" onclick="resetAll()">↺ پاک کردن</button>
-    </div>
-  </div>
+<p>
+عکس محصولت رو بده و یک پوستر حرفه‌ای آماده انتشار بساز.
+</p>
 
 </section>
 
-<!-- ================= PREVIEW ================= -->
-<section class="panel preview-panel">
 
-  <div class="preview-top">
-    <div class="preview-title">
-      <strong>پیش‌نمایش تبلیغ</strong>
-      <small id="sizeText">1080 × 1920</small>
-    </div>
+<div class="layout">
 
-    <div class="preview-actions">
-      <button class="icon-btn" onclick="downloadPoster()">⬇️ <span class="text-btn">دانلود</span></button>
-      <button class="icon-btn" onclick="sharePoster()">↗️ <span class="text-btn">اشتراک</span></button>
-      <button class="icon-btn" onclick="openFullscreen()">⛶</button>
-    </div>
-  </div>
+<!-- FORM -->
 
-  <div class="canvas-wrap">
-    <canvas id="poster"></canvas>
-  </div>
+<section class="card">
 
-  <div class="variants">
-    <button class="variant active" onclick="setVariant(0)">طرح ۱<br>اصلی</button>
-    <button class="variant" onclick="setVariant(1)">طرح ۲<br>تیره</button>
-    <button class="variant" onclick="setVariant(2)">طرح ۳<br>تمرکز محصول</button>
-    <button class="variant" onclick="setVariant(3)">طرح ۴<br>فروش</button>
-  </div>
+<h2>✨ ساخت تبلیغ حرفه‌ای</h2>
 
-  <div class="status">
-    <span><i class="dot"></i> آماده ساخت</span>
-    <span id="statusText">ADPIX V2</span>
-  </div>
+
+<label class="upload" for="file">
+
+<div class="upload-icon">📸</div>
+
+<strong>
+عکس محصولت رو انتخاب کن
+</strong>
+
+<small>
+JPG / PNG / WEBP
+</small>
+
+<img
+id="previewImg"
+class="preview-img"
+alt="پیش‌نمایش محصول"
+>
+
+</label>
+
+<input
+id="file"
+type="file"
+accept="image/*"
+>
+
+
+<div class="row">
+
+<div>
+
+<label class="label">
+نام محصول
+</label>
+
+<input
+id="productName"
+placeholder="مثلاً کتونی Air Max"
+>
+
+</div>
+
+<div>
+
+<label class="label">
+برند
+</label>
+
+<input
+id="brand"
+placeholder="مثلاً Nike"
+>
+
+</div>
+
+</div>
+
+
+<div class="row">
+
+<div>
+
+<label class="label">
+قیمت
+</label>
+
+<input
+id="price"
+class="price"
+inputmode="numeric"
+value="1,990,000"
+>
+
+</div>
+
+<div>
+
+<label class="label">
+تخفیف
+</label>
+
+<input
+id="discount"
+inputmode="numeric"
+placeholder="20%"
+>
+
+</div>
+
+</div>
+
+
+<label class="label">
+دسته‌بندی
+</label>
+
+<div
+class="options"
+id="categories"
+>
+
+<button class="option active" data-value="fashion">
+👕 لباس
+</button>
+
+<button class="option" data-value="shoes">
+👟 کفش
+</button>
+
+<button class="option" data-value="beauty">
+💄 زیبایی
+</button>
+
+<button class="option" data-value="perfume">
+🌸 عطر
+</button>
+
+<button class="option" data-value="food">
+🍔 غذا
+</button>
+
+<button class="option" data-value="tech">
+🎧 تکنولوژی
+</button>
+
+<button class="option" data-value="watch">
+⌚ ساعت
+</button>
+
+<button class="option" data-value="accessory">
+💎 اکسسوری
+</button>
+
+</div>
+
+
+<label class="label">
+استایل تبلیغ
+</label>
+
+<div
+class="options"
+id="styles"
+>
+
+<button class="option active" data-value="luxury">
+👑 لوکس
+</button>
+
+<button class="option" data-value="minimal">
+✨ مینیمال
+</button>
+
+<button class="option" data-value="dark">
+🖤 دارک
+</button>
+
+<button class="option" data-value="neon">
+⚡ نئونی
+</button>
+
+<button class="option" data-value="fire">
+🔥 فایر
+</button>
+
+<button class="option" data-value="chrome">
+💿 کروم
+</button>
+
+</div>
+
+
+<label class="label">
+فرمت خروجی
+</label>
+
+<select id="format">
+
+<option value="story">
+استوری — 9:16
+</option>
+
+<option value="post">
+پست — 4:5
+</option>
+
+<option value="square">
+مربع — 1:1
+</option>
+
+</select>
+
+
+<label class="label">
+برچسب تبلیغ
+</label>
+
+<div class="badges">
+
+<button class="badge active" data-badge="SALE">
+🔥 تخفیف ویژه
+</button>
+
+<button class="badge" data-badge="NEW">
+✨ جدید
+</button>
+
+<button class="badge" data-badge="HOT">
+🔥 پرفروش
+</button>
+
+<button class="badge" data-badge="LIMIT">
+⏳ محدود
+</button>
+
+</div>
+
+
+<label class="label">
+متن تبلیغ
+</label>
+
+<textarea
+id="scenario"
+placeholder="مثلاً کالکشن جدید با ارسال سریع؛ همین امروز سفارش بده..."
+></textarea>
+
+
+<div class="actions">
+
+<button
+class="primary"
+id="generate"
+>
+✨ ساخت تبلیغ
+</button>
+
+<button
+class="secondary"
+id="reset"
+>
+↺ پاک کردن
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PREVIEW -->
+
+<section class="card preview">
+
+<div class="preview-top">
+
+<h2>
+پیش‌نمایش تبلیغ
+</h2>
+
+<span id="formatText">
+استوری 9:16
+</span>
+
+</div>
+
+<canvas id="canvas"></canvas>
+
+
+<div class="preview-actions">
+
+<button id="download">
+⬇️ دانلود
+</button>
+
+<button id="share">
+📤 اشتراک
+</button>
+
+<button id="save">
+💾 ذخیره
+</button>
+
+</div>
+
+<div class="tip">
+💎 برای نتیجه بهتر، عکس واضح و با نور مناسب انتخاب کن.
+</div>
 
 </section>
 
 </div>
-</main>
 
-<!-- PROJECT MODAL -->
-<div class="modal" id="projectModal">
-  <div class="modal-card">
-    <div class="modal-head">
-      <strong>💾 پروژه‌های ذخیره‌شده</strong>
-      <button class="close" onclick="closeProjects()">×</button>
-    </div>
-    <div id="projectsList"></div>
-  </div>
+
+<!-- SUBSCRIPTION -->
+
+<section class="subscription">
+
+<h2>
+💎 اشتراک ADPIX
+</h2>
+
+<p>
+برای استفاده بیشتر و ساخت تبلیغ‌های بیشتر، پلن مناسب خودت رو انتخاب کن.
+</p>
+
+
+<div class="plans">
+
+<div class="plan">
+
+<strong>
+🟢 رایگان
+</strong>
+
+<div class="plan-price">
+۰ تومان
 </div>
 
-<!-- LOADING -->
-<div class="loading" id="loading">
-  <div class="loader-box">
-    <div class="loader"></div>
-    <strong>در حال ساخت تبلیغ...</strong>
-    <div style="color:#aaa;font-size:11px;margin-top:5px">ADPIX V2</div>
-  </div>
+<small>
+۳ طراحی
+</small>
+
 </div>
 
-<div class="toast" id="toast">انجام شد</div>
+
+<div class="plan">
+
+<strong>
+⭐ Starter
+</strong>
+
+<div class="plan-price">
+۹۹,۰۰۰ تومان
+</div>
+
+<small>
+۳۰ طراحی
+</small>
+
+</div>
+
+
+<div class="plan pro">
+
+<strong>
+👑 Pro
+</strong>
+
+<div class="plan-price">
+۲۹۹,۰۰۰ تومان
+</div>
+
+<small>
+۱۵۰ طراحی
+</small>
+
+</div>
+
+</div>
+
+
+<a
+class="dm-button"
+href="https://www.instagram.com/f2fweb/"
+target="_blank"
+rel="noopener"
+>
+💬 برای خرید اشتراک به دایرکت پیام دهید
+</a>
+
+
+<div class="dm-note">
+فعال‌سازی اشتراک و پشتیبانی از طریق @f2fweb
+</div>
+
+</section>
+
+
+<footer>
+
+ADPIX © 2026 — ساخته شده برای فروشنده‌های اینستاگرامی
+
+<br>
+
+<a
+href="https://www.instagram.com/f2fweb/"
+target="_blank"
+rel="noopener"
+>
+@f2fweb
+</a>
+
+</footer>
+
+</div>
+
 
 <script>
-/* =========================================================
-   ADPIX V2
-   Static Canvas Advertising Studio
-   ========================================================= */
-
-const canvas = document.getElementById("poster");
-const ctx = canvas.getContext("2d");
-
-let productImage = null;
-let category = "fashion";
-let style = "luxury";
-let accent = "#8b4dff";
-let badge = "none";
-let variant = 0;
-
-const categoryNames = {
-  fashion:"لباس",
-  shoes:"کفش",
-  perfume:"عطر",
-  beauty:"آرایشی",
-  accessory:"اکسسوری",
-  food:"غذا",
-  phone:"موبایل",
-  laptop:"لپ‌تاپ",
-  watch:"ساعت",
-  jewelry:"جواهرات",
-  car:"خودرو",
-  store:"فروشگاهی"
-};
-
-const styleNames = {
-  luxury:"لوکس",
-  minimal:"مینیمال",
-  dark:"دارک",
-  neon:"نئونی",
-  fire:"آتشی",
-  chrome:"کرومی",
-  glass:"شیشه‌ای",
-  studio:"استودیو",
-  street:"خیابانی",
-  organic:"طبیعی"
-};
-
-const formatSizes = {
-  story:[1080,1920],
-  portrait:[1080,1350],
-  square:[1080,1080],
-  banner:[1920,1080],
-  wide:[1500,1000],
-  whatsapp:[1080,1350]
-};
 
 const $ = id => document.getElementById(id);
 
-function toast(message){
-  const el=$("toast");
-  el.textContent=message;
-  el.classList.add("show");
-  clearTimeout(window.__toast);
-  window.__toast=setTimeout(()=>el.classList.remove("show"),2200);
-}
+let productImage = null;
 
-function loading(show){
-  $("loading").classList.toggle("show",show);
-}
+let selectedCategory = "fashion";
 
-/* ================= UPLOAD ================= */
+let selectedStyle = "luxury";
 
-const dropZone=$("dropZone");
-const fileInput=$("fileInput");
+let selectedBadge = "SALE";
 
-dropZone.addEventListener("click",()=>fileInput.click());
 
-fileInput.addEventListener("change",e=>{
-  if(e.target.files[0]) loadImage(e.target.files[0]);
+/* PRICE */
+
+$("price").addEventListener("input",function(){
+
+let value =
+this.value.replace(/\D/g,"");
+
+this.value =
+value
+? Number(value).toLocaleString("en-US")
+: "";
+
 });
 
-["dragenter","dragover"].forEach(ev=>{
-  dropZone.addEventListener(ev,e=>{
-    e.preventDefault();
-    dropZone.classList.add("drag");
-  });
+
+/* DISCOUNT */
+
+$("discount").addEventListener("input",function(){
+
+let value =
+this.value.replace(/\D/g,"");
+
+this.value =
+value
+? value + "%"
+: "";
+
 });
 
-["dragleave","drop"].forEach(ev=>{
-  dropZone.addEventListener(ev,e=>{
-    e.preventDefault();
-    dropZone.classList.remove("drag");
-  });
+
+/* IMAGE */
+
+$("file").addEventListener("change",function(event){
+
+const file =
+event.target.files[0];
+
+if(!file)return;
+
+const reader =
+new FileReader();
+
+reader.onload =
+function(){
+
+productImage =
+new Image();
+
+productImage.onload =
+function(){
+
+$("previewImg").src =
+productImage.src;
+
+$("previewImg").style.display =
+"block";
+
+render();
+
+};
+
+productImage.src =
+reader.result;
+
+};
+
+reader.readAsDataURL(file);
+
 });
 
-dropZone.addEventListener("drop",e=>{
-  const file=e.dataTransfer.files[0];
-  if(file && file.type.startsWith("image/")) loadImage(file);
+
+/* CATEGORY */
+
+document
+.querySelectorAll("#categories .option")
+.forEach(button=>{
+
+button.addEventListener("click",function(){
+
+document
+.querySelectorAll("#categories .option")
+.forEach(x=>
+x.classList.remove("active")
+);
+
+this.classList.add("active");
+
+selectedCategory =
+this.dataset.value;
+
+render();
+
 });
 
-function loadImage(file){
-  const reader=new FileReader();
-
-  reader.onload=e=>{
-    const img=new Image();
-
-    img.onload=()=>{
-      productImage=img;
-      $("uploadText").textContent="✓ عکس محصول انتخاب شد";
-      generatePoster(false);
-      toast("عکس محصول اضافه شد");
-    };
-
-    img.src=e.target.result;
-  };
-
-  reader.readAsDataURL(file);
-}
-
-/* ================= CHIPS ================= */
-
-document.querySelectorAll("#categories .chip").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.querySelectorAll("#categories .chip").forEach(x=>x.classList.remove("active"));
-    btn.classList.add("active");
-    category=btn.dataset.value;
-    generatePoster(false);
-  });
 });
 
-document.querySelectorAll("#styles .chip").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.querySelectorAll("#styles .chip").forEach(x=>x.classList.remove("active"));
-    btn.classList.add("active");
-    style=btn.dataset.value;
-    generatePoster(false);
-  });
+
+/* STYLE */
+
+document
+.querySelectorAll("#styles .option")
+.forEach(button=>{
+
+button.addEventListener("click",function(){
+
+document
+.querySelectorAll("#styles .option")
+.forEach(x=>
+x.classList.remove("active")
+);
+
+this.classList.add("active");
+
+selectedStyle =
+this.dataset.value;
+
+render();
+
 });
 
-document.querySelectorAll(".color").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.querySelectorAll(".color").forEach(x=>x.classList.remove("active"));
-    btn.classList.add("active");
-    accent=btn.dataset.color;
-    generatePoster(false);
-  });
 });
 
-document.querySelectorAll(".badge-option").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.querySelectorAll(".badge-option").forEach(x=>x.classList.remove("active"));
-    btn.classList.add("active");
-    badge=btn.dataset.badge;
-    generatePoster(false);
-  });
+
+/* BADGE */
+
+document
+.querySelectorAll(".badge")
+.forEach(button=>{
+
+button.addEventListener("click",function(){
+
+document
+.querySelectorAll(".badge")
+.forEach(x=>
+x.classList.remove("active")
+);
+
+this.classList.add("active");
+
+selectedBadge =
+this.dataset.badge;
+
+render();
+
 });
 
-$("format").addEventListener("change",()=>generatePoster(false));
-
-["productName","brand","price","discount","cta","scenario"].forEach(id=>{
-  $(id).addEventListener("input",()=>{
-    generatePoster(false);
-  });
 });
 
-/* ================= FORMAT ================= */
 
-function getSize(){
-  return formatSizes[$("format").value] || formatSizes.story;
+/* FORMAT */
+
+$("format").addEventListener(
+"change",
+function(){
+
+let text =
+this.value==="story"
+? "استوری 9:16"
+: this.value==="post"
+? "پست 4:5"
+: "مربع 1:1";
+
+$("formatText").textContent =
+text;
+
+render();
+
+}
+);
+
+
+/* CANVAS */
+
+const canvas =
+$("canvas");
+
+const ctx =
+canvas.getContext("2d");
+
+
+function dimensions(){
+
+if($("format").value==="story")
+return [900,1600];
+
+if($("format").value==="post")
+return [1080,1350];
+
+return [1080,1080];
+
 }
 
-function updateSize(){
-  const [w,h]=getSize();
-  $("sizeText").textContent=`${w} × ${h}`;
+
+function roundedRect(x,y,w,h,r){
+
+ctx.beginPath();
+
+ctx.roundRect(
+x,y,w,h,r
+);
+
+ctx.fill();
+
 }
 
-/* ================= HELPERS ================= */
 
-function hexToRgb(hex){
-  hex=hex.replace("#","");
-  if(hex.length===3) hex=hex.split("").map(x=>x+x).join("");
-  return {
-    r:parseInt(hex.substring(0,2),16),
-    g:parseInt(hex.substring(2,4),16),
-    b:parseInt(hex.substring(4,6),16)
-  };
+function background(){
+
+let gradient =
+ctx.createLinearGradient(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+if(selectedStyle==="neon"){
+
+gradient.addColorStop(
+0,
+"#090014"
+);
+
+gradient.addColorStop(
+.5,
+"#4c1d95"
+);
+
+gradient.addColorStop(
+1,
+"#020617"
+);
+
 }
 
-function rgba(hex,a){
-  const c=hexToRgb(hex);
-  return `rgba(${c.r},${c.g},${c.b},${a})`;
+else if(selectedStyle==="fire"){
+
+gradient.addColorStop(
+0,
+"#160604"
+);
+
+gradient.addColorStop(
+.5,
+"#9a3412"
+);
+
+gradient.addColorStop(
+1,
+"#020617"
+);
+
 }
 
-function roundRect(c,x,y,w,h,r,fill=true,stroke=false){
-  c.beginPath();
-  c.roundRect(x,y,w,h,r);
-  if(fill)c.fill();
-  if(stroke)c.stroke();
+else if(selectedStyle==="chrome"){
+
+gradient.addColorStop(
+0,
+"#111827"
+);
+
+gradient.addColorStop(
+.5,
+"#64748b"
+);
+
+gradient.addColorStop(
+1,
+"#020617"
+);
+
 }
 
-function fitImage(img,x,y,w,h){
-  const ir=img.width/img.height;
-  const br=w/h;
+else if(selectedStyle==="minimal"){
 
-  let dw,dh,dx,dy;
+gradient.addColorStop(
+0,
+"#fafafa"
+);
 
-  if(ir>br){
-    dh=h;
-    dw=h*ir;
-    dx=x+(w-dw)/2;
-    dy=y;
-  }else{
-    dw=w;
-    dh=w/ir;
-    dx=x;
-    dy=y+(h-dh)/2;
-  }
+gradient.addColorStop(
+1,
+"#d6d3d1"
+);
 
-  ctx.save();
-  ctx.beginPath();
-  ctx.rect(x,y,w,h);
-  ctx.clip();
-  ctx.drawImage(img,dx,dy,dw,dh);
-  ctx.restore();
 }
 
-function textFit(text,maxWidth,maxSize,minSize=22,font="Vazirmatn"){
-  let size=maxSize;
+else if(selectedStyle==="dark"){
 
-  while(size>minSize){
-    ctx.font=`800 ${size}px ${font}`;
-    if(ctx.measureText(text).width<=maxWidth)return size;
-    size-=2;
-  }
+gradient.addColorStop(
+0,
+"#020204"
+);
 
-  return minSize;
+gradient.addColorStop(
+.5,
+"#17121f"
+);
+
+gradient.addColorStop(
+1,
+"#030303"
+);
+
 }
 
-function centerText(text,x,y,maxWidth,size,weight=800){
-  ctx.font=`${weight} ${size}px Vazirmatn`;
-  ctx.textAlign="center";
-  ctx.textBaseline="middle";
+else{
 
-  const words=text.split(" ");
-  let lines=[];
-  let line="";
+gradient.addColorStop(
+0,
+"#12091f"
+);
 
-  for(const word of words){
-    const test=line?line+" "+word:word;
+gradient.addColorStop(
+.5,
+"#32134d"
+);
 
-    if(ctx.measureText(test).width>maxWidth && line){
-      lines.push(line);
-      line=word;
-    }else{
-      line=test;
-    }
-  }
+gradient.addColorStop(
+1,
+"#050509"
+);
 
-  if(line)lines.push(line);
-
-  const lh=size*1.3;
-
-  lines.forEach((l,i)=>{
-    ctx.fillText(l,x,y+(i-(lines.length-1)/2)*lh);
-  });
-
-  return lines.length;
 }
 
-function shadow(color="rgba(0,0,0,.4)",blur=35){
-  ctx.shadowColor=color;
-  ctx.shadowBlur=blur;
-  ctx.shadowOffsetX=0;
-  ctx.shadowOffsetY=15;
+ctx.fillStyle =
+gradient;
+
+ctx.fillRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
 }
 
-/* ================= BACKGROUNDS ================= */
 
-function background(w,h){
-  const rgb=hexToRgb(accent);
+function text(
+value,
+x,
+y,
+size,
+weight,
+color,
+align="center"
+){
 
-  if(style==="minimal"){
-    ctx.fillStyle="#f4f3f0";
-    ctx.fillRect(0,0,w,h);
+ctx.font =
+`${weight} ${size}px Vazirmatn,Arial`;
 
-    ctx.fillStyle=rgba(accent,.12);
-    ctx.beginPath();
-    ctx.arc(w*.82,h*.15,w*.3,0,Math.PI*2);
-    ctx.fill();
+ctx.fillStyle =
+color;
 
-  }else if(style==="organic"){
-    ctx.fillStyle="#e8eee5";
-    ctx.fillRect(0,0,w,h);
+ctx.textAlign =
+align;
 
-    ctx.fillStyle="rgba(40,80,50,.12)";
-    for(let i=0;i<8;i++){
-      ctx.beginPath();
-      ctx.arc(
-        Math.random()*w,
-        Math.random()*h,
-        80+Math.random()*180,
-        0,Math.PI*2
-      );
-      ctx.fill();
-    }
+ctx.fillText(
+value,
+x,
+y
+);
 
-  }else if(style==="fire"){
-    const g=ctx.createLinearGradient(0,0,w,h);
-    g.addColorStop(0,"#130308");
-    g.addColorStop(.5,"#401006");
-    g.addColorStop(1,"#090607");
-    ctx.fillStyle=g;
-    ctx.fillRect(0,0,w,h);
-
-    for(let i=0;i<30;i++){
-      ctx.fillStyle=`rgba(255,${50+Math.random()*100},20,${.04+Math.random()*.1})`;
-      ctx.beginPath();
-      ctx.arc(Math.random()*w,Math.random()*h,10+Math.random()*70,0,Math.PI*2);
-      ctx.fill();
-    }
-
-  }else if(style==="chrome"){
-    const g=ctx.createLinearGradient(0,0,w,h);
-    g.addColorStop(0,"#050507");
-    g.addColorStop(.25,"#62626b");
-    g.addColorStop(.4,"#111116");
-    g.addColorStop(.6,"#a0a0aa");
-    g.addColorStop(.8,"#15151b");
-    g.addColorStop(1,"#000");
-    ctx.fillStyle=g;
-    ctx.fillRect(0,0,w,h);
-
-  }else if(style==="glass"){
-    ctx.fillStyle="#07121c";
-    ctx.fillRect(0,0,w,h);
-
-    const g=ctx.createRadialGradient(
-      w*.2,h*.2,10,
-      w*.2,h*.2,w*.7
-    );
-    g.addColorStop(0,rgba(accent,.5));
-    g.addColorStop(1,"transparent");
-
-    ctx.fillStyle=g;
-    ctx.fillRect(0,0,w,h);
-
-    ctx.strokeStyle="rgba(255,255,255,.1)";
-    ctx.lineWidth=2;
-
-    for(let i=0;i<10;i++){
-      ctx.beginPath();
-      ctx.arc(Math.random()*w,Math.random()*h,60+Math.random()*150,0,Math.PI*2);
-      ctx.stroke();
-    }
-
-  }else if(style==="studio"){
-    ctx.fillStyle="#eeeeee";
-    ctx.fillRect(0,0,w,h);
-
-    const g=ctx.createRadialGradient(
-      w*.5,h*.35,10,
-      w*.5,h*.35,w*.75
-    );
-    g.addColorStop(0,"#fff");
-    g.addColorStop(1,"#c8c8c8");
-
-    ctx.fillStyle=g;
-    ctx.fillRect(0,0,w,h);
-
-  }else if(style==="street"){
-    ctx.fillStyle="#090a0d";
-    ctx.fillRect(0,0,w,h);
-
-    ctx.strokeStyle="rgba(255,255,255,.06)";
-    ctx.lineWidth=4;
-
-    for(let x=-h;x<w;x+=70){
-      ctx.beginPath();
-      ctx.moveTo(x,0);
-      ctx.lineTo(x+h,h);
-      ctx.stroke();
-    }
-
-    ctx.fillStyle=rgba(accent,.12);
-    ctx.fillRect(0,0,w,h);
-
-  }else if(style==="neon"){
-    ctx.fillStyle="#05040b";
-    ctx.fillRect(0,0,w,h);
-
-    const g=ctx.createRadialGradient(w*.5,h*.35,10,w*.5,h*.35,w*.7);
-    g.addColorStop(0,rgba(accent,.55));
-    g.addColorStop(.5,rgba(accent,.1));
-    g.addColorStop(1,"transparent");
-
-    ctx.fillStyle=g;
-    ctx.fillRect(0,0,w,h);
-
-  }else{
-    // luxury / dark default
-    const g=ctx.createLinearGradient(0,0,w,h);
-
-    if(style==="dark"){
-      g.addColorStop(0,"#030305");
-      g.addColorStop(.55,"#111018");
-      g.addColorStop(1,"#050507");
-    }else{
-      g.addColorStop(0,"#050309");
-      g.addColorStop(.45,rgba(accent,.18));
-      g.addColorStop(1,"#08060d");
-    }
-
-    ctx.fillStyle=g;
-    ctx.fillRect(0,0,w,h);
-
-    const rg=ctx.createRadialGradient(w*.8,h*.2,10,w*.8,h*.2,w*.65);
-    rg.addColorStop(0,rgba(accent,.32));
-    rg.addColorStop(1,"transparent");
-
-    ctx.fillStyle=rg;
-    ctx.fillRect(0,0,w,h);
-  }
-
-  // decorative glow
-  if(style!=="minimal" && style!=="studio"){
-    ctx.save();
-    ctx.globalCompositeOperation="screen";
-
-    const g=ctx.createRadialGradient(
-      w*.15,h*.75,10,
-      w*.15,h*.75,w*.5
-    );
-    g.addColorStop(0,rgba(accent,.16));
-    g.addColorStop(1,"transparent");
-
-    ctx.fillStyle=g;
-    ctx.fillRect(0,0,w,h);
-    ctx.restore();
-  }
 }
 
-/* ================= PRODUCT ================= */
 
-function drawProduct(w,h){
-  if(!productImage){
-    // Placeholder
-    ctx.save();
-    ctx.fillStyle=style==="minimal"||style==="studio" ? "#ddd" : "rgba(255,255,255,.06)";
-    roundRect(ctx,w*.15,h*.27,w*.7,h*.4,35,true);
+function drawProduct(){
 
-    ctx.fillStyle=style==="minimal"||style==="studio" ? "#777" : "#888";
-    ctx.font="700 70px Vazirmatn";
-    ctx.textAlign="center";
-    ctx.textBaseline="middle";
-    ctx.fillText("📦",w*.5,h*.47);
+if(!productImage)return;
 
-    ctx.font="500 25px Vazirmatn";
-    ctx.fillText("عکس محصول",w*.5,h*.57);
-    ctx.restore();
-    return;
-  }
+let maxWidth =
+canvas.width * .82;
 
-  let x=w*.09;
-  let y=h*.25;
-  let pw=w*.82;
-  let ph=h*.47;
+let maxHeight =
+canvas.height * .48;
 
-  if(variant===1){
-    x=w*.16;
-    y=h*.31;
-    pw=w*.68;
-    ph=h*.39;
-  }
+let scale =
+Math.min(
+maxWidth / productImage.width,
+maxHeight / productImage.height
+);
 
-  if(variant===2){
-    x=w*.06;
-    y=h*.23;
-    pw=w*.88;
-    ph=h*.52;
-  }
+let width =
+productImage.width * scale;
 
-  if(variant===3){
-    x=w*.12;
-    y=h*.28;
-    pw=w*.76;
-    ph=h*.44;
-  }
+let height =
+productImage.height * scale;
 
-  shadow(rgba(accent,.2),55);
-  fitImage(productImage,x,y,pw,ph);
-  ctx.shadowColor="transparent";
+let x =
+(canvas.width-width)/2;
+
+let y =
+canvas.height*.27;
+
+ctx.save();
+
+ctx.shadowColor =
+"#000000bb";
+
+ctx.shadowBlur =
+50;
+
+ctx.drawImage(
+productImage,
+x,
+y,
+width,
+height
+);
+
+ctx.restore();
+
 }
 
-/* ================= BADGE ================= */
 
-function drawBadge(w,h){
-  if(badge==="none")return;
+function render(){
 
-  const labels={
-    sale:"🔥 SALE",
-    new:"NEW",
-    best:"BEST SELLER",
-    limited:"LIMITED",
-    special:"SPECIAL"
-  };
+const [width,height] =
+dimensions();
 
-  const text=labels[badge]||"SALE";
+canvas.width =
+width;
 
-  const bw=Math.min(w*.4,270);
-  const bh=Math.max(55,w*.065);
+canvas.height =
+height;
 
-  let x=w*.07;
-  let y=h*.07;
+background();
 
-  if(variant===3){
-    x=w*.58;
-    y=h*.1;
-  }
 
-  ctx.save();
-  ctx.fillStyle=accent;
-  shadow(rgba(accent,.4),25);
-  roundRect(ctx,x,y,bw,bh,bh/2,true);
+const mainColor =
+selectedStyle==="minimal"
+? "#111"
+: "#fff";
 
-  ctx.shadowColor="transparent";
-  ctx.fillStyle="#fff";
-  ctx.font=`900 ${Math.max(20,bh*.34)}px Vazirmatn`;
-  ctx.textAlign="center";
-  ctx.textBaseline="middle";
-  ctx.fillText(text,x+bw/2,y+bh/2);
-  ctx.restore();
+const secondaryColor =
+selectedStyle==="minimal"
+? "#555"
+: "#bbb";
+
+
+/* HEADER */
+
+text(
+"ADPIX",
+width*.08,
+height*.07,
+Math.round(width*.045),
+"900",
+mainColor,
+"left"
+);
+
+text(
+"تبلیغ حرفه‌ای محصول",
+width*.92,
+height*.07,
+Math.round(width*.022),
+"600",
+secondaryColor,
+"right"
+);
+
+
+/* BADGE */
+
+let badgeText =
+selectedBadge==="SALE"
+? "🔥 تخفیف ویژه"
+: selectedBadge==="NEW"
+? "✨ جدید"
+: selectedBadge==="HOT"
+? "🔥 پرفروش"
+: "⏳ محدود";
+
+
+ctx.fillStyle =
+selectedStyle==="minimal"
+? "#111"
+: "#a855f7";
+
+roundedRect(
+width*.08,
+height*.105,
+width*.28,
+height*.065,
+20
+);
+
+text(
+badgeText,
+width*.22,
+height*.148,
+Math.round(width*.020),
+"800",
+"#fff"
+);
+
+
+/* PRODUCT */
+
+drawProduct();
+
+
+/* DATA */
+
+const productName =
+$("productName").value ||
+"محصول شما";
+
+const brand =
+$("brand").value ||
+"BRAND";
+
+const price =
+$("price").value ||
+"1,990,000";
+
+const discount =
+$("discount").value;
+
+
+text(
+productName,
+width/2,
+height*.72,
+Math.round(width*.045),
+"900",
+mainColor
+);
+
+text(
+brand,
+width/2,
+height*.765,
+Math.round(width*.025),
+"600",
+secondaryColor
+);
+
+
+/* PRICE */
+
+text(
+price,
+width*.72,
+height*.865,
+Math.round(width*.045),
+"900",
+mainColor
+);
+
+text(
+"تومان",
+width*.72,
+height*.90,
+Math.round(width*.018),
+"600",
+secondaryColor
+);
+
+
+/* DISCOUNT */
+
+if(discount){
+
+text(
+discount,
+width*.22,
+height*.865,
+Math.round(width*.05),
+"900",
+selectedStyle==="minimal"
+? "#111"
+: "#f0abfc"
+);
+
+text(
+"٪ تخفیف",
+width*.22,
+height*.90,
+Math.round(width*.018),
+"700",
+secondaryColor
+);
+
 }
 
-/* ================= TEXT ================= */
 
-function drawTexts(w,h){
-  const name=$("productName").value.trim() || categoryNames[category];
-  const brand=$("brand").value.trim() || "ADPIX";
-  const price=$("price").value.trim();
-  const discount=$("discount").value.trim();
-  const cta=$("cta").value.trim() || "همین حالا سفارش بده";
+/* CTA */
 
-  const light=style==="minimal"||style==="studio"||style==="organic";
-  const primary=light?"#101010":"#fff";
-  const secondary=light?"#555":"rgba(255,255,255,.68)";
+let scenario =
+$("scenario").value ||
+"همین حالا سفارش بده";
 
-  let titleY=h*.73;
+if(scenario.length>45){
 
-  if(variant===1) titleY=h*.70;
-  if(variant===2) titleY=h*.78;
-  if(variant===3) titleY=h*.69;
+scenario =
+scenario.substring(0,45)+"…";
 
-  ctx.save();
-
-  ctx.fillStyle=secondary;
-  ctx.font=`700 ${Math.max(18,w*.018)}px Vazirmatn`;
-  ctx.textAlign="center";
-  ctx.fillText(brand.toUpperCase(),w*.5,titleY-Math.max(30,w*.035));
-
-  const titleSize=textFit(name,w*.82,Math.max(50,w*.075),28);
-  ctx.fillStyle=primary;
-
-  centerText(
-    name,
-    w*.5,
-    titleY,
-    w*.82,
-    titleSize,
-    900
-  );
-
-  // Price
-  if(price){
-    ctx.font=`800 ${Math.max(24,w*.034)}px Vazirmatn`;
-    ctx.fillStyle=primary;
-    ctx.textAlign="center";
-    ctx.fillText(price+" تومان",w*.5,h*.84);
-  }
-
-  // Discount
-  if(discount){
-    ctx.fillStyle=accent;
-    ctx.font=`900 ${Math.max(24,w*.04)}px Vazirmatn`;
-    ctx.fillText("٪"+discount.replace("%",""),w*.5,h*.895);
-  }
-
-  // CTA
-  const ctaW=w*.58;
-  const ctaH=Math.max(65,h*.055);
-  const ctaY=h*.92;
-
-  ctx.fillStyle=accent;
-  shadow(rgba(accent,.3),25);
-  roundRect(ctx,w*.5-ctaW/2,ctaY-ctaH/2,ctaW,ctaH,ctaH/2,true);
-
-  ctx.shadowColor="transparent";
-  ctx.fillStyle="#fff";
-  ctx.font=`800 ${Math.max(18,w*.023)}px Vazirmatn`;
-  ctx.fillText(cta,w*.5,ctaY);
-
-  ctx.restore();
 }
 
-/* ================= DECOR ================= */
+text(
+scenario,
+width/2,
+height*.955,
+Math.round(width*.021),
+"700",
+secondaryColor
+);
 
-function decorations(w,h){
-  if(style==="minimal"||style==="studio")return;
-
-  ctx.save();
-
-  ctx.globalAlpha=.22;
-  ctx.strokeStyle=accent;
-  ctx.lineWidth=Math.max(2,w*.002);
-
-  ctx.beginPath();
-  ctx.arc(w*.08,h*.88,w*.2,Math.PI,Math.PI*1.5);
-  ctx.stroke();
-
-  ctx.beginPath();
-  ctx.arc(w*.92,h*.16,w*.16,0,Math.PI/2);
-  ctx.stroke();
-
-  if(style==="neon"||style==="fire"){
-    ctx.globalAlpha=.16;
-    for(let i=0;i<20;i++){
-      ctx.fillStyle=accent;
-      ctx.beginPath();
-      ctx.arc(
-        Math.random()*w,
-        Math.random()*h,
-        2+Math.random()*7,
-        0,Math.PI*2
-      );
-      ctx.fill();
-    }
-  }
-
-  ctx.restore();
 }
 
-/* ================= GENERATE ================= */
 
-function generatePoster(showLoading=true){
-  if(showLoading)loading(true);
+/* GENERATE */
 
-  setTimeout(()=>{
-    const [w,h]=getSize();
+$("generate").addEventListener(
+"click",
+function(){
 
-    canvas.width=w;
-    canvas.height=h;
+render();
 
-    updateSize();
+this.textContent =
+"✓ تبلیغ آماده شد";
 
-    background(w,h);
-    decorations(w,h);
-    drawProduct(w,h);
-    drawBadge(w,h);
-    drawTexts(w,h);
+setTimeout(
+()=>{
+this.textContent =
+"✨ ساخت تبلیغ";
+},
+1500
+);
 
-    $("statusText").textContent =
-      `${styleNames[style]} • ${categoryNames[category]}`;
-
-    if(showLoading){
-      loading(false);
-      toast("تبلیغ آماده شد ✨");
-    }
-  },showLoading?350:0);
 }
+);
 
-/* ================= VARIANTS ================= */
 
-function setVariant(v){
-  variant=v;
+/* DOWNLOAD */
 
-  document.querySelectorAll(".variant").forEach((x,i)=>{
-    x.classList.toggle("active",i===v);
-  });
+$("download").addEventListener(
+"click",
+function(){
 
-  generatePoster(false);
+const link =
+document.createElement("a");
+
+link.download =
+"ADPIX-Advertising.png";
+
+link.href =
+canvas.toDataURL("image/png");
+
+link.click();
+
 }
+);
 
-function generateVariants(){
-  loading(true);
 
-  setTimeout(()=>{
-    variant=Math.floor(Math.random()*4);
+/* SHARE */
 
-    document.querySelectorAll(".variant").forEach((x,i)=>{
-      x.classList.toggle("active",i===variant);
-    });
+$("share").addEventListener(
+"click",
+function(){
 
-    generatePoster(false);
-    loading(false);
-    toast("۴ سبک طراحی آماده شد؛ بین طرح‌ها انتخاب کن 🔥");
-  },450);
+canvas.toBlob(
+async blob=>{
+
+const file =
+new File(
+[blob],
+"ADPIX.png",
+{
+type:"image/png"
 }
+);
 
-/* ================= RANDOM ================= */
+if(
+navigator.share &&
+navigator.canShare &&
+navigator.canShare({
+files:[file]
+})
+){
 
-function randomize(){
-  const cats=Object.keys(categoryNames);
-  const styles=Object.keys(styleNames);
-  const colors=[...document.querySelectorAll(".color")];
-
-  category=cats[Math.floor(Math.random()*cats.length)];
-  style=styles[Math.floor(Math.random()*styles.length)];
-
-  document.querySelectorAll("#categories .chip").forEach(x=>{
-    x.classList.toggle("active",x.dataset.value===category);
-  });
-
-  document.querySelectorAll("#styles .chip").forEach(x=>{
-    x.classList.toggle("active",x.dataset.value===style);
-  });
-
-  const color=colors[Math.floor(Math.random()*colors.length)];
-  colors.forEach(x=>x.classList.remove("active"));
-  color.classList.add("active");
-  accent=color.dataset.color;
-
-  variant=Math.floor(Math.random()*4);
-
-  document.querySelectorAll(".variant").forEach((x,i)=>{
-    x.classList.toggle("active",i===variant);
-  });
-
-  generatePoster(true);
-}
-
-/* ================= DOWNLOAD ================= */
-
-function downloadPoster(){
-  try{
-    const link=document.createElement("a");
-    link.download="ADPIX-ad.png";
-    link.href=canvas.toDataURL("image/png",1);
-    link.click();
-    toast("تصویر دانلود شد 📥");
-  }catch(e){
-    toast("دانلود انجام نشد");
-  }
-}
-
-/* ================= SHARE ================= */
-
-async function sharePoster(){
-  try{
-    canvas.toBlob(async blob=>{
-      if(!blob)return;
-
-      const file=new File([blob],"ADPIX-ad.png",{type:"image/png"});
-
-      if(navigator.share && navigator.canShare && navigator.canShare({files:[file]})){
-        await navigator.share({
-          title:"ADPIX",
-          text:"تبلیغ محصول ساخته‌شده با ADPIX",
-          files:[file]
-        });
-      }else{
-        downloadPoster();
-        toast("اشتراک‌گذاری مستقیم پشتیبانی نمی‌شود؛ فایل دانلود شد");
-      }
-    },"image/png");
-  }catch(e){
-    toast("اشتراک‌گذاری لغو شد");
-  }
-}
-
-/* ================= FULLSCREEN ================= */
-
-function openFullscreen(){
-  if(canvas.requestFullscreen){
-    canvas.requestFullscreen();
-  }else{
-    toast("تمام‌صفحه پشتیبانی نمی‌شود");
-  }
-}
-
-/* ================= SAVE ================= */
-
-function getProjectData(){
-  return {
-    id:Date.now(),
-    name:$("productName").value || "پروژه بدون نام",
-    productName:$("productName").value,
-    brand:$("brand").value,
-    price:$("price").value,
-    discount:$("discount").value,
-    cta:$("cta").value,
-    scenario:$("scenario").value,
-    category,
-    style,
-    accent,
-    badge,
-    format:$("format").value,
-    variant,
-    image:productImage ? productImage.src : null,
-    date:new Date().toLocaleString("fa-IR")
-  };
-}
-
-function saveProject(){
-  const projects=JSON.parse(localStorage.getItem("adpix_projects")||"[]");
-
-  projects.unshift(getProjectData());
-
-  localStorage.setItem(
-    "adpix_projects",
-    JSON.stringify(projects.slice(0,20))
-  );
-
-  toast("پروژه ذخیره شد 💾");
-}
-
-function openProjects(){
-  renderProjects();
-  $("projectModal").classList.add("show");
-}
-
-function closeProjects(){
-  $("projectModal").classList.remove("show");
-}
-
-function renderProjects(){
-  const projects=JSON.parse(localStorage.getItem("adpix_projects")||"[]");
-  const box=$("projectsList");
-
-  if(!projects.length){
-    box.innerHTML=`
-      <div style="text-align:center;padding:35px;color:#999">
-        هنوز پروژه‌ای ذخیره نکردی.
-      </div>
-    `;
-    return;
-  }
-
-  box.innerHTML=projects.map((p,i)=>`
-    <div style="
-      border:1px solid rgba(255,255,255,.08);
-      background:#0c0b12;
-      padding:12px;
-      border-radius:15px;
-      margin-bottom:8px;
-      display:flex;
-      gap:10px;
-      align-items:center;
-    ">
-      ${p.image
-        ? `<img src="${p.image}" style="width:55px;height:55px;object-fit:cover;border-radius:10px">`
-        : `<div style="width:55px;height:55px;border-radius:10px;background:#21162e;display:grid;place-items:center">✦</div>`
-      }
-
-      <div style="flex:1">
-        <strong style="font-size:12px">${escapeHtml(p.name)}</strong>
-        <div style="font-size:10px;color:#777;margin-top:3px">${p.date}</div>
-      </div>
-
-      <button
-        onclick="loadProject(${i})"
-        style="border:1px solid rgba(255,255,255,.08);background:#171520;color:#fff;border-radius:9px;padding:8px">
-        باز کردن
-      </button>
-
-      <button
-        onclick="deleteProject(${i})"
-        style="border:1px solid rgba(255,77,109,.15);background:#1b0d12;color:#ff7188;border-radius:9px;padding:8px">
-        حذف
-      </button>
-    </div>
-  `).join("");
-}
-
-function escapeHtml(str){
-  return String(str||"")
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-
-function loadProject(i){
-  const projects=JSON.parse(localStorage.getItem("adpix_projects")||"[]");
-  const p=projects[i];
-
-  if(!p)return;
-
-  $("productName").value=p.productName||"";
-  $("brand").value=p.brand||"";
-  $("price").value=p.price||"";
-  $("discount").value=p.discount||"";
-  $("cta").value=p.cta||"همین حالا سفارش بده";
-  $("scenario").value=p.scenario||"";
-  $("format").value=p.format||"story";
-
-  category=p.category||"fashion";
-  style=p.style||"luxury";
-  accent=p.accent||"#8b4dff";
-  badge=p.badge||"none";
-  variant=p.variant||0;
-
-  document.querySelectorAll("#categories .chip").forEach(x=>{
-    x.classList.toggle("active",x.dataset.value===category);
-  });
-
-  document.querySelectorAll("#styles .chip").forEach(x=>{
-    x.classList.toggle("active",x.dataset.value===style);
-  });
-
-  document.querySelectorAll(".color").forEach(x=>{
-    x.classList.toggle("active",x.dataset.color===accent);
-  });
-
-  document.querySelectorAll(".badge-option").forEach(x=>{
-    x.classList.toggle("active",x.dataset.badge===badge);
-  });
-
-  if(p.image){
-    const img=new Image();
-    img.onload=()=>{
-      productImage=img;
-      $("uploadText").textContent="✓ عکس محصول انتخاب شد";
-      generatePoster(false);
-    };
-    img.src=p.image;
-  }else{
-    productImage=null;
-    generatePoster(false);
-  }
-
-  document.querySelectorAll(".variant").forEach((x,j)=>{
-    x.classList.toggle("active",j===variant);
-  });
-
-  closeProjects();
-  toast("پروژه باز شد");
-}
-
-function deleteProject(i){
-  const projects=JSON.parse(localStorage.getItem("adpix_projects")||"[]");
-  projects.splice(i,1);
-  localStorage.setItem("adpix_projects",JSON.stringify(projects));
-  renderProjects();
-  toast("پروژه حذف شد");
-}
-
-/* ================= RESET ================= */
-
-function resetAll(){
-  if(!confirm("همه اطلاعات فرم پاک شود؟"))return;
-
-  $("productName").value="";
-  $("brand").value="";
-  $("price").value="";
-  $("discount").value="";
-  $("cta").value="همین حالا سفارش بده";
-  $("scenario").value="";
-
-  productImage=null;
-  $("uploadText").textContent="برای انتخاب عکس ضربه بزن";
-
-  category="fashion";
-  style="luxury";
-  accent="#8b4dff";
-  badge="none";
-  variant=0;
-
-  document.querySelectorAll("#categories .chip").forEach(x=>{
-    x.classList.toggle("active",x.dataset.value==="fashion");
-  });
-
-  document.querySelectorAll("#styles .chip").forEach(x=>{
-    x.classList.toggle("active",x.dataset.value==="luxury");
-  });
-
-  document.querySelectorAll(".color").forEach(x=>{
-    x.classList.toggle("active",x.dataset.color==="#8b4dff");
-  });
-
-  document.querySelectorAll(".badge-option").forEach(x=>{
-    x.classList.toggle("active",x.dataset.badge==="none");
-  });
-
-  document.querySelectorAll(".variant").forEach((x,i)=>{
-    x.classList.toggle("active",i===0);
-  });
-
-  $("format").value="story";
-
-  generatePoster(false);
-  toast("فرم پاک شد");
-}
-
-/* ================= KEYBOARD ================= */
-
-document.addEventListener("keydown",e=>{
-  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="s"){
-    e.preventDefault();
-    saveProject();
-  }
-
-  if(e.key==="Escape"){
-    closeProjects();
-  }
+await navigator.share({
+title:"ADPIX",
+text:"تبلیغ ساخته شده با ADPIX",
+files:[file]
 });
 
-/* ================= INIT ================= */
+}else{
 
-window.addEventListener("load",()=>{
-  updateSize();
-  generatePoster(false);
-});
+alert(
+"اشتراک‌گذاری مستقیم فعال نیست؛ از دانلود استفاده کن."
+);
 
-/* ================= PWA-STYLE APP SUPPORT ================= */
+}
 
-let deferredPrompt=null;
+}
+);
 
-window.addEventListener("beforeinstallprompt",e=>{
-  e.preventDefault();
-  deferredPrompt=e;
-});
+}
+);
 
-/* ================= AUTO SAVE FORM ================= */
 
-setInterval(()=>{
-  const draft={
-    productName:$("productName").value,
-    brand:$("brand").value,
-    price:$("price").value,
-    discount:$("discount").value,
-    cta:$("cta").value,
-    scenario:$("scenario").value,
-    category,
-    style,
-    accent,
-    badge,
-    format:$("format").value,
-    variant
-  };
+/* SAVE */
 
-  localStorage.setItem("adpix_draft",JSON.stringify(draft));
-},5000);
+$("save").addEventListener(
+"click",
+function(){
 
-/* ================= RESTORE DRAFT ================= */
+const data = {
 
-(function restoreDraft(){
-  try{
-    const d=JSON.parse(localStorage.getItem("adpix_draft"));
-    if(!d)return;
+name:$("productName").value,
 
-    $("productName").value=d.productName||"";
-    $("brand").value=d.brand||"";
-    $("price").value=d.price||"";
-    $("discount").value=d.discount||"";
-    $("cta").value=d.cta||"همین حالا سفارش بده";
-    $("scenario").value=d.scenario||"";
+brand:$("brand").value,
 
-    category=d.category||"fashion";
-    style=d.style||"luxury";
-    accent=d.accent||"#8b4dff";
-    badge=d.badge||"none";
-    variant=d.variant||0;
-    $("format").value=d.format||"story";
+price:$("price").value,
 
-    setTimeout(()=>{
-      document.querySelectorAll("#categories .chip").forEach(x=>{
-        x.classList.toggle("active",x.dataset.value===category);
-      });
+discount:$("discount").value,
 
-      document.querySelectorAll("#styles .chip").forEach(x=>{
-        x.classList.toggle("active",x.dataset.value===style);
-      });
+scenario:$("scenario").value,
 
-      document.querySelectorAll(".color").forEach(x=>{
-        x.classList.toggle("active",x.dataset.color===accent);
-      });
+category:selectedCategory,
 
-      document.querySelectorAll(".badge-option").forEach(x=>{
-        x.classList.toggle("active",x.dataset.badge===badge);
-      });
+style:selectedStyle,
 
-      document.querySelectorAll(".variant").forEach((x,i)=>{
-        x.classList.toggle("active",i===variant);
-      });
+badge:selectedBadge
 
-      generatePoster(false);
-    },50);
+};
 
-  }catch(e){}
-})();
+localStorage.setItem(
+"ADPIX_PROJECT",
+JSON.stringify(data)
+);
+
+alert(
+"پروژه با موفقیت ذخیره شد ✅"
+);
+
+}
+);
+
+
+/* RESET */
+
+$("reset").addEventListener(
+"click",
+function(){
+
+$("productName").value="";
+
+$("brand").value="";
+
+$("price").value="1,990,000";
+
+$("discount").value="";
+
+$("scenario").value="";
+
+$("file").value="";
+
+$("previewImg").style.display="none";
+
+productImage=null;
+
+render();
+
+}
+);
+
+
+/* INITIAL */
+
+render();
 
 </script>
 
 </body>
-  </html>
+</html>
